@@ -4,3 +4,11 @@ library/.check/
 app-*.png
 sheet-*.png
 dist/
+video/frames/
+video/board*/
+video/overlays/
+video/*.png
+video/*.mp4
+video/*.wav
+video/*.log
+video/*.err

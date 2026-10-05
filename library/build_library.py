@@ -2,6 +2,7 @@
 # Output: exercises.glb (mesh + rig + one animation per exercise) and exercises.json (metadata).
 # Run:  blender -b -P library/build_library.py                      (all categories -> library/)
 #       blender -b -P library/build_library.py -- <category> <dir>  (one category -> <dir>, for checking)
+#       blender -b -P library/build_library.py -- <file.json> <dir>  (any file in the same format, e.g. the video's moves)
 #
 # Pose format (degrees, the figure's own axes: x = right->left, y = up, z = forward):
 #   bone: [x, y, z] rotation, applied y (twist) then z (sideways) then x (forward/back).
@@ -104,7 +105,7 @@ g = body.vertex_groups['hips'].index
 PELVIS = np.array([any(e.group == g and e.weight > .5 for e in v.groups) for v in body.data.vertices])
 g = body.vertex_groups['prop'].index
 BODY = np.array([not any(e.group == g for e in v.groups) for v in body.data.vertices])
-FILES = sorted(glob.glob(os.path.join(HERE, 'exercises', (ONLY or '*') + '.json')))
+FILES = [ONLY] if ONLY and ONLY.endswith('.json') else sorted(glob.glob(os.path.join(HERE, 'exercises', (ONLY or '*') + '.json')))
 assert FILES, f'no exercises/{ONLY}.json'
 
 meta = []

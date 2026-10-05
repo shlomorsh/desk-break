@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* 1080x1920 transparent overlays for the promo: ?cap=<text> or ?end=1|2 */
+  html, body { margin: 0; width: 1080px; height: 1920px; background: transparent; font-family: Heebo, sans-serif; }
+  .wood { background: linear-gradient(180deg, rgba(255,255,255,.3), rgba(255,255,255,0) 45%, rgba(110,70,30,.1)),
+      url(../library/wood.png) 0 0 / 520px, #ecd8b6;
+    box-shadow: inset 0 2px 0 rgba(255,255,255,.7), inset 0 -2px 0 rgba(110,70,30,.25), 0 4px 10px rgba(50,30,10,.3), 0 18px 40px rgba(50,30,10,.22); }
+  #cap { position: absolute; left: 80px; right: 80px; bottom: 360px; width: fit-content; margin-inline: auto; padding: 22px 40px 26px;
+    border-radius: 30px; color: #2f1f10; font-size: 56px; font-weight: 700; line-height: 1.25; text-align: center; }
+  #end { position: absolute; top: 210px; left: 90px; right: 90px; padding: 56px 50px 60px; border-radius: 44px; text-align: center; color: #2f1f10; }
+  #end h1 { margin: 0; font-size: 108px; font-weight: 800; line-height: 1.05; letter-spacing: -1px; }
+  #end p { margin: 26px 0 0; font-size: 50px; font-weight: 500; color: #5c4128; }
+  #end .url { margin-top: 30px; font-size: 46px; font-weight: 700; direction: ltr; color: #7a4a1c; }
+  [hidden] { display: none !important; }
+</style>
+<div id="cap" class="wood" hidden></div>
+<div id="end" class="wood" hidden><h1>תרגיל בהמתנה</h1><p id="l2">435 תרגילים · חינם · קוד פתוח</p><div class="url" id="l3">parametric.co.il/desk-break</div></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (q.get('cap')) { const c = document.getElementById('cap'); c.textContent = q.get('cap'); c.hidden = false; }
+  if (q.get('end')) {
+    document.getElementById('end').hidden = false;
+    if (q.get('end') === '1') document.getElementById('l2').style.visibility = document.getElementById('l3').style.visibility = 'hidden';
+  }
+</script>
+</html>

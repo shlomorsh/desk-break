@@ -1,14 +1,18 @@
 # Desk Break
 
-A small wooden mannequin that lives on your desktop and shows you a short exercise whenever you're
-waiting for the computer: a build, a render, an AI agent working. Click for the next one.
+Two things in one repository:
 
-It comes with an open library of **435 animated exercises** in 11 categories, made for this project
-and free to use in your own apps, games and videos.
+1. **An open library of 435 rigged exercise animations** on a wooden artist's mannequin: stretches, mobility,
+   yoga, chair and floor work, low-impact cardio, dances and a few silly ones. One GLB, one Blender file,
+   MIT licensed. Use them in your own apps, games and videos.
+   **[Browse all of them in your browser](https://parametric.co.il/desk-break/library/)** ·
+   [jump to the library section](#the-animation-library)
+2. **A small desktop app built on it**: the mannequin stands on your screen and shows you a short exercise
+   whenever you're waiting for the computer (a build, a render, an AI agent working). Click for the next one.
 
 ![The mannequin floating on the desktop with its exercise panel](docs/floating.jpg)
 
-## What it does
+## The desktop app
 
 - **Just the figure on screen.** No window and no background. Drag it anywhere. Hover to see the exercise
   and its counter; click to open the panel with full instructions.
@@ -20,14 +24,12 @@ and free to use in your own apps, games and videos.
 - **Gets out of the way.** Shrink it to a small wooden head, tuck it into a screen edge, or hide it fully;
   `Ctrl+Alt+M` or the tray icon brings it back. `Ctrl+Alt+N` gives the next exercise from any app.
 
-Browse the whole library online: **https://parametric.co.il/desk-break/library/**
-
-## Download
+### Download
 
 **[DeskBreak-Setup.exe](https://github.com/shlomorsh/desk-break/releases/latest/download/DeskBreak-Setup.exe)** (Windows 10/11).
 It isn't code-signed yet, so the first time Windows shows "Windows protected your PC": click *More info*, then *Run anyway*.
 
-## Run from source
+### Run from source
 
 With [Node.js](https://nodejs.org) 20 or newer:
 
@@ -42,9 +44,12 @@ If your npm has `ignore-scripts` turned on, Electron's binary is not downloaded 
 run `node node_modules/electron/install.js` once. If you start it from a VS Code terminal and it
 fails with `require('electron')`, clear `ELECTRON_RUN_AS_NODE` first (`start.bat` does this for you).
 
-## The exercise library
+## The animation library
 
-| Category | Exercises |
+Free exercise animation with a rig is hard to find: the big mocap sets are research-only or can't be
+redistributed. This one was made from scratch for this project, so it is yours to use (MIT).
+
+| Category | Animations |
 |---|---|
 | Neck, shoulders & arms | 42 |
 | Back & spine | 36 |
@@ -58,16 +63,48 @@ fails with `require('electron')`, clear `ELECTRON_RUN_AS_NODE` first (`start.bat
 | Dance & hip hop (with BPM) | 35 |
 | Funny (stage dive, drop the mouse, backflip…) | 39 |
 
+### What to download
+
 Everything is in [`library/`](library):
 
-- `exercises.glb`: the mannequin with its rig and one animation per exercise, for any engine
-  (three.js, Unity, Unreal, Blender, Godot).
-- `exercises.json`: names (Hebrew and English), amounts, step-by-step instructions, camera hints, tempo.
-- `exercises/*.json`: the source. Each exercise is a few poses written as joint angles.
-- `gallery.html`: browse every animation in a browser.
+| File | What it is |
+|---|---|
+| [`exercises.glb`](library/exercises.glb) | Mannequin + rig + all 435 animations, for three.js, Unity, Unreal, Godot or any glTF importer (8 MB) |
+| [`exercises.blend`](library/exercises.blend) | The same as a Blender file: one Action per exercise, wood texture packed inside (saved with Blender 5.2) |
+| [`mannequin.blend`](library/mannequin.blend) / [`mannequin.glb`](library/mannequin.glb) | The original rig and mesh alone, no animation |
+| [`exercises.json`](library/exercises.json) | For every animation: id, name (Hebrew and English), category, amount, step-by-step instructions (Hebrew), camera hint, tempo, key times |
+| [`exercises/*.json`](library/exercises) | The source: each exercise is a few poses written as joint angles |
 
-To add or change exercises, read [`library/AUTHORING.md`](library/AUTHORING.md), edit a category file and
-rebuild with Blender 4.2 or newer (`npm run dist` then builds the installer into `dist/`):
+Animation names are the ids in `exercises.json` (`neck-side-tilt`, `warrior-2`, `funny-stage-dive`…).
+
+### The rig
+
+- 15 body bones: `hips` (root), `spine`, `neck`, and left/right `arm`, `elbow`, `hand`, `leg`, `knee`, `foot`.
+  One extra bone, `prop`, carries a small computer mouse and is scaled to zero unless an animation uses it.
+- 1.75 m tall, metres, feet on the floor at the origin. Rigid skinning: every part follows one bone.
+- Animations are sampled at 30 fps and loop, except the ones marked `"once"` in the JSON. The root height is
+  baked so the body stays on the floor; chair exercises (`"seated"`) assume a seat 0.45 m high.
+- Simple on purpose: no fingers, no IK, and the back is one piece. The bones are short stubs that all point up,
+  so every rest rotation is identity and a pose is plain angles. It looks unusual in Blender's viewport;
+  it makes the animations easy to write and to retarget by hand.
+
+### Use it in three.js
+
+```js
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+const gltf = await new GLTFLoader().loadAsync('exercises.glb');
+scene.add(gltf.scene);
+const mixer = new THREE.AnimationMixer(gltf.scene);
+mixer.clipAction(THREE.AnimationClip.findByName(gltf.animations, 'warrior-2')).play();
+// each frame: mixer.update(deltaSeconds)
+```
+
+[`library/gallery.html`](library/gallery.html) is a complete example that plays all of them on one page.
+
+### Add or change exercises
+
+Read [`library/AUTHORING.md`](library/AUTHORING.md), edit a category file, and rebuild with Blender
+(built and tested with 5.2):
 
 ```
 blender -b -P library/build_library.py
@@ -75,6 +112,7 @@ bash library/check.sh <category>     # build one category and photograph every p
 ```
 
 The mannequin (`build_mannequin.py`) and its maple texture (`make_wood.py`) are generated by script too.
+`npm run dist` builds the Windows installer into `dist/`.
 
 ## A note on health
 
@@ -91,4 +129,4 @@ If you have joint or back problems, check with a doctor or physiotherapist which
 ## בעברית
 
 דמות עץ קטנה שיושבת על שולחן העבודה של המחשב ומראה לך תרגיל קצר בכל פעם שאתה מחכה למחשב: לרינדור, לבנייה, לסוכן AI שעובד.
-לחיצה, והיא עוברת לתרגיל הבא. יש בה ספרייה פתוחה של 435 תרגילים מונפשים ב-11 קטגוריות, ומותר להשתמש בה בכל פרויקט.
+לחיצה, והיא עוברת לתרגיל הבא. במאגר יש גם ספרייה פתוחה של 435 אנימציות תרגילים עם ריג, ב-11 קטגוריות, כקובץ GLB וכקובץ בלנדר. מותר להשתמש בה בכל פרויקט.

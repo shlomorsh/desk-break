@@ -1,13 +1,15 @@
 # Puts the promo together: rendered frames + narration take + ding + Hebrew captions + wooden end card.
-#   python video/compose.py            -> video/desk-break-promo.mp4
-import subprocess, os
+#   python video/compose.py [music.mp3 [out.mp4]]   -> video/desk-break-promo.mp4
+#   Music sits under the voice: ducked while he talks, faded out at the end.
+import subprocess, os, sys
 from pathlib import Path
 from urllib.parse import quote
 from playwright.sync_api import sync_playwright
 
 V = Path(__file__).resolve().parent
 TAKE = r'C:\studio\tools\video-engine\remotion\voice\desk-break-promo\_take.mp3'
-OUT = V / 'desk-break-promo.mp4'
+MUSIC = sys.argv[1] if len(sys.argv) > 1 else None
+OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else V / 'desk-break-promo.mp4'
 END = 29.5
 # phrase timings from the word timestamps of the take
 CAPS = [(0.0, 1.55, 'נתת למחשב משימה.'), (1.66, 3.22, 'עכשיו הוא עובד.'), (3.3, 5.7, 'ואתה? אתה מחכה.'),
@@ -31,10 +33,18 @@ with sync_playwright() as p:
     b.close()
 
 # a soft two-note ding, like the app's
+import math, wave, struct
 ding = V / 'ding.wav'
-subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-f', 'lavfi', '-i',
-                'aevalsrc=0.25*sin(2*PI*660*t)*exp(-6*t)*lt(t,0.6)+0.25*sin(2*PI*880*(t-0.12))*exp(-6*(t-0.12))*gt(t,0.12):d=0.8:s=48000',
-                str(ding)], check=True)
+with wave.open(str(ding), 'wb') as w:
+    w.setnchannels(1); w.setsampwidth(2); w.setframerate(48000)
+    samples = []
+    for i in range(int(48000 * .8)):
+        t = i / 48000
+        v = .25 * math.sin(2 * math.pi * 660 * t) * math.exp(-6 * t) * (t < .6)
+        if t > .12:
+            v += .25 * math.sin(2 * math.pi * 880 * (t - .12)) * math.exp(-6 * (t - .12))
+        samples.append(struct.pack('<h', int(v * 32767)))
+    w.writeframes(b''.join(samples))
 
 layers = [(a, b, ov / f'cap{i:02d}.png') for i, (a, b, _) in enumerate(CAPS)] + [(a, b, ov / f'end{s}.png') for a, b, s in ENDCARD]
 cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-framerate', '24', '-i', str(V / 'frames' / 'f%04d.png'), '-i', TAKE, '-i', str(ding)]
@@ -44,7 +54,15 @@ f, last = [], '0:v'
 for k, (a, b, _) in enumerate(layers):
     f.append(f"[{last}][{k + 3}:v]overlay=0:0:enable='between(t,{a},{b})'[v{k}]")
     last = f'v{k}'
-f.append(f'[2:a]adelay={int(DING * 1000)}|{int(DING * 1000)}[d];[1:a][d]amix=inputs=2:duration=first:normalize=0[a]')
+f.append(f'[2:a]adelay={int(DING * 1000)}|{int(DING * 1000)}[d]')
+if MUSIC:
+    m = len(layers) + 3
+    cmd += ['-i', MUSIC]
+    f.append(f'[1:a]asplit=2[vo][key];[{m}:a]volume=0.32,afade=t=in:d=0.4,afade=t=out:st={END - 1.8}:d=1.8[mu]')
+    f.append('[mu][key]sidechaincompress=threshold=0.03:ratio=6:attack=40:release=450[duck]')
+    f.append('[vo][d][duck]amix=inputs=3:duration=first:normalize=0[a]')
+else:
+    f.append('[1:a][d]amix=inputs=2:duration=first:normalize=0[a]')
 cmd += ['-filter_complex', ';'.join(f), '-map', f'[{last}]', '-map', '[a]', '-t', str(END),
         '-c:v', 'libx264', '-crf', '17', '-preset', 'slow', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', str(OUT)]
 subprocess.run(cmd, check=True)

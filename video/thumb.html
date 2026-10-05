@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  /* YouTube Shorts cover, 1080x1920: thumb.html?img=frames/f0447.png&hook=...&pos=top|bottom */
+  html, body { margin: 0; width: 1080px; height: 1920px; overflow: hidden; font-family: Heebo, sans-serif; }
+  #bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .plank { position: absolute; left: 70px; right: 70px; padding: 50px 50px 58px; border-radius: 48px; text-align: center; color: #2f1f10;
+    background: linear-gradient(180deg, rgba(255,255,255,.32), rgba(255,255,255,0) 45%, rgba(110,70,30,.12)), url(../library/wood.png) 0 0 / 560px, #ecd8b6;
+    box-shadow: inset 0 3px 0 rgba(255,255,255,.7), inset 0 -3px 0 rgba(110,70,30,.28), 0 6px 14px rgba(50,30,10,.3), 0 26px 60px rgba(50,30,10,.3); }
+  .top { top: 150px; } .bottom { bottom: 260px; }
+  h1 { margin: 0; font-size: 150px; font-weight: 900; line-height: 1; letter-spacing: -2px; }
+  p { margin: 22px 0 0; font-size: 64px; font-weight: 700; color: #6a4724; line-height: 1.15; }
+</style>
+<img id="bg">
+<div class="plank" id="p"><h1>תרגיל בהמתנה</h1><p id="hook"></p></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('bg').src = q.get('img');
+  document.getElementById('hook').textContent = q.get('hook') || '';
+  document.getElementById('p').className = 'plank ' + (q.get('pos') || 'top');
+</script>
+</html>

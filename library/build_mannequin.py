@@ -106,6 +106,7 @@ prop = body.vertex_groups['prop'].index
 zs = [v.co.z for v in mesh.vertices if not any(e.group == prop for e in v.groups)]
 assert abs(min(zs)) < .002 and abs(max(zs) - 1.75) < .01, (min(zs), max(zs))   # sole on floor, 1.75 tall
 
+bpy.ops.file.pack_all()                      # the wood texture travels inside the .blend
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HERE, 'mannequin.blend'))
 bpy.ops.export_scene.gltf(filepath=os.path.join(HERE, 'mannequin.glb'), export_format='GLB',
                           export_animations=False, export_image_format='JPEG', export_jpeg_quality=88)

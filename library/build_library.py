@@ -1,5 +1,6 @@
 # Turns every exercises/*.json into an animation on the mannequin rig.
-# Output: exercises.glb (mesh + rig + one animation per exercise) and exercises.json (metadata).
+# Output: exercises.glb (mesh + rig + one animation per exercise), exercises.blend (the same, as Blender actions)
+# and exercises.json (metadata).
 # Run:  blender -b -P library/build_library.py                      (all categories -> library/)
 #       blender -b -P library/build_library.py -- <category> <dir>  (one category -> <dir>, for checking)
 #       blender -b -P library/build_library.py -- <file.json> <dir>  (any file in the same format, e.g. the video's moves)
@@ -150,6 +151,9 @@ rig.animation_data.action = None
 for b in bones: b.rotation_quaternion = (1, 0, 0, 0); b.location = (0, 0, 0)
 bpy.ops.export_scene.gltf(filepath=os.path.join(OUT, 'exercises.glb'), export_format='GLB',
                           export_animation_mode='ACTIONS', export_image_format='JPEG', export_jpeg_quality=88, export_force_sampling=True, export_frame_step=1)
+if not ONLY:                                  # the full library also as a Blender file: rig + one action per exercise
+    bpy.ops.file.pack_all()
+    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(OUT, 'exercises.blend'), compress=True, copy=True)
 json.dump({'categories': list(cats.values()), 'exercises': meta},
           open(os.path.join(OUT, 'exercises.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 ids = [m['id'] for m in meta]

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<meta charset="utf-8">
+<title>ספריית תרגילים</title>
+<style>
+  body { margin: 0; background: #e9e4da; color: #2a2620; font-family: "Segoe UI", sans-serif; }
+  header { padding: 18px 24px 4px; }
+  h1 { margin: 0; font-size: 22px; }
+  h2 { margin: 22px 24px 6px; font-size: 17px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; padding: 0 24px 24px; }
+  .cell { background: #f6f2ea; border-radius: 10px; overflow: hidden; }
+  .view { height: 230px; }
+  .cell b { display: block; padding: 6px 10px 0; font-size: 14px; }
+  .cell span { display: block; padding: 0 10px 8px; font-size: 12px; opacity: .7; }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+</style>
+<header><h1>ספריית תרגילים</h1></header>
+<main id="list"></main>
+<canvas id="c"></canvas>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { clone } from 'three/addons/utils/SkeletonUtils.js';
+import { VIEWS, chair, lights } from './player.js';
+
+// gallery.html#k=1&only=neck-shoulders-arms&lib=.check/x/  -> freeze every figure on key 1, one category, other build folder
+const opt = Object.fromEntries(new URLSearchParams(location.hash.slice(1)));
+const [lib, glb] = await Promise.all([
+  fetch((opt.lib || '') + 'exercises.json').then(r => r.json()),
+  new GLTFLoader().loadAsync((opt.lib || '') + 'exercises.glb'),
+]);
+
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setPixelRatio(devicePixelRatio);
+renderer.setScissorTest(true);
+const camera = new THREE.PerspectiveCamera(30, 190 / 230, 0.1, 20);
+const cells = [];
+for (const cat of lib.categories) {
+  if (opt.only && opt.only !== cat.id) continue;
+  const list = document.getElementById('list');
+  list.insertAdjacentHTML('beforeend', `<h2>${cat.he}</h2><div class="grid"></div>`);
+  const grid = list.lastElementChild;
+  for (const ex of lib.exercises.filter(e => e.category === cat.id)) {
+    grid.insertAdjacentHTML('beforeend', `<div class="cell" title="${ex.steps.join(' ')}"><div class="view"></div><b>${ex.he}</b><span>${ex.amount}</span></div>`);
+    const scene = new THREE.Scene();
+    const fig = clone(glb.scene);
+    fig.traverse(o => { if (o.isSkinnedMesh) o.frustumCulled = false; });
+    if (ex.seated) scene.add(chair());
+    scene.add(fig); lights(scene);
+    const mixer = new THREE.AnimationMixer(fig);
+    const action = mixer.clipAction(THREE.AnimationClip.findByName(glb.animations, ex.id));
+    if (ex.once) {           // one-shot: play, hold the last pose 2 s, replay
+      action.setLoop(THREE.LoopOnce); action.clampWhenFinished = true;
+      mixer.addEventListener('finished', () => setTimeout(() => action.reset().play(), 2000));
+    }
+    action.play();
+    if (opt.k) mixer.setTime(ex.keyTimes[Math.min(+opt.k, ex.keyTimes.length - 1)]);
+    cells.push({ el: grid.lastElementChild.querySelector('.view'), scene, mixer, view: VIEWS[ex.view] || VIEWS.full });
+  }
+}
+
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const dt = opt.k ? 0 : clock.getDelta();
+  renderer.setSize(innerWidth, innerHeight, false);
+  renderer.setScissor(0, 0, innerWidth, innerHeight); renderer.clear();
+  for (const c of cells) {
+    const r = c.el.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) continue;
+    c.mixer.update(dt);
+    const y = innerHeight - r.bottom;
+    renderer.setViewport(r.left, y, r.width, r.height);
+    renderer.setScissor(r.left, y, r.width, r.height);
+    camera.position.set(...c.view[0]); camera.lookAt(...c.view[1]);
+    camera.aspect = r.width / r.height; camera.updateProjectionMatrix();
+    renderer.render(c.scene, camera);
+  }
+});
+</script>
+</html>

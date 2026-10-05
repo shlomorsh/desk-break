@@ -1,0 +1,5 @@
+node_modules/
+library/.check/
+*.blend1
+app-*.png
+sheet-*.png

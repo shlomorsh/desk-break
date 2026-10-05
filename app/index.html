@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<meta charset="utf-8">
+<title>תרגיל בהמתנה</title>
+<link rel="stylesheet" href="wood.css">
+<style>
+  html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; user-select: none; }
+  body { display: flex; }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+  /* the figure, nothing else; drag to move, click for the panel */
+  #fig { position: relative; flex: none; cursor: grab; }
+  #fig:active { cursor: grabbing; }
+  .pill { position: absolute; top: 6px; inset-inline: 8px; padding: 7px 10px 8px; border-radius: 12px; z-index: 2;
+    opacity: 0; transform: translateY(-4px); transition: opacity .18s, transform .18s; pointer-events: none; }
+  #fig:hover .pill, .pill.flash { opacity: 1; transform: none; }
+  .open .pill { display: none; }
+  .pill b { display: block; font-size: 14px; line-height: 1.3; }
+  .pill span { font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  .meter { height: 4px; border-radius: 2px; margin-top: 5px; background: rgba(110, 70, 30, .18); overflow: hidden; }
+  .meter i { display: block; height: 100%; width: 0; background: #8a5a2b; border-radius: 2px; transition: width .3s; }
+  .done .meter i { background: #2d6a52; }
+
+  /* head: the minimised state */
+  #head { display: none; position: fixed; inset: 4px; border-radius: 50%; cursor: grab; }
+  .head #head { display: block; }
+  .head #fig, .head #panel { display: none; }
+  .head canvas { clip-path: circle(calc(50% - 4px)); }
+  #vanish { display: none; position: fixed; top: 0; inset-inline-end: 0; width: 24px; height: 24px; min-height: 0; padding: 0;
+    border-radius: 50%; font-size: 12px; z-index: 3; opacity: 0; transition: opacity .15s; }
+  .head #vanish { display: block; }
+  .head:hover #vanish, #vanish:focus-visible { opacity: 1; }
+
+  /* panel next to the figure, on the side with more screen */
+  #panel { display: none; flex: 1; margin: 8px; padding: 14px 16px; overflow: auto; flex-direction: column; gap: 12px; }
+  .open #panel { display: flex; }
+  .fig-left #fig { order: 2; }
+  #panel header { display: flex; align-items: start; gap: 8px; }
+  #panel h1 { margin: 0; font-size: 19px; line-height: 1.25; }
+  #cat { font-size: 13px; }
+  .count { display: flex; align-items: center; gap: 10px; }
+  .count strong { font-size: 30px; font-variant-numeric: tabular-nums; line-height: 1; }
+  .count .side { font-size: 13px; }
+  .count .btn { margin-inline-start: auto; }
+  ol { margin: 0; padding-inline-start: 20px; font-size: 14px; line-height: 1.5; }
+  li.warn { list-style: none; margin-inline-start: -20px; color: #8a3b12; font-weight: 600; }
+  .tune { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; font-size: 14px; }
+  .stepper { display: flex; align-items: center; gap: 6px; justify-self: start; }
+  .stepper .btn { width: 36px; min-height: 36px; padding: 0; font-size: 18px; }
+  .stepper output { min-width: 64px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .row { display: flex; gap: 8px; }
+  .row .primary { flex: 1; }
+  details summary { cursor: pointer; font-size: 14px; color: var(--ink-soft); }
+  .keys { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin-top: 8px; font-size: 13px; }
+  kbd { font: 600 12px/1.6 inherit; padding: 0 6px; border-radius: 6px; background: rgba(255, 255, 255, .55);
+    box-shadow: inset 0 -1px 0 rgba(110, 70, 30, .3); white-space: nowrap; direction: ltr; }
+</style>
+
+<body class="figure">
+<div id="fig" role="button" tabindex="0" aria-label="התרגיל. לחיצה פותחת פרטים, גרירה מזיזה">
+  <div class="pill plank" id="pill"><b id="pname"></b><span id="pcount" class="muted"></span><div class="meter"><i id="pmeter"></i></div></div>
+</div>
+<section id="panel" class="plank" aria-label="פרטי התרגיל">
+  <header>
+    <div style="flex:1"><h1 id="name" aria-live="polite"></h1><div id="cat" class="muted"></div></div>
+    <button id="close" class="btn icon" aria-label="סגירת הפאנל" title="סגירה (Esc)">✕</button>
+  </header>
+  <div class="count">
+    <strong id="count"></strong><span id="side" class="side muted"></span>
+    <button id="restart" class="btn icon" aria-label="להתחיל מחדש" title="מחדש (רווח)">↺</button>
+  </div>
+  <div class="meter"><i id="meter"></i></div>
+  <ol id="how"></ol>
+  <div class="tune">
+    <span id="doseLabel"></span>
+    <div class="stepper" id="doseBox"><button class="btn" id="doseMinus" aria-label="פחות">−</button><output id="dose"></output><button class="btn" id="dosePlus" aria-label="יותר">+</button></div>
+    <span id="speedLabel"></span>
+    <div class="stepper"><button class="btn" id="speedMinus" aria-label="לאט יותר">−</button><output id="speed"></output><button class="btn" id="speedPlus" aria-label="מהר יותר">+</button></div>
+  </div>
+  <div class="row">
+    <button id="prev" class="btn icon" aria-label="התרגיל הקודם" title="הקודם">→</button>
+    <button id="next" class="btn primary">התרגיל הבא</button>
+  </div>
+  <div class="row">
+    <button id="library" class="btn" style="flex:1" title="ספרייה והגדרות">ספרייה</button>
+    <button id="hide" class="btn" title="Ctrl+Alt+M">מזעור</button>
+    <button id="vanish2" class="btn" title="הסתרה מלאה. מחזירים מהאייקון ליד השעון או Ctrl+Alt+M">הסתרה</button>
+  </div>
+  <details><summary>קיצורי מקלדת</summary><div class="keys" id="keys"></div></details>
+</section>
+<div id="head" class="plank" role="button" tabindex="0" aria-label="החזרת הדמות. אפשר לגרור"></div>
+<button id="vanish" class="btn" aria-label="הסתרה מלאה" title="הסתרה מלאה. מחזירים מהאייקון ליד השעון או Ctrl+Alt+M">✕</button>
+<canvas id="c"></canvas>
+
+<script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js","three/addons/":"../node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { VIEWS, chair, lights } from '../library/player.js';
+import { load, save, playlist, dose, figureSize, PANEL_W, PANEL_H, SHORTCUTS } from './store.js';
+
+const $ = id => document.getElementById(id);
+const desk = window.desk || { mode: async () => ({}), move() {}, drop: async () => null, tuck() {}, untuck() {}, settings() {}, onCommand() {} };
+const shot = location.hash.slice(1);              // self-check: #panel / #figure / #head
+
+const [lib, glb] = await Promise.all([
+  fetch('../library/exercises.json').then(r => r.json()),
+  new GLTFLoader().loadAsync('../library/exercises.glb'),
+]);
+const catName = Object.fromEntries(lib.categories.map(c => [c.id, c.he]));
+$('keys').append(...SHORTCUTS.flatMap(([k, t]) => [Object.assign(document.createElement('kbd'), { textContent: k }), Object.assign(document.createElement('span'), { textContent: t })]));
+
+// ---------- 3D ----------
+const renderer = new THREE.WebGLRenderer({ canvas: $('c'), antialias: true, alpha: true });
+renderer.setPixelRatio(devicePixelRatio);
+renderer.setScissorTest(true);
+const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(30, 1, .05, 20);
+const fig = glb.scene, seat = chair();
+fig.traverse(o => { if (o.isSkinnedMesh) { o.frustumCulled = false; fig.userData.skin = o.skeleton; } });
+scene.add(fig, seat); lights(scene);
+const mixer = new THREE.AnimationMixer(fig), neck = fig.getObjectByName('neck');
+let action;
+
+// ---------- playlist & progress ----------
+let settings = load(), list = [], i = 0, ui = 'figure', d = {}, reps = 0, started = 0, finished = false;
+const ex = () => list[i];
+function rebuild() {
+  const cur = ex()?.id ?? localStorage.getItem('desk-pos');
+  list = playlist(lib, settings);
+  i = Math.max(0, list.findIndex(e => e.id === cur));
+}
+const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+function progress() {                      // 0..1 and its text
+  if (d.once) return [action && !action.isRunning() ? 1 : 0, 'פעם אחת'];
+  if (d.seconds) {
+    const total = d.seconds * (d.perSide ? 2 : 1), left = Math.max(0, total - (performance.now() - started) / 1000);
+    return [1 - left / total, fmt(Math.ceil(left))];
+  }
+  return [Math.min(1, reps / d.reps), `${Math.min(reps, d.reps)} / ${d.reps}`];
+}
+function ding() {
+  if (!settings.sound) return;
+  try {
+    const a = new AudioContext();
+    for (const [f, t] of [[660, 0], [880, .12]]) {
+      const o = a.createOscillator(), g = a.createGain();
+      o.frequency.value = f; g.gain.setValueAtTime(.0001, a.currentTime + t);
+      g.gain.exponentialRampToValueAtTime(.08, a.currentTime + t + .02); g.gain.exponentialRampToValueAtTime(.0001, a.currentTime + t + .5);
+      o.connect(g).connect(a.destination); o.start(a.currentTime + t); o.stop(a.currentTime + t + .55);
+    }
+  } catch {}
+}
+function restart() { reps = 0; started = performance.now(); finished = false; document.body.classList.remove('done'); action?.reset().play(); }
+mixer.addEventListener('loop', () => { reps++; });
+
+function show(flash) {
+  const e = ex();
+  if (!e) { $('pname').textContent = $('name').textContent = 'לא נבחרו תרגילים'; $('pcount').textContent = 'בוחרים בספרייה'; return; }
+  try { localStorage.setItem('desk-pos', e.id); } catch {}
+  d = dose(e, settings.custom[e.id]);
+  $('pname').textContent = $('name').textContent = e.he;
+  $('cat').textContent = `${catName[e.category]} · ${i + 1} מתוך ${list.length}`;
+  $('how').replaceChildren(...e.steps.map(s => Object.assign(document.createElement('li'),
+    s.startsWith('!') ? { className: 'warn', textContent: s.slice(1) } : { textContent: s })));
+  $('doseLabel').textContent = d.seconds ? 'זמן' : 'חזרות';
+  $('doseLabel').hidden = $('doseBox').hidden = !!d.once;
+  $('speedLabel').textContent = e.bpm ? 'קצב (BPM)' : 'מהירות';
+  seat.visible = !!e.seated;
+  action?.stop();
+  action = mixer.clipAction(THREE.AnimationClip.findByName(glb.animations, e.id));
+  action.setLoop(d.once ? THREE.LoopOnce : THREE.LoopRepeat); action.clampWhenFinished = true;
+  action.timeScale = d.speed;
+  restart(); tune();
+  if (flash) { $('pill').classList.add('flash'); clearTimeout(show.t); show.t = setTimeout(() => $('pill').classList.remove('flash'), 2500); }
+}
+function tune() {
+  const e = ex();
+  $('dose').textContent = d.seconds ? `${d.seconds} ש׳${d.perSide ? ' לצד' : ''}` : `${d.reps}${d.perSide ? ' לצד' : ''}`;
+  $('speed').textContent = e.bpm ? Math.round(e.bpm * d.speed) : `×${d.speed.toFixed(2).replace(/\.?0+$/, '')}`;
+}
+function change(key, delta) {                     // per-exercise dose / speed, remembered in settings
+  const e = ex(), c = settings.custom[e.id] ||= {};
+  if (key === 'dose') {
+    if (d.seconds) c.seconds = d.seconds = Math.max(5, d.seconds + 5 * delta);
+    else c.reps = d.reps = Math.max(1, d.reps + delta);
+  } else {
+    const stepBy = e.bpm ? 4 / e.bpm : 0.25;
+    c.speed = d.speed = Math.min(2.5, Math.max(0.25, +(d.speed + stepBy * delta).toFixed(3)));
+    action.timeScale = d.speed;
+  }
+  save(settings); tune();
+}
+const step = n => { if (list.length) { i = (i + n + list.length) % list.length; show(ui !== 'open'); } };
+
+// ---------- figure / open panel / head ----------
+async function setUI(m) {
+  ui = m;
+  const [w, h] = figureSize(settings);
+  const size = m === 'head' ? [settings.head, settings.head] : m === 'open' ? [w + PANEL_W, Math.max(h, PANEL_H)] : [w, h];
+  const r = await desk.mode(...size);
+  document.body.className = `${m === 'open' ? 'figure open' : m} ${r.right === false ? 'fig-left' : ''}`;
+  $('fig').style.width = `${w}px`;
+  if (m === 'head') { action?.stop(); fig.userData.skin.pose(); seat.visible = false; }
+  else if (!action?.isRunning() && !finished) show();
+  if (m === 'open') $('next').focus();
+}
+let tucked = false;
+function draggable(el, onClick, onDrop) {
+  let start = null, moved = false;
+  el.addEventListener('pointerdown', e => {
+    if (e.button !== 0) return;
+    el.setPointerCapture(e.pointerId);
+    start = { x: e.screenX, y: e.screenY, wx: screenX, wy: screenY }; moved = false;
+  });
+  el.addEventListener('pointermove', e => {
+    if (!start) return;
+    const dx = e.screenX - start.x, dy = e.screenY - start.y;
+    if (!moved && Math.hypot(dx, dy) < 5) return;
+    moved = true; desk.move(start.wx + dx, start.wy + dy);
+  });
+  el.addEventListener('pointerup', async () => {
+    if (!start) return;
+    start = null;
+    if (moved) onDrop(await desk.drop()); else onClick();
+  });
+}
+const unhide = async () => { if (tucked) { tucked = false; await desk.untuck(); } await setUI('figure'); };
+// dropping the figure on a screen edge turns it into the head, tucked into that edge
+draggable($('fig'), () => setUI(ui === 'open' ? 'figure' : 'open'), async edge => { if (edge) { await setUI('head'); desk.tuck(edge); tucked = true; } });
+draggable($('head'), unhide, edge => { if (edge) { desk.tuck(edge); tucked = true; } });
+$('fig').addEventListener('keydown', e => { if (e.key === 'Enter') setUI('open'); });
+$('head').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') unhide(); });
+
+$('next').onclick = () => step(1);
+$('prev').onclick = () => step(-1);
+$('close').onclick = () => setUI('figure');
+$('hide').onclick = () => setUI('head');
+$('vanish').onclick = $('vanish2').onclick = () => desk.vanish?.();
+$('library').onclick = () => desk.settings();
+$('restart').onclick = restart;
+$('doseMinus').onclick = () => change('dose', -1); $('dosePlus').onclick = () => change('dose', 1);
+$('speedMinus').onclick = () => change('speed', -1); $('speedPlus').onclick = () => change('speed', 1);
+addEventListener('keydown', e => {
+  if (ui !== 'open') return;
+  if (e.key === 'Escape') setUI('figure');
+  if (e.key === 'ArrowLeft') step(1);            // RTL: left = forward
+  if (e.key === 'ArrowRight') step(-1);
+  if (e.key === ' ' && e.target.tagName !== 'BUTTON') { e.preventDefault(); restart(); }
+});
+desk.onCommand(c => {
+  if (c === 'hide') return ui === 'head' ? unhide() : setUI('head');
+  if (c === 'vanish') return desk.vanish?.();
+  if (c === 'next') { if (ui === 'head') unhide().then(() => step(1)); else step(1); }
+});
+addEventListener('storage', e => {             // the library window changed something
+  if (e.key !== 'desk-settings') return;
+  settings = load(); rebuild(); show(); if (ui !== 'head') setUI(ui);
+});
+
+// ---------- loop ----------
+const timer = new THREE.Timer(), near = new THREE.Vector3();
+renderer.setAnimationLoop(t => {
+  timer.update(t);
+  const w = innerWidth, h = innerHeight;
+  renderer.setSize(w, h, false);
+  renderer.setViewport(0, 0, w, h); renderer.setScissor(0, 0, w, h); renderer.clear();
+  if (ui === 'head') {
+    neck.rotation.set(0.06 * Math.sin(t / 1400), 0.25 * Math.sin(t / 2300), 0.08 * Math.sin(t / 1700));
+    camera.position.set(0, 1.63, 0.62); camera.lookAt(0, 1.62, 0);
+    camera.aspect = 1;
+  } else {
+    mixer.update(timer.getDelta());
+    const [p, text] = progress();
+    $('pcount').textContent = $('count').textContent = text;
+    $('pmeter').style.width = $('meter').style.width = `${p * 100}%`;
+    $('side').textContent = d.perSide && d.seconds ? (p < .5 ? 'צד ראשון' : 'צד שני') : '';
+    if (p >= 1 && !finished) { finished = true; document.body.classList.add('done'); ding(); }
+    const r = $('fig').getBoundingClientRect(), [pos, at] = VIEWS[ex()?.view] || VIEWS.full;
+    camera.aspect = r.width / r.height;
+    // narrow window: step back so wide poses stay in frame
+    camera.position.set(...pos).lerp(near.set(...at), 0.1 - 1.4 * Math.max(0, 0.85 - camera.aspect)); camera.lookAt(near);
+    renderer.setViewport(r.left, h - r.bottom, r.width, r.height); renderer.setScissor(r.left, h - r.bottom, r.width, r.height);
+  }
+  camera.updateProjectionMatrix();
+  renderer.render(scene, camera);
+});
+
+rebuild(); show();
+setUI(shot === 'panel' ? 'open' : shot === 'head' ? 'head' : 'figure').then(() => { if (shot === 'figure') $('pill').classList.add('flash'); });
+</script>
+</body>
+</html>

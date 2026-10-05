@@ -1,0 +1,43 @@
+/* Light natural wood UI, the same maple as the mannequin (library/wood.png). */
+:root {
+  --ink: #3f2b19;
+  --ink-soft: #6e5235;
+  --focus: #2d6a52;
+  --grain: url(../library/wood.png);
+  font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+}
+
+.plank {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .28), rgba(255, 255, 255, 0) 40%, rgba(110, 70, 30, .08)),
+    var(--grain) 0 0 / 360px, #ecd8b6;
+  border-radius: 16px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), inset 0 -1px 0 rgba(110, 70, 30, .22),
+    0 1px 2px rgba(50, 30, 10, .3), 0 6px 18px rgba(50, 30, 10, .22);
+}
+
+.btn {
+  font: inherit; font-weight: 600; font-size: 15px; color: var(--ink);
+  min-height: 44px; padding: 0 18px; border: 0; border-radius: 12px; cursor: pointer;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .38), rgba(255, 255, 255, 0) 45%, rgba(110, 70, 30, .12)),
+    var(--grain) 40px 0 / 260px, #e9d3ae;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .75), inset 0 -2px 0 rgba(110, 70, 30, .28),
+    0 1px 2px rgba(50, 30, 10, .35), 0 3px 8px rgba(50, 30, 10, .16);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .55);
+  transition: filter .12s, transform .08s;
+}
+.btn:hover { filter: brightness(1.05); }
+.btn:active { transform: translateY(1px); box-shadow: inset 0 2px 5px rgba(90, 55, 20, .35); }
+.btn:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.btn.primary {                       /* a warmer, deeper cut of the same wood */
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 45%, rgba(90, 50, 15, .14)),
+    linear-gradient(rgba(196, 140, 75, .38), rgba(196, 140, 75, .38)),
+    var(--grain) 0 0 / 260px, #d9b07a;
+  color: #2f1f10;
+}
+.btn.icon { padding: 0; width: 44px; font-size: 20px; }
+
+.muted { color: var(--ink-soft); }

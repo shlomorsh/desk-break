@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<meta charset="utf-8">
+<title>ספרייה והגדרות</title>
+<link rel="stylesheet" href="wood.css">
+<style>
+  :root { --paper: #f4ebdc; --line: rgba(110, 70, 30, .16); }
+  html, body { margin: 0; height: 100%; }
+  body { background: var(--paper); display: grid; grid-template-columns: 250px 1fr; overflow: hidden; }
+
+  /* sidebar */
+  nav { scrollbar-width: thin; padding: 22px 16px; display: flex; flex-direction: column; gap: 4px; overflow: auto; border-radius: 0; box-shadow: inset 1px 0 0 var(--line); }
+  .brand { display: flex; align-items: center; gap: 10px; margin: 0 6px 18px; }
+  .brand img { width: 40px; height: 40px; }
+  .brand b { font-size: 17px; line-height: 1.2; }
+  .brand small { display: block; font-size: 12px; font-weight: 400; color: var(--ink-soft); }
+  .group { margin: 16px 10px 6px; font-size: 12px; color: var(--ink-soft); }
+  .nav { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border-radius: 10px;
+    font: inherit; font-size: 14.5px; color: var(--ink); background: none; border: 0; cursor: pointer; text-align: start; }
+  .nav:hover { background: rgba(255, 255, 255, .35); }
+  .nav[aria-current="true"] { background: rgba(255, 255, 255, .6); box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; }
+  .nav .n { margin-inline-start: auto; font-size: 12.5px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+  /* main */
+  main { display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
+  .top { display: flex; align-items: center; gap: 12px; padding: 20px 28px 14px; }
+  .top h1 { margin: 0; font-size: 24px; font-weight: 700; }
+  .top .sub { color: var(--ink-soft); font-size: 14px; }
+  #search { margin-inline-start: auto; width: 240px; min-height: 40px; border-radius: 10px; border: 1px solid var(--line);
+    background: rgba(255, 255, 255, .7); font: inherit; padding: 0 12px; color: var(--ink); }
+  #scroll { flex: 1; overflow: auto; padding: 0 28px 28px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(176px, 1fr)); gap: 14px; }
+  .card { position: relative; border-radius: 14px; background: #fbf6ee; box-shadow: 0 0 0 1px var(--line), 0 2px 6px rgba(60, 40, 20, .06);
+    cursor: pointer; overflow: hidden; transition: box-shadow .15s, transform .15s; }
+  .card:hover { box-shadow: 0 0 0 1px rgba(110, 70, 30, .3), 0 6px 18px rgba(60, 40, 20, .12); transform: translateY(-1px); }
+  .card:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .card .view { height: 190px; }
+  .card .txt { padding: 8px 12px 12px; }
+  .card b { display: block; font-size: 14.5px; line-height: 1.3; }
+  .card span { font-size: 12.5px; color: var(--ink-soft); }
+  .card.on { box-shadow: 0 0 0 2px #b0844f, 0 2px 6px rgba(60, 40, 20, .08); }
+  .pick { position: absolute; top: 8px; inset-inline-start: 8px; width: 30px; height: 30px; border-radius: 50%; border: 0; cursor: pointer;
+    background: rgba(255, 255, 255, .85); box-shadow: 0 0 0 1px var(--line); font-size: 16px; color: var(--ink-soft); z-index: 1; }
+  .on .pick { background: #8a5a2b; color: #fff; box-shadow: none; }
+  .empty { padding: 60px 0; text-align: center; color: var(--ink-soft); }
+
+  /* detail drawer */
+  #drawer { position: fixed; inset-block: 0; inset-inline-end: 0; width: 400px; padding: 22px 24px; box-sizing: border-box; overflow: auto;
+    border-radius: 0; transform: translateX(-105%); transition: transform .22s ease; z-index: 5; display: flex; flex-direction: column; gap: 12px; }
+  #drawer.show { transform: none; }
+  #drawer header { display: flex; gap: 10px; align-items: start; }
+  #drawer h2 { margin: 0; font-size: 22px; flex: 1; }
+  #big { height: 330px; flex: none; border-radius: 12px; background: rgba(255, 255, 255, .35); box-shadow: inset 0 0 0 1px var(--line); }
+  #drawer ol { margin: 0; padding-inline-start: 20px; line-height: 1.6; font-size: 14.5px; }
+  li.warn { list-style: none; margin-inline-start: -20px; color: #8a3b12; font-weight: 600; }
+  .tune { display: grid; grid-template-columns: 90px 1fr; gap: 8px 10px; align-items: center; font-size: 14px; }
+  .stepper { display: flex; align-items: center; gap: 6px; }
+  .stepper .btn { width: 36px; min-height: 36px; padding: 0; font-size: 18px; }
+  .stepper output { min-width: 70px; text-align: center; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  /* general settings */
+  #general { display: none; max-width: 680px; flex-direction: column; gap: 14px; }
+  .general #general { display: flex; }
+  .general .grid, .general canvas#c { display: none; }
+  .block { padding: 18px 20px; }
+  .block h3 { margin: 0 0 4px; font-size: 16px; }
+  .block p { margin: 0 0 12px; font-size: 13.5px; color: var(--ink-soft); }
+  .slider { display: grid; grid-template-columns: 1fr 70px; gap: 12px; align-items: center; }
+  input[type=range] { width: 100%; accent-color: #8a5a2b; height: 28px; }
+  .slider output { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .seg { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+  .seg .btn[aria-pressed="true"] { background: linear-gradient(rgba(150, 95, 40, .35), rgba(150, 95, 40, .35)), var(--grain) 0 0 / 260px, #d9b07a;
+    box-shadow: inset 0 2px 5px rgba(90, 55, 20, .35); }
+  .check { display: flex; align-items: center; gap: 10px; min-height: 36px; font-size: 14.5px; }
+  .check input { width: 20px; height: 20px; accent-color: #8a5a2b; }
+  .keys { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; font-size: 14px; align-items: center; }
+  kbd { font: 600 12.5px/1.8 inherit; padding: 0 8px; border-radius: 6px; background: #fff; box-shadow: inset 0 -1px 0 rgba(110, 70, 30, .3), 0 0 0 1px var(--line);
+    direction: ltr; justify-self: start; }
+  canvas#c { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; }
+</style>
+
+<nav class="plank" aria-label="קטגוריות">
+  <div class="brand"><img src="icon.png" alt=""><b>תרגיל בהמתנה<small>ספריית תרגילים</small></b></div>
+  <button class="nav" data-view="mine">הסט שלי<span class="n" id="n-mine"></span></button>
+  <button class="nav" data-view="all">כל התרגילים<span class="n" id="n-all"></span></button>
+  <div class="group">קטגוריות</div>
+  <div id="cats"></div>
+  <div class="group">כללי</div>
+  <button class="nav" data-view="general">הגדרות וקיצורים</button>
+</nav>
+
+<main>
+  <div class="top">
+    <div><h1 id="title"></h1><div class="sub" id="subtitle"></div></div>
+    <input id="search" type="search" placeholder="חיפוש תרגיל" aria-label="חיפוש תרגיל">
+  </div>
+  <div id="scroll">
+    <div class="grid" id="grid"></div>
+    <div id="general">
+      <section class="block plank">
+        <h3>גובה הדמות</h3><p>כמה מקום הדמות תופסת על המסך.</p>
+        <div class="slider"><input type="range" id="figH" aria-label="גובה הדמות"><output id="figHv"></output></div>
+      </section>
+      <section class="block plank">
+        <h3>גודל ראש העץ</h3><p>כשהדמות ממוזערת לראש קטן.</p>
+        <div class="slider"><input type="range" id="head" aria-label="גודל ראש העץ"><output id="headv"></output></div>
+      </section>
+      <section class="block plank">
+        <h3>סדר התרגילים</h3><p>מה קורה כשלוחצים "התרגיל הבא".</p>
+        <div class="seg" id="order">
+          <button class="btn" data-v="mix">מגוון: כל פעם אזור אחר</button>
+          <button class="btn" data-v="seq">לפי הסדר</button>
+          <button class="btn" data-v="random">אקראי</button>
+        </div>
+      </section>
+      <section class="block plank">
+        <h3>כללי</h3>
+        <label class="check"><input type="checkbox" id="sound"> צליל קצר כשמסיימים תרגיל</label>
+        <label class="check"><input type="checkbox" id="startup"> לפתוח אוטומטית כשהמחשב עולה</label>
+      </section>
+      <section class="block plank">
+        <h3>קיצורי מקלדת</h3>
+        <div class="keys" id="keys"></div>
+      </section>
+      <section class="block plank">
+        <h3>איפוס</h3><p>מחזיר את הסט הקצר לישיבה מול מחשב, ומבטל שינויי חזרות ומהירות.</p>
+        <button class="btn" id="reset">איפוס לברירת המחדל</button>
+      </section>
+    </div>
+  </div>
+</main>
+
+<aside id="drawer" class="plank" aria-label="פרטי התרגיל" aria-hidden="true">
+  <header><div style="flex:1"><h2 id="dName"></h2><div class="muted" id="dCat"></div></div>
+    <button class="btn icon" id="dClose" aria-label="סגירה">✕</button></header>
+  <div id="big"></div>
+  <button class="btn primary" id="dPick"></button>
+  <ol id="dSteps"></ol>
+  <div class="tune">
+    <span id="dDoseL"></span><div class="stepper" id="dDoseBox"><button class="btn" id="dDoseM" aria-label="פחות">−</button><output id="dDose"></output><button class="btn" id="dDoseP" aria-label="יותר">+</button></div>
+    <span id="dSpeedL"></span><div class="stepper"><button class="btn" id="dSpeedM" aria-label="לאט יותר">−</button><output id="dSpeed"></output><button class="btn" id="dSpeedP" aria-label="מהר יותר">+</button></div>
+  </div>
+</aside>
+<canvas id="c"></canvas>
+
+<script type="importmap">{"imports":{"three":"../node_modules/three/build/three.module.js","three/addons/":"../node_modules/three/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { clone } from 'three/addons/utils/SkeletonUtils.js';
+import { VIEWS, chair, lights } from '../library/player.js';
+import { load, save, dose, DESK_SET, LIMITS, SHORTCUTS } from './store.js';
+
+const $ = id => document.getElementById(id);
+const desk = window.desk;
+const [lib, glb] = await Promise.all([
+  fetch('../library/exercises.json').then(r => r.json()),
+  new GLTFLoader().loadAsync('../library/exercises.glb'),
+]);
+const cats = Object.fromEntries(lib.categories.map(c => [c.id, c]));
+let s = load(), view = location.hash.slice(1) || 'mine', open = null;
+const on = () => new Set(s.on);
+const commit = () => { save(s); counts(); };
+
+// ---------- live thumbnails: one renderer, a small scene per card, only visible cards are drawn ----------
+const renderer = new THREE.WebGLRenderer({ canvas: $('c'), antialias: true, alpha: true });
+renderer.setPixelRatio(devicePixelRatio);
+renderer.setScissorTest(true);
+const camera = new THREE.PerspectiveCamera(30, 1, .05, 20), near = new THREE.Vector3();
+const stages = new Map();                       // element -> { scene, mixer, ex }
+function stage(el, ex) {
+  let st = stages.get(el);
+  if (st?.ex === ex) return st;
+  const scene = new THREE.Scene(), fig = clone(glb.scene);
+  fig.traverse(o => { if (o.isSkinnedMesh) o.frustumCulled = false; });
+  scene.add(fig); lights(scene);
+  if (ex.seated) scene.add(chair());
+  const mixer = new THREE.AnimationMixer(fig);
+  const a = mixer.clipAction(THREE.AnimationClip.findByName(glb.animations, ex.id));
+  if (ex.once) { a.setLoop(THREE.LoopOnce); a.clampWhenFinished = true; mixer.addEventListener('finished', () => setTimeout(() => a.reset().play(), 1500)); }
+  a.play();
+  st = { scene, mixer, ex, action: a };
+  stages.set(el, st);
+  return st;
+}
+const timer = new THREE.Timer();
+renderer.setAnimationLoop(t => {
+  timer.update(t);
+  const dt = timer.getDelta(), W = innerWidth, H = innerHeight;
+  renderer.setSize(W, H, false);
+  renderer.setScissor(0, 0, W, H); renderer.clear();
+  const top = $('scroll').getBoundingClientRect().top;
+  for (const [el, st] of stages) {
+    if (!el.isConnected) { stages.delete(el); continue; }
+    const r = el.getBoundingClientRect(), inDrawer = el === $('big');
+    if (r.bottom < (inDrawer ? 0 : top) || r.top > H || r.width === 0) continue;
+    if (!inDrawer && $('drawer').classList.contains('show') && r.left < 400) continue;   // hidden under the drawer
+    st.mixer.update(dt);
+    const [pos, at] = VIEWS[st.ex.view] || VIEWS.full;
+    camera.aspect = r.width / r.height;
+    camera.position.set(...pos).lerp(near.set(...at), 0.1 - 0.6 * Math.max(0, 0.8 - camera.aspect)); camera.lookAt(near);
+    camera.updateProjectionMatrix();
+    const y = Math.max(H - r.bottom, 0), clipTop = inDrawer ? 0 : Math.max(0, top - r.top);
+    renderer.setViewport(r.left, H - r.bottom, r.width, r.height);
+    renderer.setScissor(r.left, y, r.width, Math.max(0, r.height - clipTop - Math.max(0, r.bottom - H)));
+    renderer.render(st.scene, camera);
+  }
+});
+
+// ---------- sidebar & grid ----------
+for (const c of lib.categories)
+  $('cats').insertAdjacentHTML('beforeend', `<button class="nav" data-view="${c.id}">${c.he}<span class="n" id="n-${c.id}"></span></button>`);
+function counts() {
+  const o = on();
+  $('n-mine').textContent = o.size; $('n-all').textContent = lib.exercises.length;
+  for (const c of lib.categories) {
+    const all = lib.exercises.filter(e => e.category === c.id);
+    $('n-' + c.id).textContent = `${all.filter(e => o.has(e.id)).length}/${all.length}`;
+  }
+  for (const card of document.querySelectorAll('.card')) {
+    const isOn = o.has(card.dataset.id);
+    card.classList.toggle('on', isOn);
+    const b = card.querySelector('.pick');
+    b.textContent = isOn ? '✓' : '+'; b.setAttribute('aria-label', isOn ? 'הסרה מהסט' : 'הוספה לסט');
+  }
+  if (open) $('dPick').textContent = o.has(open.id) ? 'בסט שלי ✓ (לחיצה מסירה)' : 'הוספה לסט שלי';
+}
+function toggle(id) {
+  const o = on();
+  o.has(id) ? o.delete(id) : o.add(id);
+  s.on = [...o]; commit();
+}
+function render() {
+  document.body.classList.toggle('general', view === 'general');
+  for (const b of document.querySelectorAll('.nav')) b.setAttribute('aria-current', b.dataset.view === view);
+  $('search').hidden = view === 'general';
+  if (view === 'general') { $('title').textContent = 'הגדרות וקיצורים'; $('subtitle').textContent = ''; counts(); return; }
+  const q = $('search').value.trim(), o = on();
+  const list = lib.exercises.filter(e => (view === 'all' || (view === 'mine' ? o.has(e.id) : e.category === view)) && (!q || e.he.includes(q) || e.en.toLowerCase().includes(q.toLowerCase())));
+  $('title').textContent = view === 'mine' ? 'הסט שלי' : view === 'all' ? 'כל התרגילים' : cats[view].he;
+  $('subtitle').textContent = view === 'mine' ? 'התרגילים שהדמות תציע לך, לפי הסדר שבחרת בהגדרות' : `${list.length} תרגילים · לחיצה על כרטיס לפרטים, + מוסיף לסט`;
+  $('grid').replaceChildren(...list.map(e => {
+    const el = document.createElement('div');
+    el.className = 'card'; el.tabIndex = 0; el.dataset.id = e.id; el.setAttribute('role', 'button');
+    el.innerHTML = `<button class="pick"></button><div class="view"></div><div class="txt"><b></b><span></span></div>`;
+    el.querySelector('b').textContent = e.he;
+    el.querySelector('span').textContent = view === 'mine' || view === 'all' ? `${cats[e.category].he} · ${e.amount}` : e.amount;
+    el.querySelector('.pick').onclick = ev => { ev.stopPropagation(); toggle(e.id); if (view === 'mine') render(); };
+    el.onclick = () => detail(e);
+    el.onkeydown = ev => { if (ev.key === 'Enter') detail(e); };
+    return el;
+  }));
+  if (!list.length) $('grid').innerHTML = `<div class="empty">${view === 'mine' ? 'הסט ריק. בוחרים תרגילים מהקטגוריות בצד.' : 'לא נמצאו תרגילים.'}</div>`;
+  thumbs.disconnect();
+  for (const v of document.querySelectorAll('.card .view')) thumbs.observe(v);
+  counts();
+}
+// build a card's 3D scene only when it scrolls into view
+const thumbs = new IntersectionObserver(entries => {
+  for (const en of entries) if (en.isIntersecting) {
+    const card = en.target.closest('.card');
+    stage(en.target, lib.exercises.find(e => e.id === card.dataset.id));
+    thumbs.unobserve(en.target);
+  }
+}, { root: $('scroll'), rootMargin: '200px' });
+
+for (const b of document.querySelectorAll('nav')) b.addEventListener('click', e => {
+  const n = e.target.closest('.nav'); if (!n) return;
+  view = n.dataset.view; $('search').value = ''; closeDetail(); render(); $('scroll').scrollTop = 0;
+});
+$('search').oninput = render;
+
+// ---------- detail drawer ----------
+function detail(e) {
+  open = e;
+  $('dName').textContent = e.he;
+  $('dCat').textContent = `${cats[e.category].he} · ${e.amount}`;
+  $('dSteps').replaceChildren(...e.steps.map(t => Object.assign(document.createElement('li'),
+    t.startsWith('!') ? { className: 'warn', textContent: t.slice(1) } : { textContent: t })));
+  stages.delete($('big')); stage($('big'), e);
+  $('drawer').classList.add('show'); $('drawer').setAttribute('aria-hidden', 'false');
+  tune(); counts(); $('dClose').focus();
+}
+function closeDetail() { open = null; $('drawer').classList.remove('show'); $('drawer').setAttribute('aria-hidden', 'true'); stages.delete($('big')); }
+function tune() {
+  const e = open, d = dose(e, s.custom[e.id]);
+  $('dDoseL').textContent = d.seconds ? 'זמן' : 'חזרות';
+  $('dDoseL').hidden = $('dDoseBox').hidden = !!d.once;
+  $('dDose').textContent = d.seconds ? `${d.seconds} שניות${d.perSide ? ' לצד' : ''}` : `${d.reps}${d.perSide ? ' לצד' : ''}`;
+  $('dSpeedL').textContent = e.bpm ? 'קצב (BPM)' : 'מהירות';
+  $('dSpeed').textContent = e.bpm ? Math.round(e.bpm * d.speed) : `×${d.speed.toFixed(2).replace(/\.?0+$/, '')}`;
+  const st = stages.get($('big')); if (st) st.action.timeScale = d.speed;
+}
+function change(key, delta) {
+  const e = open, d = dose(e, s.custom[e.id]), c = s.custom[e.id] ||= {};
+  if (key === 'dose') { if (d.seconds) c.seconds = Math.max(5, d.seconds + 5 * delta); else c.reps = Math.max(1, d.reps + delta); }
+  else c.speed = Math.min(2.5, Math.max(0.25, +(d.speed + (e.bpm ? 4 / e.bpm : 0.25) * delta).toFixed(3)));
+  commit(); tune();
+}
+$('dClose').onclick = closeDetail;
+$('dPick').onclick = () => { toggle(open.id); if (view === 'mine') render(); };
+$('dDoseM').onclick = () => change('dose', -1); $('dDoseP').onclick = () => change('dose', 1);
+$('dSpeedM').onclick = () => change('speed', -1); $('dSpeedP').onclick = () => change('speed', 1);
+addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+
+// ---------- general ----------
+for (const k of ['figH', 'head']) {
+  const r = $(k);
+  [r.min, r.max] = LIMITS[k]; r.step = 2; r.value = s[k]; $(k + 'v').textContent = s[k];
+  r.oninput = () => { s[k] = +r.value; $(k + 'v').textContent = r.value; commit(); };
+}
+for (const b of $('order').children) {
+  b.setAttribute('aria-pressed', s.order === b.dataset.v);
+  b.onclick = () => { s.order = b.dataset.v; for (const x of $('order').children) x.setAttribute('aria-pressed', x === b); commit(); };
+}
+$('sound').checked = s.sound; $('sound').onchange = () => { s.sound = $('sound').checked; commit(); };
+$('keys').append(...SHORTCUTS.flatMap(([k, t]) => [Object.assign(document.createElement('kbd'), { textContent: k }), Object.assign(document.createElement('span'), { textContent: t })]));
+$('reset').onclick = () => {
+  s = { ...load(), on: DESK_SET, custom: {} }; commit(); render();
+};
+if (desk) { $('startup').checked = await desk.startup(); $('startup').onchange = () => desk.startup($('startup').checked); }
+else $('startup').closest('label').hidden = true;
+
+render();
+$('scroll').scrollTop = 0;
+</script>
+</html>

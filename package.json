@@ -1,6 +1,6 @@
 {
   "name": "desk-break",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A wooden mannequin on your desktop that shows you a short exercise while the computer works.",
   "license": "MIT",
   "author": "Shlomi Reshef (parametric.co.il)",
@@ -33,16 +33,19 @@
     "win": {
       "target": "nsis",
       "icon": "app/icon.png",
-      "artifactName": "DeskBreak-Setup.exe"
+      "artifactName": "DeskBreak-Setup.exe",
+      "legalTrademarks": "Desk Break"
     },
     "nsis": {
       "oneClick": true,
       "perMachine": false,
       "shortcutName": "Desk Break",
-      "runAfterFinish": true
+      "runAfterFinish": true,
+      "uninstallDisplayName": "Desk Break"
     },
     "directories": {
       "output": "dist"
-    }
+    },
+    "copyright": "Copyright (c) 2026 Shlomi Reshef"
   }
 }

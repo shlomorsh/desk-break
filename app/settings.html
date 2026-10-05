@@ -359,6 +359,7 @@ function useLang() {
   lang = langOf(s);
   apply(lang);
   document.title = T('settingsTitle');
+  if ($('aboutLink')) $('aboutLink').href = lang === 'en' ? '/desk-break/en/' : '/desk-break/';   // web version only
   for (const el of document.querySelectorAll('.cn')) el.textContent = catName(cats[el.dataset.cat], lang);
   $('keys').replaceChildren(...shortcuts(lang).flatMap(([k, t]) => [Object.assign(document.createElement('kbd'), { textContent: k }), Object.assign(document.createElement('span'), { textContent: t })]));
   for (const b of $('langs').children) b.setAttribute('aria-pressed', b.dataset.v === lang);

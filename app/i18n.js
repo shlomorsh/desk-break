@@ -25,7 +25,7 @@ export const WORDS = {
     order: 'סדר התרגילים', orderText: 'מה קורה כשלוחצים "התרגיל הבא".', orderMix: 'מגוון: כל פעם אזור אחר', orderSeq: 'לפי הסדר', orderRandom: 'אקראי',
     general: 'כללי', sound: 'צליל קצר כשמסיימים תרגיל', startup: 'לפתוח אוטומטית כשהמחשב עולה',
     reset: 'איפוס', resetText: 'מחזיר את הסט הקצר לישיבה מול מחשב, ומבטל שינויי חזרות ומהירות.', resetBtn: 'איפוס לברירת המחדל',
-    language: 'שפה', footer: 'ספרייה פתוחה (MIT) מתוך',
+    language: 'שפה', footer: 'ספרייה פתוחה (MIT) מתוך', about: 'על הכלי', privacy: 'פרטיות', terms: 'תנאי שימוש', a11y: 'נגישות',
     // tray (main process)
     trayTip: 'תרגיל בהמתנה', trayToggle: 'מזעור / החזרה', trayNext: 'התרגיל הבא', traySettings: 'הגדרות', trayQuit: 'יציאה',
     hiddenTitle: 'הדמות מוסתרת', hiddenText: 'לחיצה על האייקון כאן ליד השעון, או Ctrl+Alt+M, מחזירה אותה.',
@@ -53,7 +53,7 @@ export const WORDS = {
     order: 'Exercise order', orderText: 'What happens when you click "Next exercise".', orderMix: 'Mixed: a different body area each time', orderSeq: 'In order', orderRandom: 'Random',
     general: 'General', sound: 'Short chime when an exercise is done', startup: 'Open automatically when the computer starts',
     reset: 'Reset', resetText: 'Brings back the short set for people at a desk and clears your rep and speed changes.', resetBtn: 'Reset to default',
-    language: 'Language', footer: 'Open library (MIT) from',
+    language: 'Language', footer: 'Open library (MIT) from', about: 'About', privacy: 'Privacy', terms: 'Terms', a11y: 'Accessibility',
     trayTip: 'Desk Break', trayToggle: 'Minimize / bring back', trayNext: 'Next exercise', traySettings: 'Settings', trayQuit: 'Quit',
     hiddenTitle: 'The figure is hidden', hiddenText: 'Click this icon by the clock, or press Ctrl+Alt+M, to bring it back.',
   },

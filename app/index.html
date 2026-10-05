@@ -52,6 +52,8 @@
   .row .primary { flex: 1; }
   details summary { cursor: pointer; font-size: 14px; color: var(--ink-soft); }
   .keys { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin-top: 8px; font-size: 13px; }
+  /* on a web page (no desktop app around it) only the parts that work there */
+  .web #library, .web #vanish2, .web #vanish { display: none !important; }
   kbd { font: 600 12px/1.6 inherit; padding: 0 6px; border-radius: 6px; background: rgba(255, 255, 255, .55);
     box-shadow: inset 0 -1px 0 rgba(110, 70, 30, .3); white-space: nowrap; direction: ltr; }
 </style>
@@ -102,6 +104,7 @@ import { load, save, playlist, dose, figureSize, PANEL_W, PANEL_H, SHORTCUTS } f
 const $ = id => document.getElementById(id);
 const desk = window.desk || { mode: async () => ({}), move() {}, drop: async () => null, tuck() {}, untuck() {}, settings() {}, onCommand() {} };
 const shot = location.hash.slice(1);              // self-check: #panel / #figure / #head
+if (!window.desk) document.documentElement.classList.add('web');
 
 const [lib, glb] = await Promise.all([
   fetch('../library/exercises.json').then(r => r.json()),
@@ -202,7 +205,7 @@ async function setUI(m) {
   $('fig').style.width = `${w}px`;
   if (m === 'head') { action?.stop(); fig.userData.skin.pose(); seat.visible = false; }
   else if (!action?.isRunning() && !finished) show();
-  if (m === 'open') $('next').focus();
+  if (m === 'open' && window.desk) $('next').focus();
 }
 let tucked = false;
 function draggable(el, onClick, onDrop) {

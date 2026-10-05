@@ -1,5 +1,7 @@
 # Desk Break
 
+[![Downloads](https://img.shields.io/github/downloads/shlomorsh/desk-break/total?label=downloads)](https://github.com/shlomorsh/desk-break/releases/latest) [![Release](https://img.shields.io/github/v/release/shlomorsh/desk-break)](https://github.com/shlomorsh/desk-break/releases/latest) [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Two things in one repository:
 
 1. **An open library of 435 rigged exercise animations** on a wooden artist's mannequin: stretches, mobility,
@@ -74,6 +76,8 @@ Everything is in [`library/`](library):
 | [`mannequin.blend`](library/mannequin.blend) / [`mannequin.glb`](library/mannequin.glb) | The original rig and mesh alone, no animation |
 | [`exercises.json`](library/exercises.json) | For every animation: id, name (Hebrew and English), category, amount, step-by-step instructions (Hebrew), camera hint, tempo, key times |
 | [`exercises/*.json`](library/exercises) | The source: each exercise is a few poses written as joint angles |
+
+No need to clone: the same files are attached to the [latest release](https://github.com/shlomorsh/desk-break/releases/latest).
 
 Animation names are the ids in `exercises.json` (`neck-side-tilt`, `warrior-2`, `funny-stage-dive`…).
 

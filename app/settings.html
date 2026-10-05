@@ -231,11 +231,11 @@ function counts() {
   $('n-mine').textContent = o.size; $('n-all').textContent = lib.exercises.length;
   for (const c of lib.categories) {
     const all = lib.exercises.filter(e => e.category === c.id);
-    $('n-' + c.id).textContent = `${all.filter(e => o.has(e.id)).length}/${all.length}`;
+    $('n-' + c.id).textContent = web ? all.length : `${all.filter(e => o.has(e.id)).length}/${all.length}`;
   }
   for (const card of document.querySelectorAll('.card')) {
     const isOn = o.has(card.dataset.id);
-    card.classList.toggle('on', isOn);
+    card.classList.toggle('on', isOn && !web);
     const b = card.querySelector('.pick');
     b.textContent = isOn ? '✓' : '+'; b.setAttribute('aria-label', isOn ? 'הסרה מהסט' : 'הוספה לסט');
   }

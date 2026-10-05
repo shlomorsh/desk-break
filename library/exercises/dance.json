@@ -16,6 +16,12 @@
     "על כל פעמה מכופפים קצת את הברכיים ומהנהנים.",
     "הידיים רפויות ומתנדנדות עם הגוף."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Stand with your feet shoulder-width apart, knees soft.",
+    "On every beat, bend your knees a little and nod your head.",
+    "Keep your arms loose and let them swing with your body."
+   ],
    "beat": 0.625,
    "keys": [
     {
@@ -84,6 +90,12 @@
     "צעד לצד שמאל, והרגל השנייה מצטרפת.",
     "צעד לצד ימין, והרגל השנייה מצטרפת.",
     "ברכיים רכות, ידיים מתנדנדות לקצב."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Step to the left and bring your other foot in.",
+    "Step to the right and bring your other foot in.",
+    "Keep your knees soft and swing your arms to the beat."
    ],
    "beat": 0.652,
    "keys": [
@@ -229,6 +241,13 @@
     "מתיישרים ומתחילים שוב מהחזה.",
     "!גל קטן ורך. אם הגב רגיש, מקטינים את התנועה."
    ],
+   "amount_en": "8 times",
+   "steps_en": [
+    "Push your chest forward.",
+    "Let the wave roll down through your belly to your knees, and bend them a little.",
+    "Stand tall and start again from your chest.",
+    "!Keep the wave small and soft. If your back is sensitive, make the move smaller."
+   ],
    "beat": 0.682,
    "keys": [
     {
@@ -353,6 +372,12 @@
     "מקפיצים כתף אחת למעלה, ואז את השנייה.",
     "הראש נוטה קצת עם הכתף, בכיף."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Keep your arms loose, elbows slightly bent.",
+    "Bounce one shoulder up, then the other.",
+    "Tilt your head a little with your shoulder. Have fun with it."
+   ],
    "beat": 0.3125,
    "keys": [
     {
@@ -415,6 +440,12 @@
     "פורשים ידיים לצדדים.",
     "מעבירים גל: כף יד, מרפק, כתף, ועובר ליד השנייה.",
     "תנועה רכה, כמו חבל."
+   ],
+   "amount_en": "8 waves",
+   "steps_en": [
+    "Stretch your arms out to the sides.",
+    "Send a wave through: hand, elbow, shoulder, and over to the other arm.",
+    "Keep it soft and smooth, like a rope."
    ],
    "beat": 0.333,
    "linear": true,
@@ -550,6 +581,12 @@
     "היד השנייה מתקפלת מול הפנים, והראש נכנס למרפק.",
     "חוזרים למרכז ועושים לצד השני."
    ],
+   "amount_en": "8 each side",
+   "steps_en": [
+    "Stretch one arm up and out on a diagonal.",
+    "Fold the other arm in front of your face and tuck your head into your elbow.",
+    "Come back to center and do the other side."
+   ],
    "beat": 0.625,
    "keys": [
     {
@@ -674,6 +711,13 @@
     "מחליפים: הידיים לצד השני.",
     "!מתחילים לאט וקטן, בלי למשוך את הכתפיים."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Keep your arms straight and swing them together to one side: one in front of your body, one behind.",
+    "Move your hips the opposite way.",
+    "Switch: swing your arms to the other side.",
+    "!Start slow and small, without pulling on your shoulders."
+   ],
    "beat": 0.3,
    "linear": true,
    "keys": [
@@ -778,6 +822,13 @@
     "מורידים אותה וצועדים איתה קצת אחורה.",
     "מחליפים רגל. הידיים זזות כמו בריצה.",
     "!בלי לקפוץ. ברך כואבת? מרימים נמוך."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Lift one knee forward.",
+    "Lower it and step back a little with that foot.",
+    "Switch legs. Move your arms like you're running.",
+    "!No jumping. Sore knee? Keep the lift low."
    ],
    "beat": 0.625,
    "keys": [
@@ -963,6 +1014,12 @@
     "מסובבים את האגרופים בעיגול אופקי, כמו מערבבים סיר גדול.",
     "הגוף מתנדנד עם העיגול."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Make fists in front of your chest, elbows out to the sides.",
+    "Circle your fists flat in front of you, like stirring a big pot.",
+    "Let your body sway with the circle."
+   ],
    "beat": 0.3,
    "linear": true,
    "keys": [
@@ -1057,6 +1114,12 @@
     "דוחפים למעלה פעמיים, כאילו מרימים את הגג.",
     "ברכיים קופצות קלות עם הקצב."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Hold your palms open toward the ceiling at shoulder height.",
+    "Push up twice, like you're lifting the roof.",
+    "Bounce your knees lightly to the beat."
+   ],
    "beat": 0.3125,
    "keys": [
     {
@@ -1126,6 +1189,12 @@
     "מהנהנים בראש על כל פעמה.",
     "יד אחת קדימה, כף היד מכה באוויר כמו ראפר.",
     "כתפיים רפויות, הבעה רגועה."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Nod your head on every beat.",
+    "Put one hand forward and flick it through the air like a rapper.",
+    "Keep your shoulders loose and your face relaxed."
    ],
    "beat": 0.667,
    "keys": [
@@ -1210,6 +1279,12 @@
     "צעד לצד, ידיים נפתחות.",
     "הרגל השנייה מצטרפת, ומוחאים כף מול החזה.",
     "חוזרים לצד השני."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Step to the side and open your arms.",
+    "Bring your other foot in and clap in front of your chest.",
+    "Then repeat to the other side."
    ],
    "beat": 0.6,
    "keys": [
@@ -1333,6 +1408,12 @@
     "יד אחת מאחורי הראש.",
     "היד השנייה ישרה קדימה.",
     "מסובבים את פלג הגוף העליון בקפיצות קטנות, כמו ממטרה."
+   ],
+   "amount_en": "8 times",
+   "steps_en": [
+    "Put one hand behind your head.",
+    "Stretch the other arm straight out in front.",
+    "Turn your upper body in small, jerky moves, like a lawn sprinkler."
    ],
    "beat": 0.3125,
    "keys": [
@@ -1487,6 +1568,12 @@
     "מורידים את היד באלכסון למטה, לצד השני של הגוף.",
     "האגן זז עם היד. אחרי 8 מחליפים יד."
    ],
+   "amount_en": "8 each side",
+   "steps_en": [
+    "Point your finger up on a diagonal.",
+    "Bring your arm down on a diagonal, across to the other side of your body.",
+    "Move your hips with your arm. After 8, switch arms."
+   ],
    "beat": 0.577,
    "keys": [
     {
@@ -1580,6 +1667,12 @@
     "מרפקים כפופים בזווית ישרה, ידיים קשיחות.",
     "יד אחת למעלה ויד אחת קדימה, ומחליפים בבת אחת.",
     "הראש מסתובב בקפיצה, כמו רובוט."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Bend your elbows at a right angle and keep your arms stiff.",
+    "Put one arm up and one arm forward, then switch them all at once.",
+    "Turn your head with a snap, like a robot."
    ],
    "beat": 0.6,
    "linear": true,
@@ -1705,6 +1798,12 @@
     "מושכים אותו למטה ומעלה שוב, על כל פעמה.",
     "ברכיים קופצות קלות עם האגרוף."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Raise one fist up high.",
+    "Pull it down and push it up again on every beat.",
+    "Bounce your knees lightly with your fist."
+   ],
    "beat": 0.577,
    "keys": [
     {
@@ -1789,6 +1888,12 @@
     "מחזיקים את העכבר ביד מושטת קדימה, כמו מיקרופון.",
     "פותחים את היד ונותנים לו ליפול.",
     "שולבים ידיים ומרימים סנטר. סיימנו."
+   ],
+   "amount_en": "Once, at the end",
+   "steps_en": [
+    "Hold your mouse out in front of you, like a microphone.",
+    "Open your hand and let it drop.",
+    "Cross your arms and lift your chin. Done."
    ],
    "beat": 0.667,
    "keys": [
@@ -1929,6 +2034,12 @@
     "הברך של הרגל השנייה מתכופפת קצת.",
     "הכתפיים והידיים זזות עם הצד."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Shift your weight from one foot to the other.",
+    "Let your other knee bend a little.",
+    "Let your shoulders and arms move with each side."
+   ],
    "beat": 0.667,
    "keys": [
     {
@@ -2037,6 +2148,12 @@
     "רגל אחת יוצאת קדימה ונוגעת בעקב, אצבעות למעלה.",
     "חוזרת, ועכשיו הרגל השנייה.",
     "היד הנגדית מצביעה קדימה עם הקצב."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Reach one foot forward and tap your heel, toes up.",
+    "Bring it back, then switch to the other foot.",
+    "Point your opposite hand forward to the beat."
    ],
    "beat": 0.6,
    "keys": [
@@ -2212,6 +2329,12 @@
     "כתף אחת קדימה והשנייה אחורה, ומחליפים מהר.",
     "רק הכתפיים זזות, הגוף כמעט במקום."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Open your arms a little, elbows bent.",
+    "Push one shoulder forward and the other back, then switch fast.",
+    "Only your shoulders move. Your body stays almost still."
+   ],
    "beat": 0.3,
    "keys": [
     {
@@ -2281,6 +2404,12 @@
     "מוציאים חזה קדימה בבת אחת, כתפיים אחורה.",
     "משחררים חזרה פנימה.",
     "תנועה קטנה וחדה, על הפעמה."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Pop your chest forward all at once, shoulders back.",
+    "Let it go back in.",
+    "Keep it small and sharp, right on the beat."
    ],
    "beat": 0.3125,
    "keys": [
@@ -2362,6 +2491,12 @@
     "מרימים חזרה, בלי לזרוק את הראש אחורה.",
     "קטן ורגוע, כמו כשמקשיבים לשיר טוב."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Drop your chin on the beat.",
+    "Lift it back up, without throwing your head back.",
+    "Keep it small and relaxed, like you're listening to a great song."
+   ],
    "beat": 0.652,
    "keys": [
     {
@@ -2396,6 +2531,12 @@
     "אמות לפני החזה, אחת מעל השנייה.",
     "מגלגלים אותן זו סביב זו, כמו גלגל.",
     "אפשר להוסיף נדנוד קטן בברכיים."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Hold your forearms in front of your chest, one above the other.",
+    "Roll them around each other, like a wheel.",
+    "You can add a little bounce in your knees."
    ],
    "beat": 0.3,
    "linear": true,
@@ -2501,6 +2642,12 @@
     "מנדנדים את הגוף והידיים מצד לצד.",
     "!כתף רגישה? מרימים רק עד גובה הראש."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Raise both arms up, like you're at a concert.",
+    "Sway your body and arms from side to side.",
+    "!Sensitive shoulder? Raise your arms only to head height."
+   ],
    "beat": 0.667,
    "keys": [
     {
@@ -2559,6 +2706,12 @@
     "מושיטים ידיים קדימה, כאילו תופסים מדף.",
     "מושכים אותן לחזה וצועדים חזרה.",
     "מחליפים רגל בכל פעם."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Reach your arms forward, like you're grabbing something off a shelf.",
+    "Pull them in to your chest and step back.",
+    "Switch feet each time."
    ],
    "beat": 0.625,
    "keys": [
@@ -2714,6 +2867,13 @@
     "מחליפים צד על כל פעמה.",
     "!מסובבים מעט. אם הברך רגישה, הסיבוב רק מהמותניים."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Keep your knees soft and your arms bent out to the sides.",
+    "Turn your hips one way and your shoulders the other way.",
+    "Switch sides on every beat.",
+    "!Twist just a little. If your knee is sensitive, twist only from your waist."
+   ],
    "beat": 0.577,
    "keys": [
     {
@@ -2803,6 +2963,13 @@
     "מחזירים אותה ומחליפים.",
     "הידיים מתנדנדות הפוך לרגליים.",
     "!בעיטה נמוכה, בלי לנעול את הברך."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Kick one foot forward, low and soft.",
+    "Bring it back and switch.",
+    "Swing your arms opposite to your legs.",
+    "!Keep the kick low and don't lock your knee."
    ],
    "beat": 0.6,
    "keys": [
@@ -2967,6 +3134,12 @@
     "מחליפים, כמו שחיית חתירה.",
     "הראש מסתובב קצת לצד, כאילו לוקחים אוויר."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Bring one arm up and forward while the other goes down and back.",
+    "Switch, like doing the front crawl.",
+    "Turn your head a little to the side, like you're taking a breath."
+   ],
    "beat": 0.625,
    "keys": [
     {
@@ -3085,6 +3258,12 @@
     "צעד לצד, והאגודל מצביע מעבר לכתף.",
     "המבט הולך עם האגודל.",
     "חוזרים למרכז ועושים לצד השני."
+   ],
+   "amount_en": "8 each side",
+   "steps_en": [
+    "Step to the side and point your thumb over your shoulder.",
+    "Follow your thumb with your eyes.",
+    "Come back to center and do the other side."
    ],
    "beat": 0.6,
    "keys": [
@@ -3220,6 +3399,12 @@
     "מנקים את האבק החוצה בתנועה קלילה.",
     "פעמיים ביד אחת, ואז ביד השנייה. בביטחון."
    ],
+   "amount_en": "8 each side",
+   "steps_en": [
+    "Bring your hand to the opposite shoulder.",
+    "Brush the dust off and away with a light flick.",
+    "Twice with one hand, then the other. Do it with confidence."
+   ],
    "beat": 0.333,
    "keys": [
     {
@@ -3313,6 +3498,12 @@
     "שולבים ידיים על החזה.",
     "מקפיצים ברכיים ומהנהנים, בסטייל."
    ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Stand with your feet a little wider than your shoulders.",
+    "Cross your arms over your chest.",
+    "Bounce your knees and nod your head, with style."
+   ],
    "beat": 0.652,
    "keys": [
     {
@@ -3386,6 +3577,12 @@
     "ידיים כפופות מתנדנדות יחד לצד אחד.",
     "צעד קטן לאותו צד.",
     "מחליפים צד. מחייכים!"
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Bend your arms and swing them together to one side.",
+    "Take a small step to the same side.",
+    "Switch sides. Smile!"
    ],
    "beat": 0.577,
    "keys": [
@@ -3467,6 +3664,13 @@
     "ידיים למותניים ונדנוד אגן.",
     "!כתף רגישה? לא חייבים להגיע עד הראש."
    ],
+   "amount_en": "4 rounds",
+   "steps_en": [
+    "Stretch your arms straight forward, one after the other.",
+    "Bring each hand to the opposite shoulder, then behind your head.",
+    "Put your hands on your hips and sway your hips.",
+    "!Sensitive shoulder? You don't have to reach your head."
+   ],
    "beat": 0.577,
    "keys": [
     {
@@ -3540,6 +3744,13 @@
     "M: ידיים כפופות, אצבעות על הראש.",
     "C: שתי הידיים מתעקלות לצד אחד.",
     "A: ידיים למעלה, נפגשות מעל הראש."
+   ],
+   "amount_en": "4 rounds",
+   "steps_en": [
+    "Y: Stretch your arms straight up and out to the sides.",
+    "M: Bend your arms and put your fingertips on your head.",
+    "C: Curve both arms to one side.",
+    "A: Raise your arms and bring your hands together over your head."
    ],
    "beat": 0.577,
    "keys": [
@@ -3623,6 +3834,13 @@
     "מוחאים כף מעל הראש על כל פעמה.",
     "ברכיים קופצות קלות.",
     "!כתף רגישה? מוחאים כף מול הפנים."
+   ],
+   "amount_en": "16 beats",
+   "steps_en": [
+    "Open your arms up and out to the sides.",
+    "Clap over your head on every beat.",
+    "Bounce your knees lightly.",
+    "!Sensitive shoulder? Clap in front of your face instead."
    ],
    "beat": 0.6,
    "keys": [

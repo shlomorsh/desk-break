@@ -16,6 +16,12 @@
     "מרימים ברך אחת ואז את השנייה, כמו צעידה.",
     "ידיים מתנדנדות בקצב."
    ],
+   "amount_en": "30 seconds",
+   "steps_en": [
+    "Sit up tall on the edge of the chair.",
+    "Lift one knee, then the other, like marching.",
+    "Swing your arms to the beat."
+   ],
    "beat": 0.6,
    "view": "floor",
    "keys": [
@@ -141,6 +147,13 @@
     "מחזיקים 2 שניות ומורידים לאט.",
     "!אם הברך כואבת, מיישרים רק עד חצי."
    ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Sit up tall with your feet flat on the floor.",
+    "Straighten one leg out in front and pull your toes toward you.",
+    "Hold for 2 seconds and lower slowly.",
+    "!If your knee hurts, straighten it only halfway."
+   ],
    "beat": 1,
    "view": "floor",
    "keys": [
@@ -257,6 +270,12 @@
     "מרימים את הרגל הישרה מעט למעלה.",
     "מחזיקים 2 שניות ומורידים לאט."
    ],
+   "amount_en": "8 each leg",
+   "steps_en": [
+    "Stretch one leg straight out in front, heel on the floor.",
+    "Lift the straight leg up a little.",
+    "Hold for 2 seconds and lower slowly."
+   ],
    "beat": 1.1,
    "view": "floor",
    "keys": [
@@ -328,6 +347,12 @@
     "מותחים אצבעות קדימה ואז מושכים אותן אליכם.",
     "תנועה רצופה וקצבית. טוב לזרימת הדם."
    ],
+   "amount_en": "20 times",
+   "steps_en": [
+    "Stretch your legs out a little, heels on the floor.",
+    "Point your toes away, then pull them back toward you.",
+    "Keep a smooth, steady rhythm. Good for blood flow."
+   ],
    "beat": 0.6,
    "view": "floor",
    "keys": [
@@ -377,6 +402,12 @@
     "מרימים רגל אחת מעט מהרצפה.",
     "מציירים עיגולים עם כף הרגל.",
     "10 לכל כיוון, ואז מחליפים רגל."
+   ],
+   "amount_en": "10 each direction",
+   "steps_en": [
+    "Lift one foot a little off the floor.",
+    "Draw circles with your foot.",
+    "Do 10 in each direction, then switch feet."
    ],
    "beat": 0.3,
    "view": "floor",
@@ -503,6 +534,12 @@
     "מרימים עקבים ונשארים על האצבעות.",
     "מורידים לאט."
    ],
+   "amount_en": "15 times",
+   "steps_en": [
+    "Feet flat on the floor, knees hip-width apart.",
+    "Lift your heels and stay up on your toes.",
+    "Lower slowly."
+   ],
    "beat": 0.8,
    "view": "floor",
    "keys": [
@@ -564,6 +601,12 @@
     "מרימים את קדמת כף הרגל למעלה.",
     "מורידים לאט."
    ],
+   "amount_en": "15 times",
+   "steps_en": [
+    "Keep your heels on the floor.",
+    "Lift the front of your feet up.",
+    "Lower slowly."
+   ],
    "beat": 0.8,
    "view": "floor",
    "keys": [
@@ -619,6 +662,12 @@
     "כפות רגליים על הרצפה.",
     "עולים על האצבעות.",
     "מתגלגלים לעקבים ומרימים אצבעות."
+   ],
+   "amount_en": "15 times",
+   "steps_en": [
+    "Feet flat on the floor.",
+    "Rise up onto your toes.",
+    "Rock back onto your heels and lift your toes."
    ],
    "beat": 0.7,
    "view": "floor",
@@ -679,6 +728,12 @@
     "יושבים זקוף.",
     "מושיטים רגל קדימה ונוגעים בעקב ברצפה.",
     "מחזירים ומחליפים רגל, בקצב."
+   ],
+   "amount_en": "20 times",
+   "steps_en": [
+    "Sit up tall.",
+    "Reach one leg forward and tap your heel on the floor.",
+    "Bring it back and switch legs, to the beat."
    ],
    "beat": 0.5,
    "view": "floor",
@@ -794,6 +849,12 @@
     "מרימים ומורידים עקבים מהר, לסירוגין.",
     "כמו ריצה במקום, בישיבה."
    ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Sit on the edge of the chair.",
+    "Lift and lower your heels quickly, one after the other.",
+    "Like running in place, sitting down."
+   ],
    "beat": 0.25,
    "view": "floor",
    "keys": [
@@ -864,6 +925,12 @@
     "פותחים ברכיים לצדדים.",
     "סוגרים לאט בחזרה."
    ],
+   "amount_en": "12 times",
+   "steps_en": [
+    "Knees together, feet flat on the floor.",
+    "Open your knees out to the sides.",
+    "Slowly bring them back together."
+   ],
    "beat": 0.9,
    "keys": [
     {
@@ -909,6 +976,13 @@
     "מחבקים אותה בשתי הידיים.",
     "גב זקוף, נושמים ומחליפים רגל.",
     "!אם כואב בברך, תופסים מתחת לברך ולא מעליה."
+   ],
+   "amount_en": "15 seconds each leg",
+   "steps_en": [
+    "Lift one knee toward your chest.",
+    "Hug it with both arms.",
+    "Keep your back straight, breathe, and switch legs.",
+    "!If your knee hurts, hold under the knee, not over it."
    ],
    "beat": 1.2,
    "keys": [
@@ -1045,6 +1119,13 @@
     "מושיטים רגל ישרה קדימה, עקב על הרצפה ואצבעות למעלה.",
     "גב ישר, נוטים קדימה מהאגן.",
     "!לא מעגלים את הגב ולא מושכים בכוח."
+   ],
+   "amount_en": "20 seconds each leg",
+   "steps_en": [
+    "Move to the edge of the chair.",
+    "Stretch one leg straight out in front, heel on the floor and toes up.",
+    "Keep your back straight and lean forward from your hips.",
+    "!Don't round your back or force the stretch."
    ],
    "beat": 1.2,
    "view": "floor",
@@ -1203,6 +1284,13 @@
     "מרגישים מתיחה בישבן. מחליפים צד.",
     "!אם כואב בברך, מורידים את הרגל ומוותרים."
    ],
+   "amount_en": "20 seconds each side",
+   "steps_en": [
+    "Rest one ankle on the opposite knee.",
+    "Keep your back straight and lean forward a little.",
+    "Feel the stretch in your buttock. Switch sides.",
+    "!If your knee hurts, lower your leg and skip this one."
+   ],
    "beat": 1.3,
    "keys": [
     {
@@ -1338,6 +1426,12 @@
     "מוציאים רגל אחת לצד ונוגעים ברצפה.",
     "מחזירים ומחליפים צד."
    ],
+   "amount_en": "10 each side",
+   "steps_en": [
+    "Sit up tall.",
+    "Move one leg out to the side and tap the floor.",
+    "Bring it back and switch sides."
+   ],
    "beat": 0.7,
    "keys": [
     {
@@ -1441,6 +1535,13 @@
     "מרימים ברך ומסובבים את המרפק הנגדי אליה.",
     "חוזרים ומחליפים צד.",
     "!תנועה קטנה ונוחה, בלי למשוך את הצוואר."
+   ],
+   "amount_en": "10 each side",
+   "steps_en": [
+    "Hands behind your head, elbows wide.",
+    "Lift one knee and turn the opposite elbow toward it.",
+    "Come back and switch sides.",
+    "!Keep the movement small and comfortable. Don't pull on your neck."
    ],
    "beat": 0.8,
    "keys": [
@@ -1595,6 +1696,12 @@
     "פותחים רגליים לצדדים ומרימים ידיים למעלה.",
     "סוגרים בחזרה, בקצב."
    ],
+   "amount_en": "30 seconds",
+   "steps_en": [
+    "Sit on the edge of the chair.",
+    "Open your legs out to the sides and raise your arms up.",
+    "Bring them back together, to the beat."
+   ],
    "beat": 0.5,
    "keys": [
     {
@@ -1653,6 +1760,12 @@
     "אוחזים בצדי הכיסא.",
     "מסובבים רגליים כמו על אופניים, בתנועה קטנה.",
     "גב צמוד למשענת."
+   ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Hold the sides of the chair.",
+    "Pedal your legs like you're riding a bike, with small movements.",
+    "Keep your back against the backrest."
    ],
    "beat": 0.4,
    "keys": [
@@ -1723,6 +1836,13 @@
     "מסובבים את פלג הגוף העליון לצד ומסתכלים אחורה.",
     "הברכיים נשארות קדימה. מחליפים צד.",
     "!מסובבים לאט ורק עד שנעים."
+   ],
+   "amount_en": "15 seconds each side",
+   "steps_en": [
+    "Cross your arms over your chest, feet flat on the floor.",
+    "Turn your upper body to the side and look behind you.",
+    "Keep your knees facing forward. Switch sides.",
+    "!Turn slowly, and only as far as feels good."
    ],
    "beat": 1.2,
    "view": "floor",
@@ -1890,6 +2010,12 @@
     "מרימים יד אחת מעל הראש ונוטים לצד השני.",
     "הישבן נשאר על הכיסא. מחליפים צד."
    ],
+   "amount_en": "15 seconds each side",
+   "steps_en": [
+    "Sit up tall.",
+    "Raise one arm over your head and lean to the other side.",
+    "Keep your bottom on the chair. Switch sides."
+   ],
    "beat": 1.2,
    "keys": [
     {
@@ -2026,6 +2152,13 @@
     "נושמים, ועולים לאט חוליה אחרי חוליה.",
     "!אם יש כאב גב, יורדים רק עד הברכיים."
    ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Legs slightly apart.",
+    "Slowly bend forward and let your hands drop toward the floor.",
+    "Breathe, then roll up slowly, one vertebra at a time.",
+    "!If you have back pain, only go down as far as your knees."
+   ],
    "beat": 1.4,
    "keys": [
     {
@@ -2090,6 +2223,12 @@
     "ידיים על הברכיים.",
     "פרה: מקשתים גב ומוציאים חזה, מבט מעט למעלה.",
     "חתול: מעגלים גב ומורידים סנטר."
+   ],
+   "amount_en": "8 times",
+   "steps_en": [
+    "Hands on your knees.",
+    "Cow: arch your back, push your chest out, and look up a little.",
+    "Cat: round your back and drop your chin."
    ],
    "beat": 1.3,
    "view": "floor",
@@ -2201,6 +2340,12 @@
     "נוטים קדימה מהאגן עם גב ישר.",
     "חוזרים לישיבה זקופה."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Cross your arms over your chest.",
+    "Lean forward from your hips with a straight back.",
+    "Come back to sitting up tall."
+   ],
    "beat": 1.1,
    "view": "floor",
    "keys": [
@@ -2292,6 +2437,13 @@
     "חוזרים לאט.",
     "!תנועה קטנה, בלי לקשת את הגב התחתון בכוח."
    ],
+   "amount_en": "8 times",
+   "steps_en": [
+    "Hands behind your head, elbows wide.",
+    "Lift your chest and look up a little.",
+    "Come back slowly.",
+    "!Keep it small. Don't force an arch in your lower back."
+   ],
    "beat": 1.2,
    "view": "floor",
    "keys": [
@@ -2382,6 +2534,12 @@
     "ידיים על הברכיים.",
     "מציירים עיגול גדול עם פלג הגוף העליון.",
     "לאט, ואז מחליפים כיוון."
+   ],
+   "amount_en": "5 each direction",
+   "steps_en": [
+    "Hands on your knees.",
+    "Draw a big circle with your upper body.",
+    "Go slowly, then switch direction."
    ],
    "beat": 0.5,
    "linear": true,
@@ -2548,6 +2706,13 @@
     "עולים ומחליפים צד.",
     "!יורדים רק עד כמה שנוח לגב."
    ],
+   "amount_en": "8 each side",
+   "steps_en": [
+    "Legs apart, arms out to the sides.",
+    "Bend down and reach one hand toward the opposite foot.",
+    "Come back up and switch sides.",
+    "!Only go down as far as feels good for your back."
+   ],
    "beat": 1.1,
    "keys": [
     {
@@ -2682,6 +2847,13 @@
     "מחזיקים 3 שניות וחוזרים.",
     "!רק מעט אחורה. אם הגב כואב, מוותרים."
    ],
+   "amount_en": "8 times",
+   "steps_en": [
+    "Sit on the edge of the chair with your arms crossed.",
+    "Lean back a little with a straight back and a tight belly.",
+    "Hold for 3 seconds and come back.",
+    "!Just a little way back. If your back hurts, skip it."
+   ],
    "beat": 1.2,
    "view": "floor",
    "keys": [
@@ -2782,6 +2954,12 @@
     "יושבים זקוף.",
     "מושיטים יד לרוחב הגוף, כאילו לוקחים משהו מהשולחן.",
     "מסובבים מעט את הגוף וחוזרים."
+   ],
+   "amount_en": "10 each side",
+   "steps_en": [
+    "Sit up tall.",
+    "Reach one arm across your body, as if grabbing something off a table.",
+    "Turn your body a little and come back."
    ],
    "beat": 0.9,
    "keys": [
@@ -2916,6 +3094,12 @@
     "מקרבים אוזן לכתף בלי להרים את הכתף.",
     "3 שניות, חוזרים ומחליפים צד."
    ],
+   "amount_en": "5 each side",
+   "steps_en": [
+    "Sit up tall, shoulders relaxed.",
+    "Bring your ear toward your shoulder without lifting the shoulder.",
+    "Hold for 3 seconds, come back, and switch sides."
+   ],
    "beat": 1,
    "view": "upper",
    "keys": [
@@ -3031,6 +3215,12 @@
     "סנטר מקביל לרצפה.",
     "מסובבים את הראש לאט להסתכל מעבר לכתף.",
     "חוזרים ועוברים לצד השני."
+   ],
+   "amount_en": "5 each side",
+   "steps_en": [
+    "Keep your chin level with the floor.",
+    "Slowly turn your head to look over your shoulder.",
+    "Come back and turn to the other side."
    ],
    "beat": 1,
    "view": "upper",
@@ -3148,6 +3338,12 @@
     "מושכים את הראש אחורה, כמו סנטר כפול.",
     "2 שניות ומשחררים. טוב מול מסך."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Look straight ahead, back against the backrest.",
+    "Pull your head straight back, like making a double chin.",
+    "Hold for 2 seconds and release. Good for screen time."
+   ],
    "beat": 0.9,
    "view": "upper",
    "keys": [
@@ -3218,6 +3414,12 @@
     "מורידים סנטר לחזה לאט.",
     "מרימים מבט מעט למעלה.",
     "בלי לזרוק את הראש אחורה."
+   ],
+   "amount_en": "8 times",
+   "steps_en": [
+    "Slowly lower your chin to your chest.",
+    "Look up a little.",
+    "Don't throw your head back."
    ],
    "beat": 1.2,
    "view": "upper",
@@ -3333,6 +3535,12 @@
     "מרימים כתפיים לאוזניים.",
     "מחזיקים שנייה ומשחררים למטה."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Arms relaxed at your sides.",
+    "Lift your shoulders up to your ears.",
+    "Hold for a second and let them drop."
+   ],
    "beat": 0.8,
    "view": "upper",
    "keys": [
@@ -3398,6 +3606,12 @@
     "מרימים כתפיים לאוזניים.",
     "מגלגלים אחורה ומקרבים שכמות.",
     "מורידים למטה. עיגול גדול ואיטי."
+   ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Lift your shoulders up to your ears.",
+    "Roll them back and squeeze your shoulder blades together.",
+    "Lower them down. Make a big, slow circle."
    ],
    "beat": 0.3,
    "view": "upper",
@@ -3632,6 +3846,12 @@
     "מקרבים שכמות ומוציאים חזה.",
     "מחזיקים 3 שניות ומשחררים."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Elbows bent, close to your body.",
+    "Squeeze your shoulder blades together and push your chest out.",
+    "Hold for 3 seconds and release."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -3723,6 +3943,12 @@
     "מורידים מרפקים למטה ואחורה, כמו W.",
     "מקרבים שכמות ומחזיקים שנייה."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Elbows at shoulder height, forearms pointing up.",
+    "Pull your elbows down and back, like a W.",
+    "Squeeze your shoulder blades and hold for a second."
+   ],
    "beat": 1,
    "view": "upper",
    "keys": [
@@ -3809,6 +4035,12 @@
     "משלבים ידיים מאחורי הגב.",
     "מוציאים חזה ומושכים ידיים מעט אחורה ולמטה."
    ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Sit on the edge of the chair.",
+    "Clasp your hands behind your back.",
+    "Push your chest out and pull your hands a little back and down."
+   ],
    "beat": 1.2,
    "view": "floor",
    "keys": [
@@ -3890,6 +4122,12 @@
     "מעגלים את הגב העליון ומורידים סנטר.",
     "מרגישים מתיחה בין השכמות."
    ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Hug yourself, hands on your shoulders.",
+    "Round your upper back and drop your chin.",
+    "Feel the stretch between your shoulder blades."
+   ],
    "beat": 1.2,
    "view": "upper",
    "keys": [
@@ -3970,6 +4208,12 @@
     "מעבירים יד ישרה לרוחב החזה.",
     "היד השנייה מקרבת אותה מעל המרפק.",
     "כתפיים למטה. מחליפים צד."
+   ],
+   "amount_en": "20 seconds each side",
+   "steps_en": [
+    "Bring one straight arm across your chest.",
+    "Use your other hand to pull it closer, just above the elbow.",
+    "Keep your shoulders down. Switch sides."
    ],
    "beat": 1.2,
    "view": "upper",
@@ -4117,6 +4361,12 @@
     "שולחים יד קדימה ומחזירים, לסירוגין.",
     "מסובבים מעט את הגוף עם כל אגרוף."
    ],
+   "amount_en": "30 seconds",
+   "steps_en": [
+    "Sit up tall with your fists by your chin.",
+    "Punch one arm forward and pull it back, alternating arms.",
+    "Turn your body a little with each punch."
+   ],
    "beat": 0.45,
    "keys": [
     {
@@ -4226,6 +4476,12 @@
     "דוחפים יד אחת למעלה ומחזירים.",
     "לסירוגין, בקצב."
    ],
+   "amount_en": "30 seconds",
+   "steps_en": [
+    "Fists by your shoulders.",
+    "Push one arm up and bring it back.",
+    "Alternate arms, to the beat."
+   ],
    "beat": 0.45,
    "keys": [
     {
@@ -4324,6 +4580,12 @@
     "פורשים ידיים לצדדים בגובה הכתפיים.",
     "מציירים עיגולים קטנים באוויר.",
     "אחרי 15 שניות הופכים כיוון."
+   ],
+   "amount_en": "15 seconds each direction",
+   "steps_en": [
+    "Stretch your arms out to the sides at shoulder height.",
+    "Draw small circles in the air.",
+    "After 15 seconds, switch direction."
    ],
    "beat": 0.22,
    "linear": true,
@@ -4449,6 +4711,12 @@
     "מושיטים יד אחת גבוה לתקרה.",
     "מורידים ומחליפים יד."
    ],
+   "amount_en": "10 each side",
+   "steps_en": [
+    "Sit up tall.",
+    "Reach one arm high toward the ceiling.",
+    "Lower it and switch arms."
+   ],
    "beat": 0.9,
    "keys": [
     {
@@ -4572,6 +4840,12 @@
     "מכופפים מרפקים ומביאים אגרופים לכתפיים.",
     "מורידים לאט."
    ],
+   "amount_en": "12 times",
+   "steps_en": [
+    "Arms at your sides.",
+    "Bend your elbows and bring your fists up to your shoulders.",
+    "Lower slowly."
+   ],
    "beat": 0.9,
    "keys": [
     {
@@ -4646,6 +4920,12 @@
     "ידיים בתנוחת W, אמות למעלה.",
     "דוחפים את הידיים למעלה עד כמעט ישרות.",
     "חוזרים לאט ל-W."
+   ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Arms in a W shape, forearms pointing up.",
+    "Push your arms up until they are almost straight.",
+    "Slowly come back to the W."
    ],
    "beat": 1,
    "keys": [
@@ -4726,6 +5006,12 @@
     "מרימים קדימה עד גובה הכתפיים.",
     "מורידים לאט."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Arms straight down.",
+    "Raise them in front of you to shoulder height.",
+    "Lower slowly."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -4801,6 +5087,12 @@
     "מרימים לצדדים עד גובה הכתפיים.",
     "מורידים לאט."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Arms straight at your sides.",
+    "Raise them out to the sides to shoulder height.",
+    "Lower slowly."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -4875,6 +5167,12 @@
     "מושיטים ידיים קדימה.",
     "מושכים מרפקים אחורה, כמו חתירה.",
     "מקרבים שכמות וחוזרים."
+   ],
+   "amount_en": "12 times",
+   "steps_en": [
+    "Reach your arms forward.",
+    "Pull your elbows back, like rowing.",
+    "Squeeze your shoulder blades and come back."
    ],
    "beat": 0.9,
    "keys": [
@@ -4970,6 +5268,12 @@
     "מרפקים כפופים, אמות קדימה.",
     "מסובבים את כפות הידיים במעגל.",
     "אחרי 10 הופכים כיוון."
+   ],
+   "amount_en": "10 each direction",
+   "steps_en": [
+    "Elbows bent, forearms forward.",
+    "Turn your hands in circles.",
+    "After 10, switch direction."
    ],
    "beat": 0.3,
    "view": "upper",
@@ -5137,6 +5441,13 @@
     "מחליפים יד. מצוין אחרי עבודה עם עכבר.",
     "!מתיחה עדינה בלבד, בלי כאב."
    ],
+   "amount_en": "20 seconds each hand",
+   "steps_en": [
+    "Stretch one arm straight out in front, palm facing away from you.",
+    "Use your other hand to gently pull your fingers toward you.",
+    "Switch hands. Great after working with a mouse.",
+    "!Gentle stretch only, no pain."
+   ],
    "beat": 1.2,
    "view": "upper",
    "keys": [
@@ -5293,6 +5604,12 @@
     "מושיטים ידיים ישר למעלה.",
     "חוזרים לכתפיים ומורידים."
    ],
+   "amount_en": "10 times",
+   "steps_en": [
+    "Fingertips on your shoulders.",
+    "Reach your arms straight up.",
+    "Bring them back to your shoulders and lower."
+   ],
    "beat": 0.7,
    "keys": [
     {
@@ -5426,6 +5743,12 @@
     "נושפים ומורידים לאט.",
     "קצב איטי ונעים."
    ],
+   "amount_en": "5 breaths",
+   "steps_en": [
+    "Breathe in and raise your arms out to the sides and up.",
+    "Breathe out and lower them slowly.",
+    "Keep a slow, easy pace."
+   ],
    "beat": 1.6,
    "keys": [
     {
@@ -5550,6 +5873,12 @@
     "נמתחים למעלה כאילו נוגעים בתקרה.",
     "מחזיקים 5 שניות ומשחררים."
    ],
+   "amount_en": "3 times",
+   "steps_en": [
+    "Lace your fingers and raise your arms over your head.",
+    "Stretch up as if touching the ceiling.",
+    "Hold for 5 seconds and let go."
+   ],
    "beat": 1.3,
    "keys": [
     {
@@ -5624,6 +5953,12 @@
     "ידיים למעלה מעל הראש.",
     "מרימים ברך ומושכים ידיים למטה אליה.",
     "חוזרים ומחליפים רגל."
+   ],
+   "amount_en": "10 each side",
+   "steps_en": [
+    "Arms up over your head.",
+    "Lift one knee and pull your arms down toward it.",
+    "Come back and switch legs."
    ],
    "beat": 0.7,
    "keys": [
@@ -5767,6 +6102,12 @@
     "יושבים זקוף.",
     "מושיטים יד באלכסון למעלה ורגל נגדית לצד.",
     "חוזרים ומחליפים צד."
+   ],
+   "amount_en": "8 each side",
+   "steps_en": [
+    "Sit up tall.",
+    "Reach one arm diagonally up and the opposite leg out to the side.",
+    "Come back and switch sides."
    ],
    "beat": 0.8,
    "keys": [

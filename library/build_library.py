@@ -19,6 +19,7 @@
 #   key "prop": "handL" | "handR" = the computer mouse is held in that hand; [x, y, z] = mouse lies there (world,
 #   metres, y up, z forward); "propRot": [x, y, z] its rotation. No "prop" on a key = mouse hidden.
 #   "bpm": tempo the moves were written for (dances); players can speed it up to a song's tempo.
+#   "amount_en" / "steps_en": the English amount and instructions ("he" / "amount" / "steps" are Hebrew).
 import bpy, json, glob, os, sys
 import numpy as np
 from math import radians
@@ -138,7 +139,7 @@ for path in FILES:
             mode = 'CONSTANT' if fc.data_path.endswith('scale') else 'LINEAR' if ex.get('linear') else None
             if mode:
                 for kp in fc.keyframe_points: kp.interpolation = mode
-        meta.append({k: ex[k] for k in ('id', 'he', 'en', 'amount', 'steps', 'view', 'seated', 'once', 'bpm') if k in ex} |
+        meta.append({k: ex[k] for k in ('id', 'he', 'en', 'amount', 'amount_en', 'steps', 'steps_en', 'view', 'seated', 'once', 'bpm') if k in ex} |
                     {'category': cat['category']['id'], 'duration': round(t - ex['beat'], 3), 'keyTimes': times})
         if ex.get('once'): meta[-1]['duration'] = times[-1]
         print('built', ex['id'])

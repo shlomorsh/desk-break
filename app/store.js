@@ -11,7 +11,7 @@ export const DESK_SET = ['neck-side-tilt', 'chin-tuck', 'shoulder-rolls-back', '
   'posture-reset', 'march-in-place', 'calf-raise', 'standing-hip-circles', 'chair-figure-four'];
 
 // on = ids switched on, custom = { id: { reps | seconds, speed } } per-exercise changes
-const DEFAULTS = { on: DESK_SET, order: 'mix', figH: 320, head: 84, custom: {}, sound: true };
+const DEFAULTS = { on: DESK_SET, order: 'mix', figH: 320, head: 84, custom: {}, sound: true, lang: null };   // lang null = the computer's language
 
 export function load() {
   try { return { ...DEFAULTS, ...JSON.parse(localStorage.getItem(KEY)) }; } catch { return { ...DEFAULTS }; }
@@ -47,10 +47,3 @@ export function playlist(lib, s) {
   return out;
 }
 
-export const SHORTCUTS = [
-  ['Ctrl + Alt + N', 'התרגיל הבא (מכל תוכנה)'],
-  ['Ctrl + Alt + M', 'מזעור לראש / החזרה, גם אחרי הסתרה מלאה (מכל תוכנה)'],
-  ['Esc', 'סגירת הפאנל'],
-  ['← / →', 'הבא / הקודם, כשהפאנל פתוח'],
-  ['רווח', 'התחלה מחדש של הספירה'],
-];

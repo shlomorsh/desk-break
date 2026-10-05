@@ -50,6 +50,7 @@
   /* detail drawer */
   #drawer { position: fixed; inset-block: 0; inset-inline-end: 0; width: 400px; padding: 22px 24px; box-sizing: border-box; overflow: auto;
     border-radius: 0; transform: translateX(-105%); transition: transform .22s ease; z-index: 5; display: flex; flex-direction: column; gap: 12px; }
+  [dir="ltr"] #drawer { transform: translateX(105%); }
   #drawer.show { transform: none; }
   #drawer header { display: flex; gap: 10px; align-items: start; }
   #drawer h2 { margin: 0; font-size: 22px; flex: 1; }
@@ -97,66 +98,73 @@
   canvas#c { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 6; visibility: hidden; }
 </style>
 
-<nav class="plank" aria-label="קטגוריות">
-  <div class="brand"><img src="icon.png" alt=""><b>תרגיל בהמתנה<small>ספריית תרגילים</small></b></div>
-  <button class="nav" data-view="mine">הסט שלי<span class="n" id="n-mine"></span></button>
-  <button class="nav" data-view="all">כל התרגילים<span class="n" id="n-all"></span></button>
-  <div class="group">קטגוריות</div>
+<nav class="plank" data-t-label="groupCats">
+  <div class="brand"><img src="icon.png" alt=""><b><span data-t="appName"></span><small data-t="brandSub"></small></b></div>
+  <button class="nav" data-view="mine"><span data-t="navMine"></span><span class="n" id="n-mine"></span></button>
+  <button class="nav" data-view="all"><span data-t="navAll"></span><span class="n" id="n-all"></span></button>
+  <div class="group" data-t="groupCats"></div>
   <div id="cats"></div>
-  <div class="group" id="gGeneral">כללי</div>
-  <button class="nav" data-view="general">הגדרות וקיצורים</button>
+  <div class="group" id="gGeneral" data-t="groupGeneral"></div>
+  <button class="nav" data-view="general" data-t="navGeneral"></button>
 </nav>
 
 <main>
   <div class="top">
     <div><h1 id="title"></h1><div class="sub" id="subtitle"></div></div>
-    <input id="search" type="search" placeholder="חיפוש תרגיל" aria-label="חיפוש תרגיל">
+    <input id="search" type="search" data-t-ph="search" data-t-label="search">
   </div>
   <div id="scroll">
     <div class="grid" id="grid"></div>
     <div id="general">
       <section class="block plank">
-        <h3>גובה הדמות</h3><p>כמה מקום הדמות תופסת על המסך.</p>
-        <div class="slider"><input type="range" id="figH" aria-label="גובה הדמות"><output id="figHv"></output></div>
+        <h3 data-t="figH"></h3><p data-t="figHText"></p>
+        <div class="slider"><input type="range" id="figH" data-t-label="figH"><output id="figHv"></output></div>
       </section>
       <section class="block plank">
-        <h3>גודל ראש העץ</h3><p>כשהדמות ממוזערת לראש קטן.</p>
-        <div class="slider"><input type="range" id="head" aria-label="גודל ראש העץ"><output id="headv"></output></div>
+        <h3 data-t="headSize"></h3><p data-t="headText"></p>
+        <div class="slider"><input type="range" id="head" data-t-label="headSize"><output id="headv"></output></div>
       </section>
       <section class="block plank">
-        <h3>סדר התרגילים</h3><p>מה קורה כשלוחצים "התרגיל הבא".</p>
+        <h3 data-t="order"></h3><p data-t="orderText"></p>
         <div class="seg" id="order">
-          <button class="btn" data-v="mix">מגוון: כל פעם אזור אחר</button>
-          <button class="btn" data-v="seq">לפי הסדר</button>
-          <button class="btn" data-v="random">אקראי</button>
+          <button class="btn" data-v="mix" data-t="orderMix"></button>
+          <button class="btn" data-v="seq" data-t="orderSeq"></button>
+          <button class="btn" data-v="random" data-t="orderRandom"></button>
         </div>
       </section>
       <section class="block plank">
-        <h3>כללי</h3>
-        <label class="check"><input type="checkbox" id="sound"> צליל קצר כשמסיימים תרגיל</label>
-        <label class="check"><input type="checkbox" id="startup"> לפתוח אוטומטית כשהמחשב עולה</label>
+        <h3 data-t="language"></h3>
+        <div class="seg" id="langs">
+          <button class="btn" data-v="he">עברית</button>
+          <button class="btn" data-v="en">English</button>
+        </div>
       </section>
       <section class="block plank">
-        <h3>קיצורי מקלדת</h3>
+        <h3 data-t="general"></h3>
+        <label class="check"><input type="checkbox" id="sound"> <span data-t="sound"></span></label>
+        <label class="check"><input type="checkbox" id="startup"> <span data-t="startup"></span></label>
+      </section>
+      <section class="block plank">
+        <h3 data-t="shortcuts"></h3>
         <div class="keys" id="keys"></div>
       </section>
       <section class="block plank">
-        <h3>איפוס</h3><p>מחזיר את הסט הקצר לישיבה מול מחשב, ומבטל שינויי חזרות ומהירות.</p>
-        <button class="btn" id="reset">איפוס לברירת המחדל</button>
+        <h3 data-t="reset"></h3><p data-t="resetText"></p>
+        <button class="btn" id="reset" data-t="resetBtn"></button>
       </section>
     </div>
   </div>
 </main>
 
-<aside id="drawer" class="plank" aria-label="פרטי התרגיל" aria-hidden="true">
+<aside id="drawer" class="plank" data-t-label="panelLabel" aria-hidden="true">
   <header><div style="flex:1"><h2 id="dName"></h2><div class="muted" id="dCat"></div></div>
-    <button class="btn icon" id="dClose" aria-label="סגירה">✕</button></header>
+    <button class="btn icon" id="dClose" data-t-label="closeTitle">✕</button></header>
   <div id="big"></div>
   <button class="btn primary" id="dPick"></button>
   <ol id="dSteps"></ol>
   <div class="tune">
-    <span id="dDoseL"></span><div class="stepper" id="dDoseBox"><button class="btn" id="dDoseM" aria-label="פחות">−</button><output id="dDose"></output><button class="btn" id="dDoseP" aria-label="יותר">+</button></div>
-    <span id="dSpeedL"></span><div class="stepper"><button class="btn" id="dSpeedM" aria-label="לאט יותר">−</button><output id="dSpeed"></output><button class="btn" id="dSpeedP" aria-label="מהר יותר">+</button></div>
+    <span id="dDoseL"></span><div class="stepper" id="dDoseBox"><button class="btn" id="dDoseM" data-t-label="less">−</button><output id="dDose"></output><button class="btn" id="dDoseP" data-t-label="more">+</button></div>
+    <span id="dSpeedL"></span><div class="stepper"><button class="btn" id="dSpeedM" data-t-label="slower">−</button><output id="dSpeed"></output><button class="btn" id="dSpeedP" data-t-label="faster">+</button></div>
   </div>
 </aside>
 <canvas id="c"></canvas>
@@ -167,7 +175,8 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { clone } from 'three/addons/utils/SkeletonUtils.js';
 import { VIEWS, chair, lights } from '../library/player.js';
-import { load, save, dose, DESK_SET, LIMITS, SHORTCUTS } from './store.js';
+import { load, save, dose, DESK_SET, LIMITS } from './store.js';
+import { langOf, tr, apply, exText, catName, shortcuts } from './i18n.js';
 
 const $ = id => document.getElementById(id);
 const desk = window.desk;
@@ -178,6 +187,8 @@ const lib = await fetch('../library/exercises.json').then(r => r.json());
 let glb = null;
 const cats = Object.fromEntries(lib.categories.map(c => [c.id, c]));
 let s = load(), view = location.hash.slice(1) || (web ? 'all' : 'mine'), open = null;
+let lang = langOf(s);
+const T = (k, v) => tr(lang, k, v);
 const on = () => new Set(s.on);
 const commit = () => { save(s); counts(); };
 
@@ -214,7 +225,7 @@ renderer.setAnimationLoop(t => {
     if (!el.isConnected) { stages.delete(el); continue; }
     const r = el.getBoundingClientRect(), inDrawer = el === $('big');
     if (r.bottom < (inDrawer ? 0 : top) || r.top > H || r.width === 0) continue;
-    if (!inDrawer && $('drawer').classList.contains('show') && r.left < 400) continue;   // hidden under the drawer
+    if (!inDrawer && $('drawer').classList.contains('show') && (lang === 'he' ? r.left < 400 : r.right > W - 400)) continue;   // under the drawer
     st.mixer.update(dt);
     const [pos, at] = VIEWS[st.ex.view] || VIEWS.full;
     camera.aspect = r.width / r.height;
@@ -231,7 +242,7 @@ renderer.setAnimationLoop(t => {
 
 // ---------- sidebar & grid ----------
 for (const c of lib.categories)
-  $('cats').insertAdjacentHTML('beforeend', `<button class="nav" data-view="${c.id}">${c.he}<span class="n" id="n-${c.id}"></span></button>`);
+  $('cats').insertAdjacentHTML('beforeend', `<button class="nav" data-view="${c.id}"><span class="cn" data-cat="${c.id}"></span><span class="n" id="n-${c.id}"></span></button>`);
 function counts() {
   const o = on();
   $('n-mine').textContent = o.size; $('n-all').textContent = lib.exercises.length;
@@ -243,9 +254,9 @@ function counts() {
     const isOn = o.has(card.dataset.id);
     card.classList.toggle('on', isOn && !web);
     const b = card.querySelector('.pick');
-    b.textContent = isOn ? '✓' : '+'; b.setAttribute('aria-label', isOn ? 'הסרה מהסט' : 'הוספה לסט');
+    b.textContent = isOn ? '✓' : '+'; b.setAttribute('aria-label', T(isOn ? 'pickRemove' : 'pickAdd'));
   }
-  if (open) $('dPick').textContent = o.has(open.id) ? 'בסט שלי ✓ (לחיצה מסירה)' : 'הוספה לסט שלי';
+  if (open) $('dPick').textContent = T(o.has(open.id) ? 'inSet' : 'addSet');
 }
 function toggle(id) {
   const o = on();
@@ -256,23 +267,24 @@ function render() {
   document.body.classList.toggle('general', view === 'general');
   for (const b of document.querySelectorAll('.nav')) b.setAttribute('aria-current', b.dataset.view === view);
   $('search').hidden = view === 'general';
-  if (view === 'general') { $('title').textContent = 'הגדרות וקיצורים'; $('subtitle').textContent = ''; counts(); return; }
+  if (view === 'general') { $('title').textContent = T('navGeneral'); $('subtitle').textContent = ''; counts(); return; }
   const q = $('search').value.trim(), o = on();
   const list = lib.exercises.filter(e => (view === 'all' || (view === 'mine' ? o.has(e.id) : e.category === view)) && (!q || e.he.includes(q) || e.en.toLowerCase().includes(q.toLowerCase())));
-  $('title').textContent = view === 'mine' ? 'הסט שלי' : view === 'all' ? 'כל התרגילים' : cats[view].he;
-  $('subtitle').textContent = view === 'mine' ? 'התרגילים שהדמות תציע לך, לפי הסדר שבחרת בהגדרות' : `${list.length} תרגילים · לחיצה על כרטיס לפרטים${web ? '' : ', + מוסיף לסט'}`;
+  $('title').textContent = view === 'mine' ? T('navMine') : view === 'all' ? T('navAll') : catName(cats[view], lang);
+  $('subtitle').textContent = view === 'mine' ? T('mineSub') : T('countSub', { n: list.length }) + (web ? '' : T('plusHint'));
   $('grid').replaceChildren(...list.map(e => {
     const el = document.createElement('div');
     el.className = 'card'; el.tabIndex = 0; el.dataset.id = e.id; el.setAttribute('role', 'button');
     el.innerHTML = `<button class="pick"></button><div class="view"></div><div class="txt"><b></b><span></span></div>`;
-    el.querySelector('b').textContent = e.he;
-    el.querySelector('span').textContent = view === 'mine' || view === 'all' ? `${cats[e.category].he} · ${e.amount}` : e.amount;
+    const t = exText(e, lang);
+    el.querySelector('b').textContent = t.name;
+    el.querySelector('span').textContent = view === 'mine' || view === 'all' ? `${catName(cats[e.category], lang)} · ${t.amount}` : t.amount;
     el.querySelector('.pick').onclick = ev => { ev.stopPropagation(); toggle(e.id); if (view === 'mine') render(); };
     el.onclick = () => detail(e);
     el.onkeydown = ev => { if (ev.key === 'Enter') detail(e); };
     return el;
   }));
-  if (!list.length) $('grid').innerHTML = `<div class="empty">${view === 'mine' ? 'הסט ריק. בוחרים תרגילים מהקטגוריות בצד.' : 'לא נמצאו תרגילים.'}</div>`;
+  if (!list.length) $('grid').innerHTML = `<div class="empty">${T(view === 'mine' ? 'emptyMine' : 'emptyNone')}</div>`;
   watch();
   counts();
 }
@@ -299,9 +311,10 @@ $('search').oninput = render;
 // ---------- detail drawer ----------
 function detail(e) {
   open = e;
-  $('dName').textContent = e.he;
-  $('dCat').textContent = `${cats[e.category].he} · ${e.amount}`;
-  $('dSteps').replaceChildren(...e.steps.map(t => Object.assign(document.createElement('li'),
+  const x = exText(e, lang);
+  $('dName').textContent = x.name;
+  $('dCat').textContent = `${catName(cats[e.category], lang)} · ${x.amount}`;
+  $('dSteps').replaceChildren(...x.steps.map(t => Object.assign(document.createElement('li'),
     t.startsWith('!') ? { className: 'warn', textContent: t.slice(1) } : { textContent: t })));
   stages.delete($('big')); stage($('big'), e);
   $('drawer').classList.add('show'); $('drawer').setAttribute('aria-hidden', 'false');
@@ -310,10 +323,11 @@ function detail(e) {
 function closeDetail() { open = null; $('drawer').classList.remove('show'); $('drawer').setAttribute('aria-hidden', 'true'); stages.delete($('big')); }
 function tune() {
   const e = open, d = dose(e, s.custom[e.id]);
-  $('dDoseL').textContent = d.seconds ? 'זמן' : 'חזרות';
+  $('dDoseL').textContent = T(d.seconds ? 'time' : 'reps');
   $('dDoseL').hidden = $('dDoseBox').hidden = !!d.once;
-  $('dDose').textContent = d.seconds ? `${d.seconds} שניות${d.perSide ? ' לצד' : ''}` : `${d.reps}${d.perSide ? ' לצד' : ''}`;
-  $('dSpeedL').textContent = e.bpm ? 'קצב (BPM)' : 'מהירות';
+  const side = d.perSide ? T('perSide') : '';
+  $('dDose').textContent = d.seconds ? `${d.seconds} ${T('secs')}${side}` : `${d.reps}${side}`;
+  $('dSpeedL').textContent = T(e.bpm ? 'tempo' : 'speed');
   $('dSpeed').textContent = e.bpm ? Math.round(e.bpm * d.speed) : `×${d.speed.toFixed(2).replace(/\.?0+$/, '')}`;
   const st = stages.get($('big')); if (st) st.action.timeScale = d.speed;
 }
@@ -340,7 +354,17 @@ for (const b of $('order').children) {
   b.onclick = () => { s.order = b.dataset.v; for (const x of $('order').children) x.setAttribute('aria-pressed', x === b); commit(); };
 }
 $('sound').checked = s.sound; $('sound').onchange = () => { s.sound = $('sound').checked; commit(); };
-$('keys').append(...SHORTCUTS.flatMap(([k, t]) => [Object.assign(document.createElement('kbd'), { textContent: k }), Object.assign(document.createElement('span'), { textContent: t })]));
+// language: words, direction, category names, shortcuts; the choice is saved and the figure window follows it
+function useLang() {
+  lang = langOf(s);
+  apply(lang);
+  document.title = T('settingsTitle');
+  for (const el of document.querySelectorAll('.cn')) el.textContent = catName(cats[el.dataset.cat], lang);
+  $('keys').replaceChildren(...shortcuts(lang).flatMap(([k, t]) => [Object.assign(document.createElement('kbd'), { textContent: k }), Object.assign(document.createElement('span'), { textContent: t })]));
+  for (const b of $('langs').children) b.setAttribute('aria-pressed', b.dataset.v === lang);
+}
+for (const b of $('langs').children) b.onclick = () => { s.lang = b.dataset.v; commit(); useLang(); render(); if (open) detail(open); };
+useLang();
 $('reset').onclick = () => {
   s = { ...load(), on: DESK_SET, custom: {} }; commit(); render();
 };

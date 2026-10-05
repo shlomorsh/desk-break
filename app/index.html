@@ -34,7 +34,7 @@
   /* panel next to the figure, on the side with more screen */
   #panel { display: none; flex: 1; margin: 8px; padding: 14px 16px; overflow: auto; flex-direction: column; gap: 12px; }
   .open #panel { display: flex; }
-  .fig-left #fig { order: 2; }
+  .swap #fig { order: 2; }              /* the figure stays on the screen-edge side, the panel opens towards the middle */
   #panel header { display: flex; align-items: start; gap: 8px; }
   #panel h1 { margin: 0; font-size: 19px; line-height: 1.25; }
   #cat { font-size: 13px; }
@@ -59,39 +59,39 @@
 </style>
 
 <body class="figure">
-<div id="fig" role="button" tabindex="0" aria-label="התרגיל. לחיצה פותחת פרטים, גרירה מזיזה">
+<div id="fig" role="button" tabindex="0" data-t-label="figLabel">
   <div class="pill plank" id="pill"><b id="pname"></b><span id="pcount" class="muted"></span><div class="meter"><i id="pmeter"></i></div></div>
 </div>
-<section id="panel" class="plank" aria-label="פרטי התרגיל">
+<section id="panel" class="plank" data-t-label="panelLabel">
   <header>
     <div style="flex:1"><h1 id="name" aria-live="polite"></h1><div id="cat" class="muted"></div></div>
-    <button id="close" class="btn icon" aria-label="סגירת הפאנל" title="סגירה (Esc)">✕</button>
+    <button id="close" class="btn icon" data-t-label="close" data-t-title="closeTitle">✕</button>
   </header>
   <div class="count">
     <strong id="count"></strong><span id="side" class="side muted"></span>
-    <button id="restart" class="btn icon" aria-label="להתחיל מחדש" title="מחדש (רווח)">↺</button>
+    <button id="restart" class="btn icon" data-t-label="restart" data-t-title="restartTitle">↺</button>
   </div>
   <div class="meter"><i id="meter"></i></div>
   <ol id="how"></ol>
   <div class="tune">
     <span id="doseLabel"></span>
-    <div class="stepper" id="doseBox"><button class="btn" id="doseMinus" aria-label="פחות">−</button><output id="dose"></output><button class="btn" id="dosePlus" aria-label="יותר">+</button></div>
+    <div class="stepper" id="doseBox"><button class="btn" id="doseMinus" data-t-label="less">−</button><output id="dose"></output><button class="btn" id="dosePlus" data-t-label="more">+</button></div>
     <span id="speedLabel"></span>
-    <div class="stepper"><button class="btn" id="speedMinus" aria-label="לאט יותר">−</button><output id="speed"></output><button class="btn" id="speedPlus" aria-label="מהר יותר">+</button></div>
+    <div class="stepper"><button class="btn" id="speedMinus" data-t-label="slower">−</button><output id="speed"></output><button class="btn" id="speedPlus" data-t-label="faster">+</button></div>
   </div>
   <div class="row">
-    <button id="prev" class="btn icon" aria-label="התרגיל הקודם" title="הקודם">→</button>
-    <button id="next" class="btn primary">התרגיל הבא</button>
+    <button id="prev" class="btn icon" data-t-label="prev" data-t-title="prevTitle"></button>
+    <button id="next" class="btn primary" data-t="next"></button>
   </div>
   <div class="row">
-    <button id="library" class="btn" style="flex:1" title="ספרייה והגדרות">ספרייה</button>
-    <button id="hide" class="btn" title="Ctrl+Alt+M">מזעור</button>
-    <button id="vanish2" class="btn" title="הסתרה מלאה. מחזירים מהאייקון ליד השעון או Ctrl+Alt+M">הסתרה</button>
+    <button id="library" class="btn" style="flex:1" data-t="library" data-t-title="libraryTitle"></button>
+    <button id="hide" class="btn" title="Ctrl+Alt+M" data-t="minimize"></button>
+    <button id="vanish2" class="btn" data-t="hide" data-t-title="hideTitle"></button>
   </div>
-  <details><summary>קיצורי מקלדת</summary><div class="keys" id="keys"></div></details>
+  <details><summary data-t="shortcuts"></summary><div class="keys" id="keys"></div></details>
 </section>
-<div id="head" class="plank" role="button" tabindex="0" aria-label="החזרת הדמות. אפשר לגרור"></div>
-<button id="vanish" class="btn" aria-label="הסתרה מלאה" title="הסתרה מלאה. מחזירים מהאייקון ליד השעון או Ctrl+Alt+M">✕</button>
+<div id="head" class="plank" role="button" tabindex="0" data-t-label="headLabel"></div>
+<button id="vanish" class="btn" data-t-label="hideFull" data-t-title="hideTitle">✕</button>
 <canvas id="c"></canvas>
 
 <script type="importmap">{"imports":{"three":"../vendor/three/three.module.js","three/addons/":"../vendor/three/addons/"}}</script>
@@ -99,7 +99,8 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { VIEWS, chair, lights } from '../library/player.js';
-import { load, save, playlist, dose, figureSize, PANEL_W, PANEL_H, SHORTCUTS } from './store.js';
+import { load, save, playlist, dose, figureSize, PANEL_W, PANEL_H } from './store.js';
+import { langOf, tr, apply, exText, catName as catOf, shortcuts } from './i18n.js';
 
 const $ = id => document.getElementById(id);
 const desk = window.desk || { mode: async () => ({}), move() {}, drop: async () => null, tuck() {}, untuck() {}, settings() {}, onCommand() {} };
@@ -110,8 +111,16 @@ const [lib, glb] = await Promise.all([
   fetch('../library/exercises.json').then(r => r.json()),
   new GLTFLoader().loadAsync('../library/exercises.glb'),
 ]);
-const catName = Object.fromEntries(lib.categories.map(c => [c.id, c.he]));
-$('keys').append(...SHORTCUTS.flatMap(([k, t]) => [Object.assign(document.createElement('kbd'), { textContent: k }), Object.assign(document.createElement('span'), { textContent: t })]));
+const cats = Object.fromEntries(lib.categories.map(c => [c.id, c]));
+let lang;
+function useLang() {                              // interface words, direction, shortcuts list, tray menu
+  lang = langOf(settings);
+  apply(lang);
+  document.title = tr(lang, 'appName');
+  $('prev').textContent = lang === 'he' ? '→' : '←';
+  $('keys').replaceChildren(...shortcuts(lang).flatMap(([k, t]) => [Object.assign(document.createElement('kbd'), { textContent: k }), Object.assign(document.createElement('span'), { textContent: t })]));
+  desk.lang?.(lang);
+}
 
 // ---------- 3D ----------
 const renderer = new THREE.WebGLRenderer({ canvas: $('c'), antialias: true, alpha: true });
@@ -125,7 +134,8 @@ const mixer = new THREE.AnimationMixer(fig), neck = fig.getObjectByName('neck');
 let action;
 
 // ---------- playlist & progress ----------
-let settings = load(), list = [], i = 0, ui = 'figure', d = {}, reps = 0, started = 0, finished = false;
+let settings = load(); useLang();
+let list = [], i = 0, ui = 'figure', d = {}, reps = 0, started = 0, finished = false;
 const ex = () => list[i];
 function rebuild() {
   const cur = ex()?.id ?? localStorage.getItem('desk-pos');
@@ -134,7 +144,7 @@ function rebuild() {
 }
 const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 function progress() {                      // 0..1 and its text
-  if (d.once) return [action && !action.isRunning() ? 1 : 0, 'פעם אחת'];
+  if (d.once) return [action && !action.isRunning() ? 1 : 0, tr(lang, 'once')];
   if (d.seconds) {
     const total = d.seconds * (d.perSide ? 2 : 1), left = Math.max(0, total - (performance.now() - started) / 1000);
     return [1 - left / total, fmt(Math.ceil(left))];
@@ -158,16 +168,17 @@ mixer.addEventListener('loop', () => { reps++; });
 
 function show(flash) {
   const e = ex();
-  if (!e) { $('pname').textContent = $('name').textContent = 'לא נבחרו תרגילים'; $('pcount').textContent = 'בוחרים בספרייה'; return; }
+  if (!e) { $('pname').textContent = $('name').textContent = tr(lang, 'noneTitle'); $('pcount').textContent = tr(lang, 'noneSub'); return; }
   try { localStorage.setItem('desk-pos', e.id); } catch {}
   d = dose(e, settings.custom[e.id]);
-  $('pname').textContent = $('name').textContent = e.he;
-  $('cat').textContent = `${catName[e.category]} · ${i + 1} מתוך ${list.length}`;
-  $('how').replaceChildren(...e.steps.map(s => Object.assign(document.createElement('li'),
+  const t = exText(e, lang);
+  $('pname').textContent = $('name').textContent = t.name;
+  $('cat').textContent = `${catOf(cats[e.category], lang)} · ${tr(lang, 'ofN', { i: i + 1, n: list.length })}`;
+  $('how').replaceChildren(...t.steps.map(s => Object.assign(document.createElement('li'),
     s.startsWith('!') ? { className: 'warn', textContent: s.slice(1) } : { textContent: s })));
-  $('doseLabel').textContent = d.seconds ? 'זמן' : 'חזרות';
+  $('doseLabel').textContent = tr(lang, d.seconds ? 'time' : 'reps');
   $('doseLabel').hidden = $('doseBox').hidden = !!d.once;
-  $('speedLabel').textContent = e.bpm ? 'קצב (BPM)' : 'מהירות';
+  $('speedLabel').textContent = tr(lang, e.bpm ? 'tempo' : 'speed');
   seat.visible = !!e.seated;
   action?.stop();
   action = mixer.clipAction(THREE.AnimationClip.findByName(glb.animations, e.id));
@@ -178,7 +189,8 @@ function show(flash) {
 }
 function tune() {
   const e = ex();
-  $('dose').textContent = d.seconds ? `${d.seconds} ש׳${d.perSide ? ' לצד' : ''}` : `${d.reps}${d.perSide ? ' לצד' : ''}`;
+  const side = d.perSide ? tr(lang, 'perSide') : '';
+  $('dose').textContent = d.seconds ? `${d.seconds}${tr(lang, 'sec')}${side}` : `${d.reps}${side}`;
   $('speed').textContent = e.bpm ? Math.round(e.bpm * d.speed) : `×${d.speed.toFixed(2).replace(/\.?0+$/, '')}`;
 }
 function change(key, delta) {                     // per-exercise dose / speed, remembered in settings
@@ -201,7 +213,8 @@ async function setUI(m) {
   const [w, h] = figureSize(settings);
   const size = m === 'head' ? [settings.head, settings.head] : m === 'open' ? [w + PANEL_W, Math.max(h, PANEL_H)] : [w, h];
   const r = await desk.mode(...size);
-  document.body.className = `${m === 'open' ? 'figure open' : m} ${r.right === false ? 'fig-left' : ''}`;
+  const figRight = r.right !== false, rtl = lang === 'he';     // in RTL the figure is first = right side
+  document.body.className = `${m === 'open' ? 'figure open' : m} ${figRight !== rtl ? 'swap' : ''}`;
   $('fig').style.width = `${w}px`;
   if (m === 'head') { action?.stop(); fig.userData.skin.pose(); seat.visible = false; }
   else if (!action?.isRunning() && !finished) show();
@@ -246,8 +259,9 @@ $('speedMinus').onclick = () => change('speed', -1); $('speedPlus').onclick = ()
 addEventListener('keydown', e => {
   if (ui !== 'open') return;
   if (e.key === 'Escape') setUI('figure');
-  if (e.key === 'ArrowLeft') step(1);            // RTL: left = forward
-  if (e.key === 'ArrowRight') step(-1);
+  const fwd = lang === 'he' ? 'ArrowLeft' : 'ArrowRight';       // forward follows the reading direction
+  if (e.key === fwd) step(1);
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') step(-1);
   if (e.key === ' ' && e.target.tagName !== 'BUTTON') { e.preventDefault(); restart(); }
 });
 desk.onCommand(c => {
@@ -257,7 +271,7 @@ desk.onCommand(c => {
 });
 addEventListener('storage', e => {             // the library window changed something
   if (e.key !== 'desk-settings') return;
-  settings = load(); rebuild(); show(); if (ui !== 'head') setUI(ui);
+  settings = load(); useLang(); rebuild(); show(); if (ui !== 'head') setUI(ui);
 });
 
 // ---------- loop ----------
@@ -276,7 +290,7 @@ renderer.setAnimationLoop(t => {
     const [p, text] = progress();
     $('pcount').textContent = $('count').textContent = text;
     $('pmeter').style.width = $('meter').style.width = `${p * 100}%`;
-    $('side').textContent = d.perSide && d.seconds ? (p < .5 ? 'צד ראשון' : 'צד שני') : '';
+    $('side').textContent = d.perSide && d.seconds ? tr(lang, p < .5 ? 'side1' : 'side2') : '';
     if (p >= 1 && !finished) { finished = true; document.body.classList.add('done'); ding(); }
     const r = $('fig').getBoundingClientRect(), [pos, at] = VIEWS[ex()?.view] || VIEWS.full;
     camera.aspect = r.width / r.height;

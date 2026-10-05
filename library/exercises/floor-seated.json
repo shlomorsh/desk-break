@@ -3,36 +3,42 @@
   "exercises": [
     { "id": "floor-butterfly-stretch", "view": "floor", "he": "פרפר", "en": "Butterfly stretch", "amount": "30 שניות",
       "steps": ["יושבים, מצמידים כפות רגליים זו לזו.", "הברכיים נופלות לצדדים, ידיים מחזיקות את הרגליים.", "גב ארוך ונושמים. לא לוחצים על הברכיים."],
+      "amount_en": "30 seconds", "steps_en": ["Sit and press the soles of your feet together.", "Let your knees drop out to the sides and hold your feet with your hands.", "Sit tall and breathe. Don't push down on your knees."],
       "beat": 1.4,
       "keys": [{ "leg": [-90, 70, 45], "knee": [130, 0, 0], "arm": [-30, 0, -10], "elbow": [-30, 0, 0] },
                { "leg": [-90, 78, 42], "knee": [132, 0, 0], "arm": [-30, 0, -10], "elbow": [-30, 0, 0], "hold": 2 }] },
 
     { "id": "floor-butterfly-knee-flaps", "view": "floor", "he": "כנפי פרפר", "en": "Butterfly knee flaps", "amount": "20 פעמים",
       "steps": ["ישיבת פרפר, כפות רגליים צמודות.", "מרימים ומורידים את הברכיים בעדינות, כמו כנפיים.", "תנועה קטנה ורכה, בלי קפיצות."],
+      "amount_en": "20 reps", "steps_en": ["Sit in butterfly pose with the soles of your feet together.", "Gently lift and lower your knees, like wings.", "Keep the movement small and soft, no bouncing."],
       "beat": 0.5,
       "keys": [{ "leg": [-102, 58, 50], "knee": [130, 0, 0], "arm": [-30, 0, -10], "elbow": [-30, 0, 0] },
                { "leg": [-90, 78, 42], "knee": [132, 0, 0], "arm": [-30, 0, -10], "elbow": [-30, 0, 0] }] },
 
     { "id": "floor-butterfly-forward-lean", "view": "floor", "he": "פרפר עם הטיה קדימה", "en": "Butterfly forward lean", "amount": "20 שניות",
       "steps": ["ישיבת פרפר, ידיים על כפות הרגליים.", "נוטים קדימה עם גב ישר, החזה אל הרגליים.", "!אם הגב התחתון מושך, נוטים רק מעט."],
+      "amount_en": "20 seconds", "steps_en": ["Sit in butterfly pose with your hands on your feet.", "Lean forward with a straight back, bringing your chest toward your feet.", "!If your lower back pulls, lean only a little."],
       "beat": 1.4,
       "keys": [{ "leg": [-90, 70, 45], "knee": [130, 0, 0], "arm": [-30, 0, -10], "elbow": [-30, 0, 0] },
                { "leg": [-90, 70, 45], "knee": [130, 0, 0], "spine": [32, 0, 0], "neck": [10, 0, 0], "arm": [-50, 0, -10], "elbow": [-10, 0, 0], "hold": 2 }] },
 
     { "id": "floor-long-sit-forward-fold", "view": "floor", "he": "קיפול קדימה ברגליים ישרות", "en": "Seated forward fold", "amount": "20 שניות",
       "steps": ["יושבים עם רגליים ישרות קדימה.", "מושיטים ידיים אל הרגליים ונוטים קדימה מהמותן.", "!אם הגב או הברכיים מושכים, מכופפים מעט את הברכיים."],
+      "amount_en": "20 seconds", "steps_en": ["Sit with your legs straight out in front of you.", "Reach your hands toward your feet and lean forward from your hips.", "!If your back or knees pull, bend your knees a little."],
       "beat": 1.5,
       "keys": [{ "leg": [-90, 0, 0], "arm": [-150, 0, 8] },
                { "leg": [-90, 0, 0], "spine": [42, 0, 0], "neck": [10, 0, 0], "arm": [-108, 0, 0], "elbow": [0, 0, 0], "hold": 2 }] },
 
     { "id": "floor-soft-knee-forward-fold", "view": "floor", "he": "קיפול קדימה בברכיים רכות", "en": "Soft-knee forward fold", "amount": "20 שניות",
       "steps": ["רגליים קדימה, ברכיים מעט כפופות.", "מניחים ידיים על השוקיים ונוטים קדימה.", "גרסה קלה לגב ולאחורי הירכיים."],
+      "amount_en": "20 seconds", "steps_en": ["Legs out in front, knees slightly bent.", "Rest your hands on your shins and lean forward.", "An easier version for your back and the backs of your thighs."],
       "beat": 1.5,
       "keys": [{ "leg": [-105, 0, 0], "knee": [35, 0, 0] },
                { "leg": [-105, 0, 0], "knee": [35, 0, 0], "spine": [36, 0, 0], "neck": [10, 0, 0], "arm": [-100, 0, 0], "elbow": [-10, 0, 0], "hold": 2 }] },
 
     { "id": "floor-head-to-knee-easy", "view": "floor", "he": "רגל אחת ישרה, אחת מקופלת", "en": "Easy head-to-knee stretch", "amount": "20 שניות לכל צד",
       "steps": ["רגל אחת ישרה, כף הרגל השנייה ליד הירך הפנימית.", "מסתובבים אל הרגל הישרה ונוטים קדימה.", "מחליפים צד."],
+      "amount_en": "20 seconds each side", "steps_en": ["Keep one leg straight and place the other foot by your inner thigh.", "Turn toward the straight leg and lean forward.", "Switch sides."],
       "beat": 1.4,
       "keys": [{ "legL": [-90, 0, 0], "legR": [-90, 70, 45], "kneeR": [130, 0, 0] },
                { "legL": [-90, 0, 0], "legR": [-90, 70, 45], "kneeR": [130, 0, 0], "spine": [36, 15, 0], "arm": [-100, 0, 0], "elbow": [0, 0, 0], "hold": 2 },
@@ -41,6 +47,7 @@
 
     { "id": "floor-flexed-foot-hamstring", "view": "floor", "he": "מתיחת ירך אחורית עם כף רגל מכופפת", "en": "Seated hamstring with flexed foot", "amount": "20 שניות לכל רגל",
       "steps": ["רגל אחת ישרה, השנייה כפופה וכף הרגל על הרצפה.", "מושכים את אצבעות הרגל הישרה אליכם.", "נוטים מעט קדימה עם גב ישר. מחליפים."],
+      "amount_en": "20 seconds each leg", "steps_en": ["Keep one leg straight. Bend the other with the foot flat on the floor.", "Pull the toes of your straight leg toward you.", "Lean forward a little with a straight back. Switch legs."],
       "beat": 1.4,
       "keys": [{ "legL": [-90, 0, 0], "legR": [-140, 0, 0], "kneeR": [150, 0, 0], "footL": [-30, 0, 0] },
                { "legL": [-90, 0, 0], "legR": [-140, 0, 0], "kneeR": [150, 0, 0], "footL": [-30, 0, 0], "spine": [28, 10, 0], "armL": [-60, 0, 0], "armR": [-50, 0, -15], "elbow": [-10, 0, 0], "hold": 2 },
@@ -49,6 +56,7 @@
 
     { "id": "floor-straddle-side-reach", "view": "floor", "he": "רגליים פתוחות, הטיה לצד", "en": "Straddle side reach", "amount": "15 שניות לכל צד",
       "steps": ["פותחים רגליים ישרות לצדדים, כמה שנוח.", "יד אחת עולה מעל הראש והגוף נוטה לרגל הנגדית.", "מרגישים מתיחה בצד הגוף. מחליפים צד."],
+      "amount_en": "15 seconds each side", "steps_en": ["Open your straight legs out to the sides, as wide as feels good.", "Raise one arm over your head and lean toward the opposite leg.", "Feel the stretch along the side of your body. Switch sides."],
       "beat": 1.4,
       "keys": [{ "leg": [-90, 0, 28] },
                { "leg": [-90, 0, 28], "spine": [0, 0, 30], "neck": [0, 0, 10], "armL": [-160, 0, 15], "armR": [-40, 0, -10], "elbowR": [-20, 0, 0], "hold": 1.5 },
@@ -57,12 +65,14 @@
 
     { "id": "floor-straddle-forward-lean", "view": "floor", "he": "רגליים פתוחות, הטיה קדימה", "en": "Straddle forward lean", "amount": "20 שניות",
       "steps": ["רגליים פתוחות לצדדים, ברכיים כלפי התקרה.", "מניחים ידיים לפנים ומטיילים איתן קדימה.", "!לא מכריחים. אם הגב כואב, נשארים זקופים יותר."],
+      "amount_en": "20 seconds", "steps_en": ["Open your legs out to the sides, knees pointing up to the ceiling.", "Place your hands in front of you and walk them forward.", "!Don't force it. If your back hurts, stay more upright."],
       "beat": 1.5,
       "keys": [{ "leg": [-90, 0, 28] },
                { "leg": [-90, 0, 28], "spine": [35, 0, 0], "neck": [10, 0, 0], "arm": [-82, 0, 0], "elbow": [0, 0, 0], "hold": 2 }] },
 
     { "id": "floor-straddle-reach-to-foot", "view": "floor", "he": "רגליים פתוחות, יד לרגל", "en": "Straddle reach to foot", "amount": "6 לכל צד",
       "steps": ["רגליים פתוחות, ידיים לצדדים.", "מסתובבים ומושיטים יד אל הרגל הנגדית.", "חוזרים למרכז ועוברים לצד השני."],
+      "amount_en": "6 each side", "steps_en": ["Open your legs wide, arms out to the sides.", "Twist and reach one hand toward the opposite foot.", "Come back to center and switch to the other side."],
       "beat": 1.1,
       "keys": [{ "leg": [-90, 0, 28], "arm": [0, 0, 80] },
                { "leg": [-90, 0, 28], "spine": [30, 40, 0], "armR": [-75, 0, 0], "armL": [30, 0, 40], "elbow": [0, 0, 0] },
@@ -71,6 +81,7 @@
 
     { "id": "floor-straddle-twist", "view": "floor", "he": "סיבוב ברגליים פתוחות", "en": "Straddle twist", "amount": "8 לכל צד",
       "steps": ["רגליים פתוחות, ידיים פרושות בגובה הכתפיים.", "מסובבים את הגוף לצד אחד, הירכיים נשארות במקום.", "חוזרים ומסתובבים לצד השני."],
+      "amount_en": "8 each side", "steps_en": ["Open your legs wide, arms out at shoulder height.", "Turn your upper body to one side. Keep your hips still.", "Come back and turn to the other side."],
       "beat": 1,
       "keys": [{ "leg": [-90, 0, 28], "arm": [0, 0, 85], "spine": [0, 40, 0], "neck": [0, 15, 0] },
                { "leg": [-90, 0, 28], "arm": [0, 0, 85] },
@@ -79,6 +90,7 @@
 
     { "id": "floor-cross-legged-twist", "view": "floor", "he": "סיבוב בישיבה מזרחית", "en": "Cross-legged twist", "amount": "20 שניות לכל צד",
       "steps": ["יושבים ברגליים משוכלות, גב זקוף.", "יד אחת על הברך הנגדית, היד השנייה על הרצפה מאחור.", "מסתובבים לאט ומסתכלים מעבר לכתף. מחליפים צד."],
+      "amount_en": "20 seconds each side", "steps_en": ["Sit cross-legged with your back tall.", "Place one hand on the opposite knee and the other hand on the floor behind you.", "Twist slowly and look over your shoulder. Switch sides."],
       "beat": 1.4,
       "keys": [{ "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [-35, 0, -8], "elbow": [-40, 0, 0] },
                { "leg": [-80, 60, 30], "knee": [145, 0, 0], "spine": [0, 45, 0], "neck": [0, 25, 0], "armR": [-50, 0, -35], "elbowR": [-30, 0, 0], "armL": [45, 0, 18], "elbowL": [0, 0, 0], "hold": 1.5 },
@@ -87,6 +99,7 @@
 
     { "id": "floor-cross-legged-side-bend", "view": "floor", "he": "הטיה לצד בישיבה מזרחית", "en": "Cross-legged side bend", "amount": "15 שניות לכל צד",
       "steps": ["רגליים משוכלות, יד אחת על הרצפה לצד הגוף.", "היד השנייה עולה בקשת מעל הראש.", "נוטים לצד ונושמים. מחליפים צד."],
+      "amount_en": "15 seconds each side", "steps_en": ["Sit cross-legged with one hand on the floor beside you.", "Sweep the other arm up over your head.", "Lean to the side and breathe. Switch sides."],
       "beat": 1.4,
       "keys": [{ "leg": [-80, 60, 30], "knee": [145, 0, 0] },
                { "leg": [-80, 60, 30], "knee": [145, 0, 0], "spine": [0, 0, 28], "neck": [0, 0, 8], "armL": [-160, 0, 20], "armR": [0, 0, 30], "elbowR": [-15, 0, 0], "hold": 1.5 },
@@ -95,18 +108,21 @@
 
     { "id": "floor-cross-legged-forward-walk", "view": "floor", "he": "הליכת ידיים קדימה בישיבה מזרחית", "en": "Cross-legged forward walk", "amount": "20 שניות",
       "steps": ["רגליים משוכלות.", "מטיילים עם הידיים על הרצפה קדימה, הגוף נוטה אחריהן.", "נושמים בהטיה, ואז חוזרים לאט למעלה."],
+      "amount_en": "20 seconds", "steps_en": ["Sit cross-legged.", "Walk your hands forward on the floor and let your body follow.", "Breathe while you lean forward, then slowly come back up."],
       "beat": 1.5,
       "keys": [{ "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [-35, 0, -8], "elbow": [-40, 0, 0] },
                { "leg": [-80, 60, 30], "knee": [145, 0, 0], "spine": [40, 0, 0], "neck": [10, 0, 0], "arm": [-80, 0, 5], "elbow": [0, 0, 0], "hold": 2 }] },
 
     { "id": "floor-cross-legged-arm-breath", "view": "floor", "he": "ידיים למעלה עם נשימה", "en": "Cross-legged arm raise breathing", "amount": "6 נשימות",
       "steps": ["רגליים משוכלות, גב זקוף.", "בשאיפה מרימים ידיים מהצדדים מעל הראש.", "בנשיפה מורידים לאט."],
+      "amount_en": "6 breaths", "steps_en": ["Sit cross-legged with your back tall.", "As you breathe in, raise your arms out to the sides and over your head.", "As you breathe out, lower them slowly."],
       "beat": 2,
       "keys": [{ "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [0, 0, 20] },
                { "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [-170, 0, 12], "elbow": [0, 0, 0], "neck": [-8, 0, 0], "hold": 0.6 }] },
 
     { "id": "floor-cross-legged-torso-circles", "view": "floor", "he": "עיגולי גוף בישיבה מזרחית", "en": "Cross-legged torso circles", "amount": "5 לכל כיוון",
       "steps": ["רגליים משוכלות, ידיים על הברכיים.", "מציירים עיגול גדול עם החזה: קדימה, לצד, אחורה, לצד השני.", "אחרי 5 הופכים כיוון."],
+      "amount_en": "5 each direction", "steps_en": ["Sit cross-legged with your hands on your knees.", "Draw a big circle with your chest: forward, to the side, back, to the other side.", "After 5, switch direction."],
       "beat": 0.7, "linear": true,
       "keys": [{ "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [-35, 0, -8], "elbow": [-40, 0, 0], "spine": [20, 0, 0] },
                { "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [-35, 0, -8], "elbow": [-30, 0, 0], "spine": [0, 0, 16] },
@@ -115,12 +131,14 @@
 
     { "id": "floor-cross-legged-cat-cow", "view": "floor", "he": "חתול-פרה בישיבה", "en": "Seated cat-cow", "amount": "8 פעמים",
       "steps": ["רגליים משוכלות, ידיים על הברכיים.", "מעגלים את הגב ומורידים סנטר, כמו חתול.", "פותחים חזה קדימה ומרימים מבט קל."],
+      "amount_en": "8 reps", "steps_en": ["Sit cross-legged with your hands on your knees.", "Round your back and drop your chin, like a cat.", "Open your chest forward and look up slightly."],
       "beat": 1.3,
       "keys": [{ "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [-35, 0, -8], "elbow": [-35, 0, 0], "spine": [26, 0, 0], "neck": [30, 0, 0], "arm.pos": [0, 0, 0.03] },
                { "leg": [-80, 60, 30], "knee": [145, 0, 0], "arm": [-30, 0, -8], "elbow": [-15, 0, 0], "spine": [-10, 0, 0], "neck": [-24, 0, 0], "arm.pos": [0, 0, -0.03] }] },
 
     { "id": "floor-cross-legged-knee-folds", "view": "floor", "he": "הטיה מעל כל ברך", "en": "Cross-legged fold over each knee", "amount": "15 שניות לכל צד",
       "steps": ["רגליים משוכלות.", "מסובבים מעט את הגוף לכיוון ברך אחת ונוטים מעליה.", "ידיים על הרצפה ליד הברך. מחליפים צד."],
+      "amount_en": "15 seconds each side", "steps_en": ["Sit cross-legged.", "Turn your body slightly toward one knee and lean over it.", "Place your hands on the floor near that knee. Switch sides."],
       "beat": 1.4,
       "keys": [{ "leg": [-80, 60, 30], "knee": [145, 0, 0] },
                { "leg": [-80, 60, 30], "knee": [145, 0, 0], "spine": [35, 30, 0], "neck": [10, 0, 0], "arm": [-75, 0, 0], "elbow": [0, 0, 0], "hold": 1.5 },
@@ -129,24 +147,28 @@
 
     { "id": "floor-staff-pose", "view": "floor", "he": "ישיבה זקופה ברגליים ישרות", "en": "Staff pose", "amount": "30 שניות",
       "steps": ["רגליים ישרות קדימה, אצבעות הרגליים לתקרה.", "ידיים על הרצפה ליד הירכיים, דוחפים קלות.", "מאריכים את הגב ומושכים כתפיים למטה."],
+      "amount_en": "30 seconds", "steps_en": ["Legs straight out in front, toes pointing up to the ceiling.", "Place your hands on the floor by your hips and press down lightly.", "Lengthen your back and draw your shoulders down."],
       "beat": 1.5,
       "keys": [{ "leg": [-90, 0, 0], "spine": [8, 0, 0] },
                { "leg": [-90, 0, 0], "foot": [-20, 0, 0], "arm": [45, 0, 13], "elbow": [0, 0, 0], "spine": [-4, 0, 0], "hold": 2 }] },
 
     { "id": "floor-gentle-v-sit", "view": "floor", "he": "V עדין", "en": "Gentle V-sit", "amount": "5 פעמים",
       "steps": ["יושבים עם ברכיים כפופות, ידיים מחזיקות מאחורי הברכיים.", "נוטים מעט אחורה ומרימים כפות רגליים מהרצפה.", "!שומרים על גב ישר. אם הגב התחתון כואב, משאירים רגליים על הרצפה."],
+      "amount_en": "5 reps", "steps_en": ["Sit with your knees bent and hold the backs of your knees.", "Lean back a little and lift your feet off the floor.", "!Keep your back straight. If your lower back hurts, keep your feet on the floor."],
       "beat": 1.3,
       "keys": [{ "leg": [-150, 0, 0], "knee": [165, 0, 0], "arm": [-60, -80, 0], "elbow": [-90, 0, 0], "spine": [10, 0, 0] },
                { "hips": [-30, 0, 0], "leg": [-110, 0, 0], "knee": [80, 0, 0], "arm": [-50, 0, -12], "elbow": [-30, 0, 0], "spine": [8, 0, 0], "hold": 1.5 }] },
 
     { "id": "floor-easy-boat-hold", "view": "floor", "he": "סירה קלה", "en": "Easy boat pose", "amount": "15 שניות",
       "steps": ["נוטים אחורה, שוקיים מקבילות לרצפה.", "ידיים ישרות קדימה ליד הברכיים.", "!בטן אסופה. כואב בגב? מחזיקים את הירכיים בידיים."],
+      "amount_en": "15 seconds", "steps_en": ["Lean back with your shins parallel to the floor.", "Reach your arms straight forward beside your knees.", "!Pull your belly in. Back hurts? Hold your thighs with your hands."],
       "beat": 1.4,
       "keys": [{ "hips": [-30, 0, 0], "leg": [-110, 0, 0], "knee": [80, 0, 0], "arm": [-50, 0, -12], "elbow": [-30, 0, 0] },
                { "hips": [-35, 0, 0], "leg": [-95, 0, 0], "knee": [50, 0, 0], "arm": [-75, 0, 0], "elbow": [0, 0, 0], "spine": [10, 0, 0], "hold": 2 }] },
 
     { "id": "floor-boat-one-leg-reach", "view": "floor", "he": "סירה, יישור רגל אחת", "en": "Boat with one-leg reach", "amount": "6 לכל רגל",
       "steps": ["בתנוחת סירה קלה, ידיים מחזיקות את הירכיים.", "מיישרים רגל אחת באלכסון, ומחזירים.", "!רק אם הגב מרגיש טוב. מחליפים רגל."],
+      "amount_en": "6 each leg", "steps_en": ["In easy boat pose, hold your thighs with your hands.", "Straighten one leg out at an angle, then bring it back.", "!Only if your back feels good. Switch legs."],
       "beat": 1,
       "keys": [{ "hips": [-35, 0, 0], "leg": [-100, 0, 0], "knee": [60, 0, 0], "arm": [-50, 0, -12], "elbow": [-35, 0, 0], "spine": [10, 0, 0] },
                { "hips": [-35, 0, 0], "legL": [-80, 0, 0], "kneeL": [0, 0, 0], "legR": [-100, 0, 0], "kneeR": [60, 0, 0], "arm": [-50, 0, -12], "elbow": [-35, 0, 0], "spine": [10, 0, 0] },
@@ -155,6 +177,7 @@
 
     { "id": "floor-lean-back-leg-lift", "view": "floor", "he": "הרמת רגל ישרה בהישענות", "en": "Lean-back straight leg lift", "amount": "8 לכל רגל",
       "steps": ["נשענים אחורה על הידיים, רגל אחת כפופה.", "מרימים את הרגל הישרה עד גובה הברך השנייה.", "!מורידים לאט. כואב בשורש כף היד? נשענים על המרפקים."],
+      "amount_en": "8 each leg", "steps_en": ["Lean back on your hands with one knee bent.", "Lift the straight leg up to the height of your other knee.", "!Lower it slowly. Wrists hurt? Lean on your elbows."],
       "beat": 1,
       "keys": [{ "hips": [-30, 0, 0], "legL": [-60, 0, 0], "legR": [-110, 0, 0], "kneeR": [150, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
                { "hips": [-30, 0, 0], "legL": [-95, 0, 0], "legR": [-110, 0, 0], "kneeR": [150, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0], "hold": 0.6 },
@@ -163,12 +186,14 @@
 
     { "id": "floor-lean-back-scissors", "view": "floor", "he": "מספריים בהישענות על הידיים", "en": "Lean-back scissors", "amount": "20 פעמים",
       "steps": ["נשענים אחורה על הידיים, רגליים ישרות מעט מעל הרצפה.", "מרימים רגל אחת ומורידים את השנייה, לסירוגין.", "!בטן אסופה. כואב בגב? מורידים רגל אחת לרצפה."],
+      "amount_en": "20 reps", "steps_en": ["Lean back on your hands with your legs straight, just above the floor.", "Lift one leg as you lower the other, switching back and forth.", "!Pull your belly in. Back hurts? Keep one foot on the floor."],
       "beat": 0.45,
       "keys": [{ "hips": [-30, 0, 0], "legL": [-90, 0, 0], "legR": [-68, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
                { "hips": [-30, 0, 0], "legR": [-90, 0, 0], "legL": [-68, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] }] },
 
     { "id": "floor-lean-back-open-close-scissors", "view": "floor", "he": "פתיחה וסגירה של הרגליים", "en": "Lean-back open-close scissors", "amount": "16 פעמים",
       "steps": ["נשענים אחורה על הידיים, רגליים מעט מורמות.", "פותחים רגליים לצדדים וסוגרים כשהן מצטלבות.", "!אם הגב מושך, עושים עם רגליים על הרצפה."],
+      "amount_en": "16 reps", "steps_en": ["Lean back on your hands with your legs slightly raised.", "Open your legs out to the sides, then close them so they cross.", "!If your back pulls, do it with your feet on the floor."],
       "beat": 0.55,
       "keys": [{ "hips": [-30, 0, 0], "leg": [-72, 0, 25], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
                { "hips": [-30, 0, 0], "legL": [-78, 0, -10], "legR": [-68, 0, -6], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
@@ -177,6 +202,7 @@
 
     { "id": "floor-lean-back-marching", "view": "floor", "he": "צעידה בישיבה", "en": "Seated marching", "amount": "20 צעדים",
       "steps": ["נשענים אחורה על הידיים, ברכיים כפופות.", "מרימים ברך אחת לחזה ומורידים, ואז את השנייה.", "!בלי למשוך בכתפיים. אפשר על המרפקים."],
+      "amount_en": "20 steps", "steps_en": ["Lean back on your hands with your knees bent.", "Lift one knee toward your chest and lower it, then the other.", "!Don't hunch your shoulders. You can lean on your elbows."],
       "beat": 0.6,
       "keys": [{ "hips": [-30, 0, 0], "legL": [-150, 0, 0], "kneeL": [110, 0, 0], "legR": [-110, 0, 0], "kneeR": [150, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
                { "hips": [-30, 0, 0], "leg": [-110, 0, 0], "knee": [150, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
@@ -185,6 +211,7 @@
 
     { "id": "floor-knee-windshield-wipers", "view": "floor", "he": "מגבים עם הברכיים", "en": "Seated knee windshield wipers", "amount": "8 לכל צד",
       "steps": ["נשענים אחורה על הידיים, ברכיים כפופות וכפות רגליים פתוחות ברוחב.", "מפילים את שתי הברכיים לצד אחד.", "מרימים ומפילים לצד השני."],
+      "amount_en": "8 each side", "steps_en": ["Lean back on your hands, knees bent and feet wide apart.", "Let both knees fall to one side.", "Bring them up and let them fall to the other side."],
       "beat": 1,
       "keys": [{ "hips": [-30, 0, 0], "legL": [-105, 0, 45], "legR": [-105, 0, -25], "knee": [150, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
                { "hips": [-30, 0, 0], "leg": [-110, 0, 10], "knee": [150, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
@@ -193,6 +220,7 @@
 
     { "id": "floor-seated-figure-four", "view": "floor", "he": "מספר 4 בישיבה", "en": "Seated figure-four stretch", "amount": "20 שניות לכל צד",
       "steps": ["נשענים אחורה על הידיים, ברכיים כפופות.", "מניחים קרסול אחד על הברך השנייה.", "מקרבים את החזה מעט קדימה. מחליפים."],
+      "amount_en": "20 seconds each side", "steps_en": ["Lean back on your hands with your knees bent.", "Place one ankle on the opposite knee.", "Bring your chest a little forward. Switch sides."],
       "beat": 1.4,
       "keys": [{ "hips": [-25, 0, 0], "leg": [-115, 0, 0], "knee": [150, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0] },
                { "hips": [-25, 0, 0], "legL": [-115, 0, 0], "kneeL": [150, 0, 0], "legR": [-100, 70, 40], "kneeR": [110, 0, 0], "arm": [78, 0, 15], "elbow": [0, 0, 0], "spine": [10, 0, 0], "hold": 2 },
@@ -201,27 +229,32 @@
 
     { "id": "floor-ankle-pumps", "view": "floor", "he": "משאבת קרסוליים", "en": "Seated ankle pumps", "amount": "20 פעמים",
       "steps": ["יושבים עם רגליים ישרות.", "מותחים את כפות הרגליים קדימה, כמו בלרינה.", "מושכים את האצבעות חזרה אליכם."],
+      "amount_en": "20 reps", "steps_en": ["Sit with your legs straight.", "Point your feet forward, like a ballerina.", "Pull your toes back toward you."],
       "beat": 0.7,
       "keys": [{ "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "foot": [40, 0, 0] }, { "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "foot": [-30, 0, 0] }] },
 
     { "id": "floor-ankle-circles", "view": "floor", "he": "עיגולי קרסול", "en": "Seated ankle circles", "amount": "10 לכל כיוון",
       "steps": ["רגליים ישרות קדימה.", "מציירים עיגולים גדולים עם כפות הרגליים.", "רק הקרסול זז. אחרי 10 הופכים כיוון."],
+      "amount_en": "10 each direction", "steps_en": ["Legs straight out in front.", "Draw big circles with your feet.", "Only your ankles move. After 10, switch direction."],
       "beat": 0.35, "linear": true,
       "keys": [{ "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "foot": [-25, 0, 0] }, { "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "foot": [5, 0, 30] },
                { "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "foot": [35, 0, 0] }, { "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "foot": [5, 0, -30] }] },
 
     { "id": "floor-alternate-toe-point-flex", "view": "floor", "he": "מתיחה וכיפוף לסירוגין", "en": "Alternating toe point and flex", "amount": "20 פעמים",
       "steps": ["רגליים ישרות קדימה.", "רגל אחת מותחת אצבעות קדימה, השנייה מושכת אחורה.", "מחליפים בקצב נעים."],
+      "amount_en": "20 reps", "steps_en": ["Legs straight out in front.", "Point the toes of one foot forward as you pull the other foot back.", "Switch at a comfortable pace."],
       "beat": 0.6,
       "keys": [{ "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "footL": [40, 0, 0], "footR": [-30, 0, 0] }, { "hips": [0, -50, 0], "pos": [0.35, 0, -0.29], "leg": [-90, 0, 0], "footR": [40, 0, 0], "footL": [-30, 0, 0] }] },
 
     { "id": "floor-leg-roll-in-out", "view": "floor", "he": "גלגול רגליים פנימה והחוצה", "en": "Seated leg rolls", "amount": "15 פעמים",
       "steps": ["רגליים ישרות קדימה, ידיים מאחור על הרצפה.", "מגלגלים את הרגליים כך שהאצבעות פונות החוצה.", "ואז פנימה, עד שהאגודלים נוגעים."],
+      "amount_en": "15 reps", "steps_en": ["Legs straight out in front, hands on the floor behind you.", "Roll your legs so your toes point out.", "Then roll them in until your big toes touch."],
       "beat": 0.7,
       "keys": [{ "leg": [-90, 50, 0], "arm": [45, 0, 13], "elbow": [0, 0, 0] }, { "leg": [-90, -30, 0], "arm": [45, 0, 13], "elbow": [0, 0, 0] }] },
 
     { "id": "floor-heel-slides", "view": "floor", "he": "החלקת עקב", "en": "Seated heel slides", "amount": "10 לכל רגל",
       "steps": ["רגליים ישרות, ידיים על הרצפה מאחור.", "מחליקים עקב אחד לכיוון הישבן, ומיישרים חזרה.", "!תנועה רכה, עד שמרגישים טוב בברך. מחליפים."],
+      "amount_en": "10 each leg", "steps_en": ["Legs straight, hands on the floor behind you.", "Slide one heel toward your bottom, then straighten it back out.", "!Move gently, only as far as your knee feels good. Switch legs."],
       "beat": 1,
       "keys": [{ "leg": [-90, 0, 0], "arm": [45, 0, 13], "elbow": [0, 0, 0] },
                { "legL": [-140, 0, 0], "kneeL": [140, 0, 0], "legR": [-90, 0, 0], "arm": [45, 0, 13], "elbow": [0, 0, 0] },
@@ -230,6 +263,7 @@
 
     { "id": "floor-knee-hug-to-chest", "view": "floor", "he": "חיבוק ברך לחזה", "en": "Seated knee hug", "amount": "15 שניות לכל רגל",
       "steps": ["רגליים ישרות קדימה.", "מקרבים ברך אחת לחזה ומחבקים אותה בשתי הידיים.", "גב זקוף. מחליפים רגל."],
+      "amount_en": "15 seconds each leg", "steps_en": ["Legs straight out in front.", "Bring one knee toward your chest and hug it with both arms.", "Keep your back tall. Switch legs."],
       "beat": 1.3,
       "keys": [{ "leg": [-90, 0, 0] },
                { "legL": [-155, 0, 0], "kneeL": [160, 0, 0], "legR": [-90, 0, 0], "arm": [-60, -80, 0], "elbow": [-90, 0, 0], "hold": 1.5 },
@@ -238,6 +272,7 @@
 
     { "id": "floor-knees-to-chest-rock-back", "view": "floor", "he": "נדנדה על הגב", "en": "Rock back on the spine", "amount": "8 פעמים",
       "steps": ["יושבים ומחבקים את הברכיים, גב מעוגל וסנטר לחזה.", "מתגלגלים אחורה עד השכמות, וחוזרים לישיבה.", "!רק על משטח רך. לא מתגלגלים על הצוואר."],
+      "amount_en": "8 reps", "steps_en": ["Sit and hug your knees, back rounded and chin tucked to your chest.", "Roll back onto your shoulder blades, then roll up to sitting.", "!Only on a soft surface. Don't roll onto your neck."],
       "beat": 0.9,
       "keys": [{ "leg": [-150, 0, 0], "knee": [165, 0, 0], "spine": [18, 0, 0], "neck": [25, 0, 0], "arm": [-60, -80, 0], "elbow": [-90, 0, 0] },
                { "hips": [-45, 0, 0], "leg": [-150, 0, 0], "knee": [165, 0, 0], "spine": [18, 0, 0], "neck": [25, 0, 0], "arm": [-60, -80, 0], "elbow": [-90, 0, 0] },
@@ -246,12 +281,14 @@
 
     { "id": "floor-hug-knees-side-sway", "view": "floor", "he": "נדנוד לצדדים בחיבוק ברכיים", "en": "Hug-knees side sway", "amount": "10 פעמים",
       "steps": ["יושבים ומחבקים את הברכיים.", "מתנדנדים לאט לצד אחד ולצד השני.", "נעים לגב התחתון. נושמים רגוע."],
+      "amount_en": "10 reps", "steps_en": ["Sit and hug your knees.", "Slowly rock to one side and then the other.", "Feels nice on your lower back. Breathe calmly."],
       "beat": 1,
       "keys": [{ "hips": [0, 0, 22], "leg": [-150, 0, 0], "knee": [165, 0, 0], "spine": [15, 0, 0], "arm": [-60, -80, 0], "elbow": [-90, 0, 0] },
                { "hips": [0, 0, -22], "leg": [-150, 0, 0], "knee": [165, 0, 0], "spine": [15, 0, 0], "arm": [-60, -80, 0], "elbow": [-90, 0, 0] }] },
 
     { "id": "floor-bent-knee-spinal-twist", "view": "floor", "he": "סיבוב גב עם ברך כפופה", "en": "Seated spinal twist, knee bent", "amount": "20 שניות לכל צד",
       "steps": ["רגל אחת ישרה, השנייה כפופה וכף הרגל מעבר לברך הישרה.", "מסתובבים אל הברך הכפופה, המרפק הנגדי נשען על צדה החיצוני.", "היד השנייה על הרצפה מאחור. מחליפים צד."],
+      "amount_en": "20 seconds each side", "steps_en": ["Keep one leg straight. Bend the other and place that foot on the outside of the straight knee.", "Twist toward the bent knee and rest your opposite elbow against its outside.", "Place your other hand on the floor behind you. Switch sides."],
       "beat": 1.4,
       "keys": [{ "legL": [-90, 0, 0], "legR": [-135, 0, -12], "kneeR": [145, 0, 0] },
                { "legL": [-90, 0, 0], "legR": [-135, 0, -12], "kneeR": [145, 0, 0], "spine": [0, -45, 0], "neck": [0, -25, 0], "armL": [-60, 0, -40], "elbowL": [-80, 0, 0], "armR": [45, 0, 18], "elbowR": [0, 0, 0], "hold": 1.5 },
@@ -260,6 +297,7 @@
 
     { "id": "floor-long-sit-side-bend", "view": "floor", "he": "הטיה לצד ברגליים ישרות", "en": "Long-sit side bend", "amount": "6 לכל צד",
       "steps": ["רגליים ישרות קדימה, יד אחת על הרצפה ליד הירך.", "היד השנייה עולה מעל הראש.", "נוטים לאט לצד, חוזרים ומחליפים."],
+      "amount_en": "6 each side", "steps_en": ["Legs straight out in front, one hand on the floor by your hip.", "Raise your other arm over your head.", "Slowly lean to the side, come back, and switch."],
       "beat": 1.2,
       "keys": [{ "leg": [-90, 0, 0] },
                { "leg": [-90, 0, 0], "spine": [0, 0, 25], "armL": [-160, 0, 18], "armR": [0, 0, 28], "elbowR": [-10, 0, 0] },
@@ -268,6 +306,7 @@
 
     { "id": "floor-butterfly-twist", "view": "floor", "he": "סיבוב בישיבת פרפר", "en": "Butterfly twist", "amount": "15 שניות לכל צד",
       "steps": ["ישיבת פרפר, גב זקוף.", "יד אחת על הברך הנגדית, השנייה מאחור על הרצפה.", "מסתובבים בעדינות ומחליפים צד."],
+      "amount_en": "15 seconds each side", "steps_en": ["Sit in butterfly pose with your back tall.", "Place one hand on the opposite knee and the other on the floor behind you.", "Twist gently, then switch sides."],
       "beat": 1.4,
       "keys": [{ "leg": [-90, 70, 45], "knee": [130, 0, 0] },
                { "leg": [-90, 70, 45], "knee": [130, 0, 0], "spine": [0, 40, 0], "neck": [0, 25, 0], "armR": [-45, 0, -35], "elbowR": [-25, 0, 0], "armL": [45, 0, 18], "elbowL": [0, 0, 0], "hold": 1.5 },
@@ -276,6 +315,7 @@
 
     { "id": "floor-seated-chest-opener", "view": "floor", "he": "פתיחת חזה בישיבה", "en": "Seated chest opener", "amount": "20 שניות",
       "steps": ["יושבים עם ברכיים כפופות, ידיים על הרצפה מאחור.", "מצמידים שכמות ופותחים את החזה למעלה.", "!כואב בשורש כף היד? מסובבים את האצבעות לצדדים."],
+      "amount_en": "20 seconds", "steps_en": ["Sit with your knees bent, hands on the floor behind you.", "Squeeze your shoulder blades together and lift your chest.", "!Wrists hurt? Turn your fingers out to the sides."],
       "beat": 1.4,
       "keys": [{ "leg": [-130, 0, 0], "knee": [115, 0, 0], "arm": [45, 0, 13], "elbow": [0, 0, 0] },
                { "hips": [-20, 0, 0], "leg": [-120, 0, 0], "knee": [150, 0, 0], "arm": [85, 0, 15], "elbow": [0, 0, 0], "spine": [-15, 0, 0], "neck": [-12, 0, 0], "arm.pos": [0, 0, -0.03], "hold": 2 }] }

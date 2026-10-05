@@ -9,6 +9,7 @@ contextBridge.exposeInMainWorld('desk', {
   settings: () => ipcRenderer.send('settings'),
   quit: () => ipcRenderer.send('quit'),
   vanish: () => ipcRenderer.send('vanish'),
+  lang: l => ipcRenderer.send('lang', l),
   startup: on => ipcRenderer.invoke('startup', on),
   onCommand: fn => ipcRenderer.on('command', (e, c) => fn(c)),
 });

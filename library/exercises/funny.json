@@ -17,6 +17,13 @@
     "נוחתים שטוח על הגב. הקהל לא תפס...",
     "!לצפייה בלבד, לא לנסות בבית."
    ],
+   "amount_en": "Once, in your imagination",
+   "steps_en": [
+    "Spread your arms wide like a rock star.",
+    "Lean back and trust the crowd.",
+    "Land flat on your back. The crowd didn't catch you...",
+    "!Watch only. Don't try this at home."
+   ],
    "beat": 0.6,
    "keys": [
     {},
@@ -77,6 +84,13 @@
     "עוצרים לרגע דרמטי.",
     "פותחים את היד, והעכבר נופל.",
     "משלבים ידיים ומסתכלים הצידה. קול."
+   ],
+   "amount_en": "Once, after a deadline",
+   "steps_en": [
+    "Slowly raise the mouse in front of everyone.",
+    "Pause for a dramatic moment.",
+    "Open your hand and let the mouse drop.",
+    "Cross your arms and look away. Cool."
    ],
    "beat": 0.5,
    "keys": [
@@ -176,6 +190,13 @@
     "קופצים גבוה ומתגלגלים אחורה באוויר.",
     "נוחתים על הרגליים וידיים למעלה.",
     "!לצפייה בלבד, לא לנסות בבית."
+   ],
+   "amount_en": "Once, only in the movies",
+   "steps_en": [
+    "Crouch down and swing your arms back.",
+    "Jump high and flip backward in the air.",
+    "Land on your feet with your arms up.",
+    "!Watch only. Don't try this at home."
    ],
    "beat": 0.35,
    "keys": [
@@ -339,6 +360,13 @@
     "נוחתים בחזרה בכוכב ומחייכים.",
     "!לצפייה בלבד, לא לנסות בבית."
    ],
+   "amount_en": "Once, to the side",
+   "steps_en": [
+    "Arms up and legs apart, like a star.",
+    "Flip to the side: hand, hand, foot, foot.",
+    "Land back in the star shape and smile.",
+    "!Watch only. Don't try this at home."
+   ],
    "beat": 0.4,
    "keys": [
     {
@@ -463,6 +491,13 @@
     "צונחים בעדינות על הצד. אוסקר!",
     "!בחיים האמיתיים: יושבים לפני שנופלים."
    ],
+   "amount_en": "Once, when you see the bill",
+   "steps_en": [
+    "Hand on your forehead, eyes to the sky.",
+    "Let your knees give way slowly.",
+    "Sink gently onto your side. Oscar-worthy!",
+    "!In real life: sit down before you fall."
+   ],
    "beat": 0.7,
    "keys": [
     {},
@@ -567,6 +602,13 @@
     "נוחתים על ברך אחת, אגרוף ברצפה.",
     "יד אחת מאחור, מרימים מבט לאט.",
     "!הברכיים שלנו לא גיבורות: מדמיינים, לא נוחתים."
+   ],
+   "amount_en": "Once, as you walk into the office",
+   "steps_en": [
+    "Fly in from above.",
+    "Land on one knee with your fist on the floor.",
+    "One arm behind you, slowly look up.",
+    "!Our knees are not superheroes: imagine it, don't land it."
    ],
    "beat": 0.45,
    "keys": [
@@ -679,13 +721,20 @@
   {
    "id": "funny-code-works-victory",
    "he": "הקוד סוף סוף עובד!",
-   "en": "Code finally works celebration",
+   "en": "Code finally works!",
    "amount": "עד שהבאג חוזר",
    "steps": [
     "ידיים למעלה ב-V גדול.",
     "קופצים קטן משמחה.",
     "מנענעים את הגוף מצד לצד.",
     "!בברכיים רגישות: בלי קפיצה, רק ידיים."
+   ],
+   "amount_en": "Until the bug comes back",
+   "steps_en": [
+    "Arms up in a big V.",
+    "Do a little happy jump.",
+    "Sway your body from side to side.",
+    "!Sensitive knees: skip the jump, just use your arms."
    ],
    "beat": 0.4,
    "keys": [
@@ -796,6 +845,12 @@
     "מורידים את הראש לכף היד.",
     "נאנחים עמוק ומנידים ראש לאט."
    ],
+   "amount_en": "Every time someone sends a file on WhatsApp",
+   "steps_en": [
+    "Look at what just happened.",
+    "Drop your head into your palm.",
+    "Sigh deeply and slowly shake your head."
+   ],
    "beat": 0.6,
    "keys": [
     {},
@@ -864,6 +919,12 @@
     "מניפים יד ורגל נגדית לאט מאוד.",
     "פנים רציניות, כאילו בסרט פעולה.",
     "מחליפים צד כמו בהילוך איטי."
+   ],
+   "amount_en": "20 seconds, with dramatic music",
+   "steps_en": [
+    "Swing one arm and the opposite leg very slowly.",
+    "Keep a serious face, like in an action movie.",
+    "Switch sides, as if in slow motion."
    ],
    "beat": 1.4,
    "keys": [
@@ -975,6 +1036,12 @@
     "ברך אחת כפופה, עקב באוויר.",
     "מחליקים את הרגל הישרה אחורה.",
     "מחליפים רגל. נראה כמו הליכה קדימה, אבל זזים אחורה!"
+   ],
+   "amount_en": "4 steps back",
+   "steps_en": [
+    "Bend one knee, heel in the air.",
+    "Slide your straight leg back.",
+    "Switch legs. It looks like walking forward, but you move back!"
    ],
    "beat": 0.5,
    "keys": [
@@ -1204,6 +1271,13 @@
     "מתכופפים קצת ומנענעים את הישבן.",
     "!בברכיים רגישות: כיפוף קטן בלבד."
    ],
+   "amount_en": "4 rounds",
+   "steps_en": [
+    "Hands under your armpits, like wings.",
+    "Flap 4 times.",
+    "Bend down a little and wiggle your behind.",
+    "!Sensitive knees: just a small bend."
+   ],
    "beat": 0.3,
    "keys": [
     {
@@ -1296,6 +1370,12 @@
     "ראש נוטה לצד.",
     "צעדים נוקשים בלי לכופף ברכיים. אוווורררר..."
    ],
+   "amount_en": "10 steps, in the morning before coffee",
+   "steps_en": [
+    "Arms straight out in front, hands limp.",
+    "Tilt your head to the side.",
+    "Take stiff steps without bending your knees. Uuurrrgh..."
+   ],
    "beat": 0.8,
    "keys": [
     {
@@ -1383,6 +1463,12 @@
     "מרפקים צמודים, ידיים קטנות מקדימה.",
     "כפות יד רפויות למטה.",
     "צועדים כבד ושואגים. לא מגיעים לשום מדף."
+   ],
+   "amount_en": "10 steps, with a roar",
+   "steps_en": [
+    "Elbows tucked in, little hands in front.",
+    "Let your hands hang limp.",
+    "Stomp heavily and roar. You can't reach a single shelf."
    ],
    "beat": 0.6,
    "keys": [
@@ -1546,6 +1632,13 @@
     "יד אחת מחזיקה את צוואר הגיטרה.",
     "היד השנייה פורטת למעלה ולמטה.",
     "מנענעים ראש עם הקצב."
+   ],
+   "amount_en": "A 30-second solo",
+   "steps_en": [
+    "Feet apart, lean back a little.",
+    "Hold the neck of the guitar with one hand.",
+    "Strum up and down with the other hand.",
+    "Nod your head to the beat."
    ],
    "beat": 0.3,
    "keys": [
@@ -1720,6 +1813,13 @@
     "רוקעים חזק ומחליפים צד.",
     "!בברכיים רגישות: מרימים רגל נמוך ולא יורדים עמוק."
    ],
+   "amount_en": "6 stomps",
+   "steps_en": [
+    "Feet wide, hands on your thighs.",
+    "Lift one leg to the side and lean the other way.",
+    "Stomp hard and switch sides.",
+    "!Sensitive knees: lift your leg low and don't squat deep."
+   ],
    "beat": 0.6,
    "keys": [
     {
@@ -1859,13 +1959,20 @@
    "seated": true,
    "view": "upper",
    "he": "מכות במקלדת מתסכול",
-   "en": "Keyboard smash frustration",
+   "en": "Frustrated keyboard smash",
    "amount": "5 שניות, ואז נושמים",
    "steps": [
     "יושבים מול המחשב שלא עובד.",
     "מרימים ידיים ו... מכים באוויר מעל המקלדת.",
     "מנענעים ראש בייאוש.",
     "!לא מכים באמת: שורש כף היד (והמקלדת) יודו לכם."
+   ],
+   "amount_en": "5 seconds, then breathe",
+   "steps_en": [
+    "Sit in front of the computer that isn't working.",
+    "Raise your hands and... hit the air above the keyboard.",
+    "Shake your head in despair.",
+    "!Don't really hit it: your wrists (and your keyboard) will thank you."
    ],
    "beat": 0.25,
    "keys": [
@@ -1992,12 +2099,18 @@
   {
    "id": "funny-it-compiles-fist-pump",
    "he": "זה מתקמפל!",
-   "en": "It compiles! fist pump",
+   "en": "It compiles!",
    "amount": "3 פעמים, בקול",
    "steps": [
     "אגרוף מוכן ליד הכתף.",
     "יורים אגרוף לשמיים.",
     "מושכים אותו למטה עם ברך למעלה: יש!"
+   ],
+   "amount_en": "3 times, out loud",
+   "steps_en": [
+    "Get your fist ready by your shoulder.",
+    "Shoot your fist up to the sky.",
+    "Pull it down and lift a knee: Yes!"
    ],
    "beat": 0.35,
    "keys": [
@@ -2087,6 +2200,12 @@
     "מתכופפים קצת, ידיים כמו כפות של חתול.",
     "מרימים ברך גבוה ויורדים על קצות האצבעות.",
     "מציצים לצדדים. אף אחד לא שם לב."
+   ],
+   "amount_en": "10 quiet steps",
+   "steps_en": [
+    "Bend down a little, hands like cat paws.",
+    "Lift your knee high and land on your toes.",
+    "Peek to the sides. Nobody noticed."
    ],
    "beat": 0.7,
    "keys": [
@@ -2208,6 +2327,13 @@
     "מתכופפים בקידה ומחזיקים. תודה, תודה!",
     "!בגב רגיש: קידה קטנה מספיקה."
    ],
+   "amount_en": "Once, after the presentation",
+   "steps_en": [
+    "Sweep one arm open in a big gesture.",
+    "One hand on your belly, the other behind you.",
+    "Bend into a bow and hold. Thank you, thank you!",
+    "!Sensitive back: a small bow is enough."
+   ],
    "beat": 0.7,
    "keys": [
     {
@@ -2291,6 +2417,12 @@
     "ידיים פתוחות, כפות למעלה.",
     "ראש לצד: מה אני יכול לעשות?"
    ],
+   "amount_en": "Once, it is what it is",
+   "steps_en": [
+    "Lift your shoulders to your ears.",
+    "Open your hands, palms up.",
+    "Tilt your head: what can I do?"
+   ],
    "beat": 0.5,
    "keys": [
     {},
@@ -2359,6 +2491,12 @@
     "יד אחת ישרה באלכסון למעלה.",
     "מכניסים את הפנים למרפק של היד השנייה.",
     "מחליפים צד במהירות."
+   ],
+   "amount_en": "4 times each side",
+   "steps_en": [
+    "Stretch one arm straight up on a diagonal.",
+    "Tuck your face into the elbow of your other arm.",
+    "Switch sides quickly."
    ],
    "beat": 0.5,
    "keys": [
@@ -2441,6 +2579,12 @@
     "ידיים ישרות מתנדנדות מצד לצד.",
     "פעם מלפנים לגוף, פעם מאחור.",
     "הירכיים זזות הפוך לידיים."
+   ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Swing your straight arms from side to side.",
+    "First in front of your body, then behind.",
+    "Move your hips the opposite way from your arms."
    ],
    "beat": 0.3,
    "keys": [
@@ -2543,6 +2687,12 @@
     "אמות קדימה, תנועות קטועות.",
     "זורקים יד לצד ועוצרים בבת אחת.",
     "סיבוב ראש חד. ביפ בופ."
+   ],
+   "amount_en": "20 seconds, no smiling",
+   "steps_en": [
+    "Forearms forward, choppy moves.",
+    "Throw an arm to the side and stop all at once.",
+    "Snap your head to the side. Beep boop."
    ],
    "beat": 0.18,
    "keys": [
@@ -2647,6 +2797,12 @@
     "יד מוכנה ליד האף.",
     "אפצ'י! מתכופפים קדימה בבת אחת."
    ],
+   "amount_en": "Once, achoo!",
+   "steps_en": [
+    "Ah... ah... breathe in and lean back.",
+    "Hand ready by your nose.",
+    "Achoo! Bend forward all at once."
+   ],
    "beat": 0.4,
    "keys": [
     {},
@@ -2720,6 +2876,12 @@
     "ידיים ישרות לצדדים, כפות פתוחות החוצה.",
     "רגליים נוקשות, צעדים קטנים.",
     "מתנדנדים מצד לצד."
+   ],
+   "amount_en": "10 steps",
+   "steps_en": [
+    "Arms straight at your sides, palms turned out.",
+    "Stiff legs, small steps.",
+    "Waddle from side to side."
    ],
    "beat": 0.35,
    "keys": [
@@ -2799,6 +2961,12 @@
     "יד אחת מצביעה לתקרה באלכסון.",
     "יורדת לאלכסון אל הירך השנייה.",
     "הירכיים זזות יחד. סטיין אלייב!"
+   ],
+   "amount_en": "8 times, to the beat",
+   "steps_en": [
+    "Point one hand at the ceiling on a diagonal.",
+    "Bring it down across to the opposite hip.",
+    "Move your hips along. Stayin' alive!"
    ],
    "beat": 0.5,
    "keys": [
@@ -2900,6 +3068,13 @@
     "יורדים על הברכיים. הבאג ניצח.",
     "!בברכיים רגישות: נשארים לעמוד."
    ],
+   "amount_en": "Once, on a Friday",
+   "steps_en": [
+    "Raise your hands in surrender.",
+    "Hang your head in shame.",
+    "Drop to your knees. The bug won.",
+    "!Sensitive knees: stay standing."
+   ],
    "beat": 0.6,
    "keys": [
     {},
@@ -2974,6 +3149,13 @@
     "יד אחת מגרדת בראש, השנייה בבית השחי.",
     "קופצים קטן ומחליפים ידיים.",
     "!בברכיים רגישות: בלי קפיצה."
+   ],
+   "amount_en": "10 little hops, ooh-ooh-aah-aah",
+   "steps_en": [
+    "Knees bent and wide.",
+    "One hand scratches your head, the other your armpit.",
+    "Hop a little and switch hands.",
+    "!Sensitive knees: no hopping."
    ],
    "beat": 0.35,
    "keys": [
@@ -3064,6 +3246,12 @@
     "שוחים חתירה באוויר, יד אחרי יד.",
     "מסובבים ראש לצד לנשימה.",
     "מחכים שמישהו יביא מגבת."
+   ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Do the front crawl in the air, one arm after the other.",
+    "Turn your head to the side to breathe.",
+    "Wait for someone to bring you a towel."
    ],
    "beat": 0.3,
    "keys": [
@@ -3159,6 +3347,13 @@
     "ראש מצד לצד: לא רוצה!",
     "!בגב רגיש: בועטים לאט ורך."
    ],
+   "amount_en": "10 seconds, then get up with dignity",
+   "steps_en": [
+    "Lie on your back.",
+    "Kick your legs and pound the floor with your hands.",
+    "Shake your head side to side: I don't want to!",
+    "!Sensitive back: kick slowly and softly."
+   ],
    "beat": 0.25,
    "keys": [
     {
@@ -3231,12 +3426,18 @@
    "id": "funny-sleepy-nod-off",
    "once": true,
    "he": "נרדמים בעמידה",
-   "en": "Falling asleep standing",
+   "en": "Falling asleep standing up",
    "amount": "פעם אחת, אחרי ארוחת צהריים",
    "steps": [
     "מפהקים ומותחים ידיים למעלה.",
     "הראש נופל, הגוף נרדם.",
     "מתעוררים בבהלה: אני ער! אני ער!"
+   ],
+   "amount_en": "Once, after lunch",
+   "steps_en": [
+    "Yawn and stretch your arms up.",
+    "Your head drops and your body falls asleep.",
+    "Wake up with a start: I'm awake! I'm awake!"
    ],
    "beat": 0.7,
    "keys": [
@@ -3320,6 +3521,12 @@
     "מוחאים כף חזק מול הפנים.",
     "פותחים לאט ומציצים... פספסנו."
    ],
+   "amount_en": "Until you catch the mosquito",
+   "steps_en": [
+    "Follow the mosquito with your eyes.",
+    "Clap hard in front of your face.",
+    "Open slowly and peek... missed it."
+   ],
    "beat": 0.4,
    "keys": [
     {
@@ -3383,6 +3590,13 @@
     "ידיים אחורה כמו כנפיים.",
     "מתנדנדים קצת ושומרים על הפנים רציניות.",
     "!לעמוד ליד קיר או כיסא."
+   ],
+   "amount_en": "20 seconds each leg",
+   "steps_en": [
+    "Stand on one leg with the other leg bent behind you.",
+    "Arms back like wings.",
+    "Sway a little and keep a straight face.",
+    "!Stand next to a wall or a chair."
    ],
    "beat": 0.6,
    "keys": [
@@ -3456,6 +3670,12 @@
     "יד אחת קדימה ולמעלה, השנייה למטה ואחורה.",
     "כפות ידיים שטוחות.",
     "הראש מחליק מצד לצד."
+   ],
+   "amount_en": "8 steps",
+   "steps_en": [
+    "One arm forward and up, the other down and back.",
+    "Keep your hands flat.",
+    "Slide your head from side to side."
    ],
    "beat": 0.5,
    "keys": [
@@ -3546,6 +3766,13 @@
     "אוי, אוי, אוי!",
     "!בברכיים רגישות: רק מרימים עקבים."
    ],
+   "amount_en": "10 seconds",
+   "steps_en": [
+    "Lift your feet fast, one after the other.",
+    "Flap your arms up high.",
+    "Ow, ow, ow!",
+    "!Sensitive knees: just lift your heels."
+   ],
    "beat": 0.18,
    "keys": [
     {
@@ -3606,6 +3833,12 @@
     "מתכופפים קצת קדימה.",
     "מסובבים את הגוף מהר מצד לצד.",
     "ידיים רפויות עפות לבד."
+   ],
+   "amount_en": "5 seconds",
+   "steps_en": [
+    "Bend forward a little.",
+    "Twist your body fast from side to side.",
+    "Let your loose arms fly on their own."
    ],
    "beat": 0.12,
    "keys": [
@@ -3676,6 +3909,12 @@
     "מחכים רגע...",
     "פותחים ידיים לצדדים: קוקו!"
    ],
+   "amount_en": "5 times",
+   "steps_en": [
+    "Hide your face with both hands.",
+    "Wait a moment...",
+    "Open your hands out to the sides: peekaboo!"
+   ],
    "beat": 0.35,
    "keys": [
     {
@@ -3725,6 +3964,12 @@
     "מרימים מרפקים ומכווצים שרירי יד.",
     "מסתכלים על השריר בהערצה.",
     "מתכופפים קצת ומכווצים הכל. גרררר."
+   ],
+   "amount_en": "3 poses",
+   "steps_en": [
+    "Raise your elbows and flex your arm muscles.",
+    "Gaze at your muscle in admiration.",
+    "Lean forward a little and flex everything. Grrrr."
    ],
    "beat": 0.6,
    "keys": [
@@ -3800,6 +4045,13 @@
     "רגל אחת עפה קדימה, ידיים לשמיים.",
     "נוחתים על הגב. אאוץ'.",
     "!לצפייה בלבד, לא לנסות בבית."
+   ],
+   "amount_en": "Once, whoops!",
+   "steps_en": [
+    "Walk with confidence.",
+    "One leg flies forward, arms to the sky.",
+    "Land on your back. Ouch.",
+    "!Watch only. Don't try this at home."
    ],
    "beat": 0.4,
    "keys": [

@@ -16,6 +16,12 @@
     "מציירים עיגול גדול ואיטי עם האגן.",
     "אחרי 8 הופכים כיוון."
    ],
+   "amount_en": "8 each direction",
+   "steps_en": [
+    "Feet shoulder-width apart, hands on your hips.",
+    "Draw a big, slow circle with your hips.",
+    "After 8, switch direction."
+   ],
    "beat": 0.45,
    "keys": [
     {
@@ -168,6 +174,12 @@
     "מזיזים את האגן לצד אחד, הכתפיים נשארות במקום.",
     "עוברים לצד השני בתנועה רכה."
    ],
+   "amount_en": "10 each side",
+   "steps_en": [
+    "Hands on your hips, knees soft.",
+    "Shift your hips to one side. Keep your shoulders still.",
+    "Glide smoothly over to the other side."
+   ],
    "beat": 0.8,
    "keys": [
     {
@@ -246,6 +258,12 @@
     "מנדנדים רגל ישרה קדימה ואחורה, בתנופה קטנה.",
     "הגב זקוף. מחליפים רגל."
    ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hold the back of a chair or a wall with one hand.",
+    "Swing one straight leg forward and back. Keep the swing small.",
+    "Keep your back tall. Switch legs."
+   ],
    "beat": 0.7,
    "keys": [
     {
@@ -304,6 +322,12 @@
     "מנדנדים רגל לצד, ובחזרה מעט לפני הרגל השנייה.",
     "תנופה קטנה ורכה. מחליפים רגל."
    ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hold the back of a chair in front of you with both hands.",
+    "Swing one leg out to the side, then back across a little in front of the other leg.",
+    "Keep the swing small and soft. Switch legs."
+   ],
    "beat": 0.7,
    "keys": [
     {
@@ -352,6 +376,12 @@
     "אוחזים בגב כיסא, עומדים על רגל אחת.",
     "רגל ישרה מעט קדימה מציירת עיגולים קטנים באוויר.",
     "הופכים כיוון ומחליפים רגל."
+   ],
+   "amount_en": "8 each direction",
+   "steps_en": [
+    "Hold the back of a chair and stand on one leg.",
+    "Keep the other leg straight and a little forward, and draw small circles in the air with it.",
+    "Switch direction, then switch legs."
    ],
    "beat": 0.3,
    "keys": [
@@ -543,6 +573,12 @@
     "פותחים את הברך לצד, כמו שער שנפתח.",
     "מורידים את הרגל ומחליפים."
    ],
+   "amount_en": "8 each leg",
+   "steps_en": [
+    "Lift one knee in front of you to hip height.",
+    "Swing the knee out to the side, like a gate opening.",
+    "Lower your leg and switch sides."
+   ],
    "beat": 0.9,
    "keys": [
     {
@@ -624,6 +660,12 @@
     "מרימים ברך לצד, כמו שער פתוח.",
     "מסובבים אותה קדימה עד מול הגוף.",
     "מורידים את הרגל ומחליפים."
+   ],
+   "amount_en": "8 each leg",
+   "steps_en": [
+    "Lift one knee out to the side, like an open gate.",
+    "Swing it around to the front of your body.",
+    "Lower your leg and switch sides."
    ],
    "beat": 0.9,
    "keys": [
@@ -707,6 +749,12 @@
     "מרימים רגל ישרה לצד, הבוהן קדימה.",
     "יורדים לאט. הגוף לא נוטה."
    ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hold the back of a chair with one hand.",
+    "Lift one straight leg out to the side, toes pointing forward.",
+    "Lower it slowly. Keep your body upright."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -740,6 +788,12 @@
     "אוחזים בשתי ידיים בגב כיסא, הגוף נוטה מעט קדימה.",
     "מרימים רגל ישרה לאחור ומכווצים את הישבן.",
     "!לא מקשתים את הגב התחתון, ההרמה קטנה."
+   ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hold the back of a chair with both hands and lean forward a little.",
+    "Lift one straight leg behind you and squeeze your glutes.",
+    "!Don't arch your lower back. Keep the lift small."
    ],
    "beat": 1,
    "keys": [
@@ -805,6 +859,12 @@
     "ברך כפופה, מרימים אותה לצד.",
     "יורדים לאט. האגן לא מסתובב."
    ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hold the back of a chair with both hands.",
+    "Keep one knee bent and lift it out to the side.",
+    "Lower it slowly. Don't let your hips turn."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -863,6 +923,12 @@
     "עומדים זקוף, ידיים על המותניים.",
     "מרימים ברך לאט לגובה הירך.",
     "מורידים ועוברים לרגל השנייה."
+   ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Stand tall with your hands on your hips.",
+    "Slowly lift one knee to hip height.",
+    "Lower it and switch to the other leg."
    ],
    "beat": 0.9,
    "keys": [
@@ -966,6 +1032,12 @@
     "הידיים מתנדנדות בתנועה נגדית.",
     "קצב נוח, נוחתים בשקט על כל כף הרגל."
    ],
+   "amount_en": "30 seconds",
+   "steps_en": [
+    "March in place, lifting your knees.",
+    "Swing your arms in opposition to your legs.",
+    "Go at a comfortable pace and land softly on your whole foot."
+   ],
    "beat": 0.5,
    "keys": [
     {
@@ -1044,6 +1116,12 @@
     "מקפלים ברך ומביאים עקב לכיוון הישבן.",
     "הירכיים נשארות צמודות. יורדים לאט."
    ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hold the back of a chair with both hands.",
+    "Bend one knee and bring your heel toward your butt.",
+    "Keep your thighs side by side. Lower slowly."
+   ],
    "beat": 0.9,
    "keys": [
     {
@@ -1102,6 +1180,12 @@
     "צועדים במקום ומעיפים עקב לאחור בכל צעד.",
     "ידיים על המותניים או מתנדנדות.",
     "קצב רגוע, נוחתים רך."
+   ],
+   "amount_en": "30 seconds",
+   "steps_en": [
+    "March in place and kick each heel back toward your butt.",
+    "Hands on your hips, or let them swing.",
+    "Keep an easy pace and land softly."
    ],
    "beat": 0.5,
    "keys": [
@@ -1170,6 +1254,12 @@
     "ידיים על המותניים.",
     "שולחים רגל קדימה ונוגעים בבוהן ברצפה.",
     "חוזרים ומחליפים רגל."
+   ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hands on your hips.",
+    "Reach one foot forward and tap your toes on the floor.",
+    "Bring it back and switch legs."
    ],
    "beat": 0.7,
    "keys": [
@@ -1292,6 +1382,12 @@
     "ידיים על המותניים.",
     "שולחים רגל לאחור ונוגעים בבוהן ברצפה.",
     "הגוף זקוף. חוזרים ומחליפים רגל."
+   ],
+   "amount_en": "10 each leg",
+   "steps_en": [
+    "Hands on your hips.",
+    "Reach one foot back and tap your toes on the floor.",
+    "Stand tall. Bring it back and switch legs."
    ],
    "beat": 0.7,
    "keys": [
@@ -1425,6 +1521,12 @@
     "חוזרים למרכז ועוברים לצד השני.",
     "הידיים נפתחות לצדדים בכל צעד."
    ],
+   "amount_en": "10 each side",
+   "steps_en": [
+    "Take a small step to the side and tap your toes.",
+    "Come back to center and repeat on the other side.",
+    "Open your arms out to the sides with each step."
+   ],
    "beat": 0.6,
    "keys": [
     {
@@ -1464,6 +1566,12 @@
     "רגליים ברוחב הכתפיים, ידיים קדימה.",
     "יורדים מעט, כאילו מתיישבים על כיסא גבוה.",
     "!הברכיים מעל הבהונות ולא נכנסות פנימה."
+   ],
+   "amount_en": "10 reps",
+   "steps_en": [
+    "Feet shoulder-width apart, arms forward.",
+    "Lower yourself a little, as if sitting on a tall chair.",
+    "!Keep your knees over your toes, not caving in."
    ],
    "beat": 1,
    "keys": [
@@ -1524,6 +1632,12 @@
     "הגוף נוטה קדימה, הידיים נמתחות קדימה לאיזון.",
     "!יורדים רק עד שנוח לברכיים, ועולים דרך העקבים."
    ],
+   "amount_en": "8 reps",
+   "steps_en": [
+    "Push your hips back as if sitting on an imaginary chair.",
+    "Lean forward and reach your arms out in front for balance.",
+    "!Go down only as far as feels good for your knees, and push up through your heels."
+   ],
    "beat": 1.3,
    "keys": [
     {
@@ -1582,6 +1696,12 @@
     "יורדים לסקוואט קטן, ידיים ישרות קדימה.",
     "מחזיקים ונושמים רגוע.",
     "!אם הברכיים כואבות, עולים מעט יותר גבוה."
+   ],
+   "amount_en": "20 seconds",
+   "steps_en": [
+    "Lower into a small squat with your arms straight out in front.",
+    "Hold and breathe calmly.",
+    "!If your knees hurt, come up a bit higher."
    ],
    "beat": 1.2,
    "keys": [
@@ -1647,6 +1767,12 @@
     "יורדים מעט, הברכיים נפתחות לכיוון הבהונות.",
     "!ירידה קטנה, הגב זקוף."
    ],
+   "amount_en": "10 reps",
+   "steps_en": [
+    "Stand with your feet wide, toes turned out a little.",
+    "Lower yourself a little, letting your knees open toward your toes.",
+    "!Keep the dip small and your back straight."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -1710,6 +1836,12 @@
     "יורדים לסקוואט קטן.",
     "עולים, וממשיכים עד הבהונות עם ידיים למעלה.",
     "יורדים לאט לעקבים."
+   ],
+   "amount_en": "8 reps",
+   "steps_en": [
+    "Lower into a small squat.",
+    "Stand up and keep going onto your toes, arms reaching up.",
+    "Slowly lower back onto your heels."
    ],
    "beat": 0.9,
    "keys": [
@@ -1793,6 +1925,12 @@
     "צעד גדול קדימה, שתי הרגליים נשארות במקום.",
     "יורדים מעט למטה, העקב האחורי מורם.",
     "!ירידה קטנה בלבד, הברך הקדמית לא עוברת את הבהונות."
+   ],
+   "amount_en": "8 each leg",
+   "steps_en": [
+    "Stand with one foot a big step in front of the other. Both feet stay in place.",
+    "Lower down a little, with your back heel lifted.",
+    "!Only a small dip. Keep your front knee from going past your toes."
    ],
    "beat": 1.2,
    "keys": [
@@ -1898,6 +2036,12 @@
     "דוחפים את הישבן לאחור והגוף נוטה קדימה, גב ישר.",
     "!לא מעגלים את הגב. עולים בכיווץ ישבן."
    ],
+   "amount_en": "10 reps",
+   "steps_en": [
+    "Hands on your hips, knees soft.",
+    "Push your hips back and lean forward with a straight back.",
+    "!Don't round your back. Squeeze your glutes to come up."
+   ],
    "beat": 1.2,
    "keys": [
     {
@@ -1967,6 +2111,12 @@
     "גוף נוטה קדימה והידיים מחליקות על הירכיים עד מעל הברכיים.",
     "!גב ישר. עולים לאט."
    ],
+   "amount_en": "10 reps",
+   "steps_en": [
+    "Knees soft, hands on the front of your thighs.",
+    "Lean forward and slide your hands down your thighs to just above your knees.",
+    "!Keep your back straight. Come up slowly."
+   ],
    "beat": 1.2,
    "keys": [
     {
@@ -2031,6 +2181,12 @@
     "עולים לאט על הבהונות.",
     "יורדים לאט עד שהעקבים נוגעים."
    ],
+   "amount_en": "12 reps",
+   "steps_en": [
+    "Hold the back of a chair for balance.",
+    "Slowly rise up onto your toes.",
+    "Lower slowly until your heels touch the floor."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -2085,6 +2241,12 @@
     "מרימים את קצות האצבעות, עומדים על העקבים.",
     "מורידים לאט."
    ],
+   "amount_en": "12 reps",
+   "steps_en": [
+    "Hold the back of a chair.",
+    "Lift the front of your feet and stand on your heels.",
+    "Lower slowly."
+   ],
    "beat": 1,
    "keys": [
     {
@@ -2138,6 +2300,12 @@
     "אוחזים בשתי ידיים בגב כיסא.",
     "רגל אחת מורמת מאחור, עולים על הבהונות ברגל השנייה.",
     "יורדים לאט ומחליפים רגל."
+   ],
+   "amount_en": "8 each leg",
+   "steps_en": [
+    "Hold the back of a chair with both hands.",
+    "Lift one foot behind you and rise onto the toes of the other foot.",
+    "Lower slowly and switch legs."
    ],
    "beat": 1,
    "keys": [
@@ -2214,6 +2382,12 @@
     "אוחזים בגב כיסא ומרימים כף רגל מעט מהרצפה.",
     "מציירים עיגולים עם הבוהן.",
     "הופכים כיוון ומחליפים רגל."
+   ],
+   "amount_en": "10 each direction",
+   "steps_en": [
+    "Hold the back of a chair and lift one foot a little off the floor.",
+    "Draw circles with your toes.",
+    "Switch direction, then switch feet."
    ],
    "beat": 0.22,
    "keys": [
@@ -2486,6 +2660,12 @@
     "מותחים את הבוהן קדימה, ואז מושכים אותה אליכם.",
     "מחליפים רגל."
    ],
+   "amount_en": "15 each leg",
+   "steps_en": [
+    "Hold the back of a chair and lift one foot slightly forward.",
+    "Point your toes away, then pull them back toward you.",
+    "Switch legs."
+   ],
    "beat": 0.7,
    "keys": [
     {
@@ -2563,6 +2743,12 @@
     "עקב אחד קדימה על הרצפה, הבוהן למעלה.",
     "מכופפים את הברך האחורית ונוטים קדימה עם גב ישר.",
     "ידיים על הירך. מחליפים רגל."
+   ],
+   "amount_en": "20 seconds each leg",
+   "steps_en": [
+    "Place one heel forward on the floor, toes up.",
+    "Bend your back knee and lean forward with a straight back.",
+    "Rest your hands on your thigh. Switch legs."
    ],
    "beat": 1.3,
    "keys": [
@@ -2653,6 +2839,12 @@
     "מקפלים ברך ותופסים את הקרסול מאחור.",
     "!אם קשה להגיע, מחזיקים את המכנס או משתמשים במגבת. לא מושכים חזק."
    ],
+   "amount_en": "20 seconds each leg",
+   "steps_en": [
+    "Hold a wall or a chair with one hand.",
+    "Bend one knee and grab your ankle behind you.",
+    "!If it's hard to reach, hold your pants or use a towel. Don't pull hard."
+   ],
    "beat": 1.3,
    "keys": [
     {
@@ -2711,6 +2903,12 @@
     "צעד גדול קדימה, ברך קדמית כפופה מעט.",
     "מכניסים את האגן פנימה ומרגישים מתיחה בקדמת הירך האחורית.",
     "!הברך הקדמית לא עוברת את הבהונות. גב זקוף."
+   ],
+   "amount_en": "20 seconds each side",
+   "steps_en": [
+    "Take a big step forward with your front knee slightly bent.",
+    "Tuck your pelvis under and feel a stretch at the front of your back thigh.",
+    "!Keep your front knee from going past your toes. Keep your back straight."
    ],
    "beat": 1.3,
    "keys": [
@@ -2826,6 +3024,12 @@
     "מרימים את היד של הרגל האחורית גבוה ונמתחים מעט לצד.",
     "!בלי לקשת את הגב. מחליפים צד."
    ],
+   "amount_en": "5 each side",
+   "steps_en": [
+    "Stand in a big step with your front knee slightly bent.",
+    "Raise the arm on the same side as your back leg up high and lean a little to the side.",
+    "!Don't arch your back. Switch sides."
+   ],
    "beat": 1.3,
    "keys": [
     {
@@ -2919,6 +3123,12 @@
     "ידיים על הקיר, רגל אחת מאחור.",
     "העקב האחורי לוחץ לרצפה, הברך האחורית ישרה.",
     "נוטים קדימה עד מתיחה בשוק. מחליפים רגל."
+   ],
+   "amount_en": "20 seconds each leg",
+   "steps_en": [
+    "Hands on the wall, one leg back.",
+    "Press your back heel into the floor and keep your back knee straight.",
+    "Lean forward until you feel a stretch in your calf. Switch legs."
    ],
    "beat": 1.3,
    "keys": [
@@ -3023,6 +3233,12 @@
     "רגליים פשוקות רחב.",
     "מכופפים ברך אחת ונשענים עליה, הרגל השנייה ישרה.",
     "מרגישים מתיחה בצד הפנימי של הרגל הישרה. מחליפים צד."
+   ],
+   "amount_en": "20 seconds each side",
+   "steps_en": [
+    "Stand with your feet wide apart.",
+    "Bend one knee and shift your weight onto it. Keep the other leg straight.",
+    "Feel the stretch along the inside of the straight leg. Switch sides."
    ],
    "beat": 1.3,
    "keys": [
@@ -3158,6 +3374,12 @@
     "מרימים ברך ומחבקים אותה אל החזה.",
     "!ברך כואבת? מחזיקים מתחת לירך ולא על הברך."
    ],
+   "amount_en": "10 seconds each leg",
+   "steps_en": [
+    "You can stand next to a wall for balance.",
+    "Lift one knee and hug it to your chest.",
+    "!Sore knee? Hold under your thigh, not on the knee."
+   ],
    "beat": 1.2,
    "keys": [
     {
@@ -3207,6 +3429,12 @@
     "דוחפים את האגן לצד של הרגל האחורית ומרימים יד מעל הראש.",
     "נוטים מעט לצד השני. מחליפים צד."
    ],
+   "amount_en": "20 seconds each side",
+   "steps_en": [
+    "Cross one leg behind the other.",
+    "Push your hips out toward the side of the back leg and raise one arm overhead.",
+    "Lean a little to the other side. Switch sides."
+   ],
    "beat": 1.3,
    "keys": [
     {},
@@ -3249,6 +3477,12 @@
     "עומדים ליד קיר או כיסא.",
     "מרימים רגל אחת מעט, ידיים פתוחות לצדדים.",
     "מבט קדימה לנקודה קבועה. מחליפים רגל."
+   ],
+   "amount_en": "20 seconds each leg",
+   "steps_en": [
+    "Stand next to a wall or a chair.",
+    "Lift one foot a little, arms open to the sides.",
+    "Look ahead at one fixed spot. Switch legs."
    ],
    "beat": 1.3,
    "keys": [
@@ -3298,6 +3532,12 @@
     "עומדים ליד קיר.",
     "מניחים עקב על הקרסול השני, הברך פתוחה לצד.",
     "ידיים על המותניים. מחליפים רגל."
+   ],
+   "amount_en": "20 seconds each leg",
+   "steps_en": [
+    "Stand next to a wall.",
+    "Rest one heel on the other ankle, knee turned out to the side.",
+    "Hands on your hips. Switch legs."
    ],
    "beat": 1.3,
    "keys": [

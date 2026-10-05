@@ -4,7 +4,10 @@ const path = require('path');
 
 const arg = name => process.argv.find(a => a.startsWith(name))?.split('=').slice(1).join('=');
 const BUBBLE = 84, PEEK = 26, NEXT = 'Control+Alt+N', HIDE = 'Control+Alt+M';
-let win, settings, tray;
+const LANGQ = process.argv.find(a => a.startsWith('--lang=')) ? { lang: process.argv.find(a => a.startsWith('--lang=')).slice(7) } : undefined;   // self-checks: --lang=en
+let win, settings, tray, lang = 'he', tr = (l, k) => k;
+// the interface words live in app/i18n.js (an ES module); the tray menu uses the same file
+import(require('url').pathToFileURL(path.join(__dirname, 'app/i18n.js')).href).then(m => { tr = m.tr; trayMenu(); });
 
 function shoot(w, file, delay) {      // self-check helper: save a PNG of a window and quit
   setTimeout(async () => {
@@ -33,10 +36,10 @@ function gallery(hash, shot) {
 
 function openSettings(hash = '') {
   if (settings) return settings.focus();
-  settings = new BrowserWindow({ width: 1180, height: 780, minWidth: 760, minHeight: 520, title: 'הגדרות', autoHideMenuBar: true,
+  settings = new BrowserWindow({ width: 1180, height: 780, minWidth: 760, minHeight: 520, title: tr(lang, 'settingsTitle'), autoHideMenuBar: true,
     backgroundColor: '#efe2cb', icon: path.join(__dirname, 'app/icon.png'),
     webPreferences: { preload: path.join(__dirname, 'preload.js') } });
-  settings.loadFile('app/settings.html', { hash });
+  settings.loadFile('app/settings.html', { hash, query: LANGQ });
   settings.webContents.on('console-message', e => console.log('[settings]', e.message));
   settings.on('closed', () => { settings = null; });
 }
@@ -88,11 +91,24 @@ ipcMain.handle('untuck', () => {
 });
 ipcMain.on('settings', () => openSettings());
 ipcMain.on('quit', () => app.quit());
+ipcMain.on('lang', (e, l) => { lang = l; trayMenu(); if (settings) settings.setTitle(tr(lang, 'settingsTitle')); });
+function trayMenu() {
+  if (!tray) return;
+  tray.setToolTip(tr(lang, 'trayTip'));
+  tray.setContextMenu(Menu.buildFromTemplate([
+    { label: tr(lang, 'trayToggle'), accelerator: HIDE, click: hideOrShow },
+    { label: tr(lang, 'hideFull'), click: () => win.webContents.send('command', 'vanish') },
+    { label: tr(lang, 'trayNext'), accelerator: NEXT, click: () => win.webContents.send('command', 'next') },
+    { label: tr(lang, 'traySettings'), click: openSettings },
+    { type: 'separator' },
+    { label: tr(lang, 'trayQuit'), click: () => app.quit() },
+  ]));
+}
 // hide everything; the tray icon or the shortcut brings it back
 let told = false;
 ipcMain.on('vanish', () => {
   win.hide();
-  if (!told) { told = true; tray?.displayBalloon({ title: 'הדמות מוסתרת', content: 'לחיצה על האייקון כאן ליד השעון, או Ctrl+Alt+M, מחזירה אותה.' }); }
+  if (!told) { told = true; tray?.displayBalloon({ title: tr(lang, 'hiddenTitle'), content: tr(lang, 'hiddenText') }); }
 });
 function hideOrShow() {
   if (win.isVisible()) return win.webContents.send('command', 'hide');
@@ -120,20 +136,12 @@ app.whenReady().then(() => {
     icon: path.join(__dirname, 'app/icon.png'),
     webPreferences: { preload: path.join(__dirname, 'preload.js'), backgroundThrottling: false, offscreen: !!shot } });
   win.setAlwaysOnTop(true, 'screen-saver');
-  win.loadFile('app/index.html', { hash: shot || '' });
+  win.loadFile('app/index.html', { hash: shot || '', query: LANGQ });
   win.webContents.on('console-message', e => { if (shot) console.log('[page]', e.message); });
   if (shot) return shoot(win, `app-${shot}.png`, 4500);
 
   tray = new Tray(nativeImage.createFromPath(path.join(__dirname, 'app/icon.png')).resize({ width: 16, height: 16 }));
-  tray.setToolTip('תרגיל בהמתנה');
-  tray.setContextMenu(Menu.buildFromTemplate([
-    { label: 'מזעור / החזרה', accelerator: HIDE, click: hideOrShow },
-    { label: 'הסתרה מלאה', click: () => win.webContents.send('command', 'vanish') },
-    { label: 'התרגיל הבא', accelerator: NEXT, click: () => win.webContents.send('command', 'next') },
-    { label: 'הגדרות', click: openSettings },
-    { type: 'separator' },
-    { label: 'יציאה', click: () => app.quit() },
-  ]));
+  trayMenu();
   tray.on('click', hideOrShow);
   globalShortcut.register(NEXT, () => { if (!win.isVisible()) hideOrShow(); win.webContents.send('command', 'next'); });
   globalShortcut.register(HIDE, hideOrShow);

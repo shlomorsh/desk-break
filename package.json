@@ -7,12 +7,42 @@
   "repository": "github:shlomorsh/desk-break",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
   },
   "devDependencies": {
-    "electron": "^44.5.1"
-  },
-  "dependencies": {
+    "electron": "^44.5.1",
+    "electron-builder": "^26.15.3",
     "three": "^0.186.1"
+  },
+  "build": {
+    "appId": "il.co.parametric.deskbreak",
+    "productName": "Desk Break",
+    "executableName": "DeskBreak",
+    "files": [
+      "main.js",
+      "preload.js",
+      "app/**",
+      "library/exercises.glb",
+      "library/exercises.json",
+      "library/player.js",
+      "library/wood.png",
+      "package.json",
+      "vendor/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "app/icon.png",
+      "artifactName": "DeskBreak-Setup.exe"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "shortcutName": "Desk Break",
+      "runAfterFinish": true
+    },
+    "directories": {
+      "output": "dist"
+    }
   }
 }

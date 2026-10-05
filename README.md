@@ -6,7 +6,7 @@ waiting for the computer: a build, a render, an AI agent working. Click for the 
 It comes with an open library of **435 animated exercises** in 11 categories, made for this project
 and free to use in your own apps, games and videos.
 
-![The mannequin floating on the desktop with its exercise panel](docs/floating.png)
+![The mannequin floating on the desktop with its exercise panel](docs/floating.jpg)
 
 ## What it does
 
@@ -20,11 +20,16 @@ and free to use in your own apps, games and videos.
 - **Gets out of the way.** Shrink it to a small wooden head, tuck it into a screen edge, or hide it fully;
   `Ctrl+Alt+M` or the tray icon brings it back. `Ctrl+Alt+N` gives the next exercise from any app.
 
-![The exercise library](docs/library.png)
+Browse the whole library online: **https://parametric.co.il/desk-break/library/**
 
-## Run it
+## Download
 
-Windows, with [Node.js](https://nodejs.org) 20 or newer:
+**[DeskBreak-Setup.exe](https://github.com/shlomorsh/desk-break/releases/latest/download/DeskBreak-Setup.exe)** (Windows 10/11).
+It isn't code-signed yet, so the first time Windows shows "Windows protected your PC": click *More info*, then *Run anyway*.
+
+## Run from source
+
+With [Node.js](https://nodejs.org) 20 or newer:
 
 ```
 git clone https://github.com/shlomorsh/desk-break.git
@@ -62,7 +67,7 @@ Everything is in [`library/`](library):
 - `gallery.html`: browse every animation in a browser.
 
 To add or change exercises, read [`library/AUTHORING.md`](library/AUTHORING.md), edit a category file and
-rebuild with Blender 4.2 or newer:
+rebuild with Blender 4.2 or newer (`npm run dist` then builds the installer into `dist/`):
 
 ```
 blender -b -P library/build_library.py

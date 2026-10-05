@@ -3,3 +3,4 @@ library/.check/
 *.blend1
 app-*.png
 sheet-*.png
+dist/

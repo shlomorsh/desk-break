@@ -50,8 +50,11 @@ Bones: `hips` (root: rotates the WHOLE body), `spine` (one piece, waist to shoul
 
 **Grounding is automatic**: after posing, the whole body is moved up/down so its lowest point touches the
 floor (or the pelvis sits on the chair when `seated`). Lying, kneeling and sitting on the floor just work —
-pose the body, the floor finds it. Horizontal position is NOT solved: feet can slide and hands are not pinned,
-so for squats push `"pos": [0, 0, -0.1]` back yourself, and check hands that should touch the floor.
+pose the body, the floor finds it. **Contacts hold too**: a foot or hand that touches the floor stays where it
+landed (the leg/arm bends to reach it) until the keys lift it, and parts resting on the floor (back, knees, the
+seat) don't skid. So turning or tilting `hips` with the feet down moves the pelvis over planted feet, and a
+`pos` shift is a weight shift, not a slide. A foot that the leg itself drags along the floor (a heel slide, a
+leg sliding out) is let go and follows the keys.
 
 ## Directions that are verified (copy these)
 

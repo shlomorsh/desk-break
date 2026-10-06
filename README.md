@@ -121,8 +121,9 @@ The mannequin (`build_mannequin.py`) and its maple texture (`make_wood.py`) are 
 ## Code signing policy
 
 Windows builds are made by [GitHub Actions](.github/workflows/build.yml) straight from this repository.
-Code signing is being set up with free code signing provided by [SignPath.io](https://about.signpath.io),
-certificate by [SignPath Foundation](https://signpath.org). Until it is active, the installer is unsigned.
+The installer is not code-signed yet, so Windows shows "Windows protected your PC" on first run
+(More info, then Run anyway). Signing through [SignPath Foundation](https://signpath.org) is planned
+once the project is more established; the build workflow is already prepared for it.
 
 - Committers and reviewers: [Shlomi Reshef](https://github.com/shlomorsh)
 - Approvers: [Shlomi Reshef](https://github.com/shlomorsh)

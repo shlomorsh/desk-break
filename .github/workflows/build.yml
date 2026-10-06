@@ -1,0 +1,53 @@
+# Builds the Windows installer from this repository on GitHub's machines, so every release
+# can be traced to the exact source it came from (required for code signing by SignPath).
+# Runs on a version tag (v0.2.0 ...) or by hand from the Actions tab.
+name: build
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run dist
+      - id: unsigned
+        uses: actions/upload-artifact@v4
+        with:
+          name: DeskBreak-Setup-unsigned
+          path: dist/DeskBreak-Setup.exe
+          if-no-files-found: error
+
+      # Signing: switched on once SignPath approves the project and the three values below exist
+      # (Settings > Secrets and variables > Actions: SIGNPATH_API_TOKEN secret, SIGNPATH_ORGANIZATION_ID variable).
+      - if: ${{ vars.SIGNPATH_ORGANIZATION_ID != '' }}
+        uses: signpath/github-action-submit-signing-request@v1
+        with:
+          api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+          organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+          project-slug: desk-break
+          signing-policy-slug: release-signing
+          github-artifact-id: ${{ steps.unsigned.outputs.artifact-id }}
+          wait-for-completion: true
+          output-artifact-directory: signed
+
+      - name: Attach the installer to the release
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          f=dist/DeskBreak-Setup.exe
+          [ -f signed/DeskBreak-Setup.exe ] && f=signed/DeskBreak-Setup.exe
+          gh release upload "$GITHUB_REF_NAME" "$f" --clobber

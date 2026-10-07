@@ -3,7 +3,8 @@
   "version": "0.2.1",
   "description": "A wooden mannequin on your desktop that shows you a short exercise while the computer works.",
   "license": "MIT",
-  "author": "Shlomi Reshef (parametric.co.il)",
+  "author": "Shlomy Reshef",
+  "homepage": "https://parametric.co.il/desk-break/",
   "repository": "github:shlomorsh/desk-break",
   "main": "main.js",
   "scripts": {
@@ -46,6 +47,6 @@
     "directories": {
       "output": "dist"
     },
-    "copyright": "Copyright (c) 2026 Shlomi Reshef"
+    "copyright": "Copyright (c) 2026 Shlomy Reshef"
   }
 }

@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, screen, Tray, Menu, globalShortcut, nativeImage } = require('electron');
+const { app, BrowserWindow, ipcMain, screen, Tray, Menu, globalShortcut, nativeImage, shell } = require('electron');
 const fs = require('fs');
 const path = require('path');
 
@@ -91,6 +91,8 @@ ipcMain.handle('untuck', () => {
 });
 ipcMain.on('settings', () => openSettings());
 ipcMain.on('quit', () => app.quit());
+const site = medium => shell.openExternal(`https://parametric.co.il/desk-break/${lang === 'en' ? 'en/' : ''}?utm_source=desk-break-app&utm_medium=${medium}&utm_campaign=app`);
+ipcMain.on('about', () => site('settings'));
 ipcMain.on('lang', (e, l) => { lang = l; trayMenu(); if (settings) settings.setTitle(tr(lang, 'settingsTitle')); });
 function trayMenu() {
   if (!tray) return;
@@ -100,6 +102,7 @@ function trayMenu() {
     { label: tr(lang, 'hideFull'), click: () => win.webContents.send('command', 'vanish') },
     { label: tr(lang, 'trayNext'), accelerator: NEXT, click: () => win.webContents.send('command', 'next') },
     { label: tr(lang, 'traySettings'), click: openSettings },
+    { label: tr(lang, 'trayAbout'), click: () => site('tray') },
     { type: 'separator' },
     { label: tr(lang, 'trayQuit'), click: () => app.quit() },
   ]));

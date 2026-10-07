@@ -125,8 +125,8 @@ The installer is not code-signed yet, so Windows shows "Windows protected your P
 (More info, then Run anyway). Signing through [SignPath Foundation](https://signpath.org) is planned
 once the project is more established; the build workflow is already prepared for it.
 
-- Committers and reviewers: [Shlomi Reshef](https://github.com/shlomorsh)
-- Approvers: [Shlomi Reshef](https://github.com/shlomorsh)
+- Committers and reviewers: [Shlomy Reshef](https://github.com/shlomorsh)
+- Approvers: [Shlomy Reshef](https://github.com/shlomorsh)
 
 ### Privacy
 
@@ -142,7 +142,7 @@ If you have joint or back problems, check with a doctor or physiotherapist which
 ## License
 
 [MIT](LICENSE) for the code, the mannequin and the exercise library. Made by
-[Shlomi Reshef](https://parametric.co.il).
+[Shlomy Reshef](https://parametric.co.il).
 
 ---
 

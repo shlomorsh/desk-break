@@ -8,6 +8,7 @@ contextBridge.exposeInMainWorld('desk', {
   untuck: () => ipcRenderer.invoke('untuck'),
   settings: () => ipcRenderer.send('settings'),
   quit: () => ipcRenderer.send('quit'),
+  about: () => ipcRenderer.send('about'),
   vanish: () => ipcRenderer.send('vanish'),
   lang: l => ipcRenderer.send('lang', l),
   startup: on => ipcRenderer.invoke('startup', on),
